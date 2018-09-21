@@ -69,7 +69,7 @@ public class TelaPrincipal {
 	 * Create the application.
 	 */
 	public TelaPrincipal() {
-		Fachada.abrirBancoLocal();
+		Fachada.inicializar();
 		initialize();
 //		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplicação");
 
@@ -91,7 +91,7 @@ public class TelaPrincipal {
 			public void windowOpened(WindowEvent arg0) {
 				try{
 					//  pre-cadastro
-					Fachada.cadastrar();
+//					Fachada.cadastrar();
 				}catch(Exception e){
 					System.out.println(e.getMessage());
 					e.printStackTrace();
@@ -100,7 +100,7 @@ public class TelaPrincipal {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				JOptionPane.showMessageDialog(null, "ate breve !");
-				Fachada.fechaBanco();
+				Fachada.finalizar();
 			}
 		});
 

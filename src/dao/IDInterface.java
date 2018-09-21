@@ -4,7 +4,7 @@
  * Prof. Fausto Ayres
  *
  */
-package aplicacao;
+package dao;
 
 public interface IDInterface {
 	int  getId();
