@@ -8,54 +8,54 @@ import java.util.List;
 
 import com.db4o.query.Query;
 
-import modelo.Produto;
+import modelo.Funcionario;
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
  * Persistencia de Objetos
  * Prof. Fausto Maranhão Ayres
  **********************************/
-public class DAOFuncionario  extends DAO<Produto>{
+public class DAOFuncionario  extends DAO<Funcionario>{
 
-	public Produto readByNome (String nome){	
+	public Funcionario readByNome (String nome){	
 		Query q = manager.query();
-		q.constrain(Produto.class);
+		q.constrain(Funcionario.class);
 		q.descend("nome").constrain(nome);
-		List<Produto> resultados = q.execute();
+		List<Funcionario> resultados = q.execute();
 		if (resultados.size()>0)
-			return (Produto) resultados.get(0);
+			return (Funcionario) resultados.get(0);
 		else
 			return null;
 	}
 	
 	
-	public  List<Produto> consultarProdutoSemPareteleira() {
+	public  List<Funcionario> consultarFuncionarioSemPareteleira() {
 		Query q = manager.query();
-		q.constrain(Produto.class);
+		q.constrain(Funcionario.class);
 		q.descend("prateleira").constrain(null);
 		return q.execute(); 
 	}
 
-	public int consultarTotalProdutos() {
+	public int consultarTotalFuncionarios() {
 		Query q = manager.query();
-		q.constrain(Produto.class);
+		q.constrain(Funcionario.class);
 		int total = q.execute().size(); 
 		return total;
 	}
 
-	public List<Produto> consultarProdutosDaPrateleira(int id){
+	public List<Funcionario> consultarFuncionariosDaPrateleira(int id){
 		Query q = manager.query();
-		q.constrain(Produto.class);
+		q.constrain(Funcionario.class);
 		q.descend("prateleira").descend("id").constrain(id);
-		List<Produto> result = q.execute(); 
+		List<Funcionario> result = q.execute(); 
 		return result;	
 	}
 
-	public List<Produto> consultarVizinhos(String nome){
+	public List<Funcionario> consultarVizinhos(String nome){
 		Query q = manager.query();
-		q.constrain(Produto.class);
-		q.descend("prateleira").descend("produtos").descend("nome").constrain(nome);
+		q.constrain(Funcionario.class);
+		q.descend("prateleira").descend("Funcionarios").descend("nome").constrain(nome);
 		q.descend("nome").constrain(nome).not(); // excluir o proprio nome do resultado
-		List<Produto> result = q.execute(); 
+		List<Funcionario> result = q.execute(); 
 		return result;	
 	}
 
