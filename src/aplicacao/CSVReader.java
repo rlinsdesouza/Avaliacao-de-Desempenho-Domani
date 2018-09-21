@@ -13,7 +13,7 @@ public class CSVReader {
 	
 	public static final String delimiter = ";";
 
-	public static void read(String csvFile) {
+	public static List<Prato> read(String csvFile) {
 		try {
 			File file = new File(csvFile);
 			FileReader fr = new FileReader(file);
@@ -22,20 +22,44 @@ public class CSVReader {
 			String line = "";
 
 			String[] tempArr;
+			List<Prato> pratos = new ArrayList<Prato>();
+			Prato prato;
+			int i=1;
+			boolean glutem, lactose;
 			
 			line = br.readLine(); //primeira linha cabeçalho
 			
 			while ((line = br.readLine()) != null) {
 				tempArr = line.split(delimiter);
-				for (String tempStr : tempArr) {
-					System.out.print(tempStr + " ");
+				if (tempArr.length==4) {
+					if (tempArr[3].equalsIgnoreCase("SIM")) {
+						lactose = true; 
+					}else {
+						lactose = false;
+					}
+					
+					if (tempArr[2].equalsIgnoreCase("SIM")) {
+						glutem = true; 
+					}else {
+						glutem = false;
+					}
+		
+					prato = new Prato (i,tempArr[0],null,1,0,lactose,glutem,null);
+					pratos.add(prato);
+					i++;
 				}
-				System.out.println();
+				
+//				for (String tempStr : tempArr) {
+//					System.out.print(tempStr + " ");
+//				}
+//				System.out.println();
 			}
 			br.close();
+			return pratos;
 
 		} catch (IOException ex) {
 			ex.printStackTrace();
+			return null;
 		}
 
 	}

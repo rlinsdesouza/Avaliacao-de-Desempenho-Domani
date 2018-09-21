@@ -91,7 +91,6 @@ public class TelaPrincipal {
 			public void windowOpened(WindowEvent arg0) {
 				try{
 					//  pre-cadastro
-					//Fachada.criarMesas(20);
 					Fachada.cadastrar();
 				}catch(Exception e){
 					System.out.println(e.getMessage());

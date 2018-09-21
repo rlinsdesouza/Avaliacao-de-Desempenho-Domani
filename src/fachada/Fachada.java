@@ -11,6 +11,7 @@ import com.db4o.cs.Db4oClientServer;
 import com.db4o.cs.config.ClientConfiguration;
 import com.db4o.query.Query;
 
+import aplicacao.CSVReader;
 import aplicacao.IDControl;
 import modelo.Avaliacao;
 import modelo.ContaBancaria;
@@ -98,6 +99,10 @@ public class Fachada {
 //		p1.adicionarTelefone(new Telefone("88881111"));		
 		manager.store(p1);	
 		manager.commit();
+		
+		List<Prato> pratos = CSVReader.read("pratosbd.csv");
+		manager.store(pratos);
+		manager.commit();
 
 //		p1 = new Pessoa("maria");
 //		p1.adicionarTelefone(new Telefone("87882222"));
@@ -117,7 +122,7 @@ public class Fachada {
 //		p1 = new Professor ("fausto", 1000.00);
 //		manager.store(p1);		
 //		manager.commit();
-
+		System.out.println("pre-cadastro realizado com sucesso!");
 	}	
 	
 	

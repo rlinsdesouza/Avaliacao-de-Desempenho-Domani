@@ -9,15 +9,20 @@ public class Prato {
 	private String receita;
 	private int dificuldade;
 	private int tempoProduzir;
+	private boolean lactose;
+	private boolean glutem;
 	private List<Insumo> insumos = new ArrayList<Insumo>();
 	
-	public Prato(int codprato, String nome, String receita, int dificuldade, int tempoProduzir, List<Insumo> insumos) {
+	public Prato(int codprato, String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
+			boolean glutem, List<Insumo> insumos) {
 		super();
 		this.codprato = codprato;
 		this.nome = nome;
 		this.receita = receita;
 		this.dificuldade = dificuldade;
 		this.tempoProduzir = tempoProduzir;
+		this.lactose = lactose;
+		this.glutem = glutem;
 		this.insumos = insumos;
 	}
 
@@ -60,6 +65,23 @@ public class Prato {
 	public void setTempoProduzir(int tempoProduzir) {
 		this.tempoProduzir = tempoProduzir;
 	}
+	
+	public boolean isLactose() {
+		return lactose;
+	}
+
+	public void setLactose(boolean lactose) {
+		this.lactose = lactose;
+	}
+
+	public boolean isGlutem() {
+		return glutem;
+	}
+
+	public void setGlutem(boolean glutem) {
+		this.glutem = glutem;
+	}
+
 
 	public List<Insumo> getInsumos() {
 		return insumos;
@@ -72,7 +94,8 @@ public class Prato {
 	@Override
 	public String toString() {
 		return "Prato [codprato=" + codprato + ", nome=" + nome + ", receita=" + receita + ", dificuldade="
-				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", insumos=" + insumos + "]";
+				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glutem=" + glutem
+				+ ", insumos=" + insumos + "]";
 	}
 	
 	
