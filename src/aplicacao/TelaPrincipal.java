@@ -36,9 +36,6 @@ import modelo.Prato;
 import modelo.Producao;
 
 public class TelaPrincipal {
-	protected static ObjectContainer manager;
-
-
 	private JFrame frmPrincipal;
 	private JMenuItem mntmInsumos;
 	private JMenuItem mntmCadastrarGarcom;
@@ -48,6 +45,7 @@ public class TelaPrincipal {
 	private JMenuItem mntmApagarGarcom;
 	private JMenu mnCadastrar;
 	private JMenu mnGarcom;
+	private JMenuItem mntmPratos;
 
 	/**
 	 * Launch the application.
@@ -71,7 +69,7 @@ public class TelaPrincipal {
 	public TelaPrincipal() {
 		Fachada.inicializar();
 		initialize();
-//		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplicação");
+//		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplicaï¿½ï¿½o");
 
 	}
 
@@ -126,19 +124,19 @@ public class TelaPrincipal {
 		mntmListar = new JMenuItem("Listar");
 		mntmListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				TelaListagemProduto j = new TelaListagemProduto();
+//				TelaConsultaSelecao j = new TelaConsultaSelecao((Fachada.listarFuncionarios());
 //				j.setVisible(true);
 			}
 		});
 		
-		JMenuItem mntmApagar = new JMenuItem("Apagar");
-		mntmApagar.addActionListener(new ActionListener() {
+		mntmPratos = new JMenuItem("Pratos");
+		mntmPratos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				TelaApagarProduto j = new TelaApagarProduto();
-//				j.setVisible(true);
+				TelaCadastroPrato j = new TelaCadastroPrato();
+				j.setVisible(true);
 			}
 		});
-		mnCadastrar.add(mntmApagar);
+		mnCadastrar.add(mntmPratos);
 		mnCadastrar.add(mntmListar);
 		
 		mnGarcom = new JMenu("Garcom");

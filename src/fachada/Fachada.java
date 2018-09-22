@@ -58,5 +58,22 @@ public class Fachada {
 	public static List <Funcionario> listarFuncionarios () {
 		return daofuncionario.readAll();
 	}
+	
+	public static List <Prato> listarPratos () {
+		return daoprato.readAll();
+	}
+
+	public static List<Insumo> listarInsumo() {
+		return daoinsumo.readAll();
+	}
+
+	public static Prato localizarPrato(int id) {
+		return daoprato.read(id);
+	}
+
+	public static Prato atualizarPrato(Prato prato) {
+		daoprato.refresh(prato);
+		return prato;
+	}
 
 }

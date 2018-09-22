@@ -1,7 +1,7 @@
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
  * Persistencia de Objetos
- * Prof. Fausto Maranhão Ayres
+ * Prof. Fausto Maranhï¿½o Ayres
  **********************************/
 
 package dao;
@@ -57,7 +57,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		config.common().objectClass(Insumo.class).cascadeOnDelete(true);;
 		config.common().objectClass(Insumo.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Insumo.class).cascadeOnActivate(true);
-		config.common().objectClass(Prato.class).cascadeOnDelete(true);;
+		config.common().objectClass(Prato.class).cascadeOnDelete(false);;
 		config.common().objectClass(Prato.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Prato.class).cascadeOnActivate(true);
 
@@ -86,7 +86,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		config.common().objectClass(Insumo.class).cascadeOnDelete(true);;
 		config.common().objectClass(Insumo.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Insumo.class).cascadeOnActivate(true);
-		config.common().objectClass(Prato.class).cascadeOnDelete(true);;
+		config.common().objectClass(Prato.class).cascadeOnDelete(false);;
 		config.common().objectClass(Prato.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Prato.class).cascadeOnActivate(true);
 
@@ -147,7 +147,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		return (List<T>) q.execute();
 	}
 	
-	//--------transação---------------
+	//--------transaï¿½ï¿½o---------------
 	public static void begin(){	}		// tem que ser vazio
 	public static void commit(){
 		manager.commit();
