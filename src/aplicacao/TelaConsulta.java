@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
 import modelo.Funcionario;
+import uteis.CriarPDF;
 
 public class TelaConsulta extends JFrame {
 
@@ -25,6 +26,7 @@ public class TelaConsulta extends JFrame {
 	private JButton btnMesasSemGarcom;
 	private JButton button;
 	private JButton btnDescontoMedioGarcom;
+	private JButton btnPDFPlacasPratos;
 
 	/**
 	 * Launch the application.
@@ -84,6 +86,16 @@ public class TelaConsulta extends JFrame {
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scroll);
+		
+		btnPDFPlacasPratos = new JButton("PDF placas pratos");
+		btnPDFPlacasPratos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CriarPDF pdf = new CriarPDF ();
+				pdf.criarDocumento(Fachada.listarPratos("arroz"));
+			}
+		});
+		btnPDFPlacasPratos.setBounds(412, 48, 273, 25);
+		contentPane.add(btnPDFPlacasPratos);
 
 //		btnConsulta_2 = new JButton("Consultar Conta Parcial da mesa");
 //		btnConsulta_2.addActionListener(new ActionListener() {

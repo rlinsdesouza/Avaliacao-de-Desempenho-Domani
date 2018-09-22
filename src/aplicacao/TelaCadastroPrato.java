@@ -48,6 +48,7 @@ public class TelaCadastroPrato extends JFrame {
 	private JButton btnAtualizarCarac;
 	private JScrollPane scrollPane;
 	private JScrollPane scrollPane_1;
+	private JButton btnCancelar;
 
 	
 	/**
@@ -85,17 +86,33 @@ public class TelaCadastroPrato extends JFrame {
 		btnCriar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					int codigo = Integer.parseInt(textFieldCod.getText());
-					String nome = textFieldNome.getText();
-					Boolean lactose = chckbxLactose.isSelected();
-					Boolean glutem = checkBoxGlutem.isSelected();
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar o produto?", "Confirmação",0);
+					if (opcao==0) {
+						int dificuldade=1;
+						String nome = textFieldNome.getText();
+						Boolean lactose = chckbxLactose.isSelected();
+						Boolean glutem = checkBoxGlutem.isSelected();
+						
+						if (rdbtnFacil.isSelected()) dificuldade = 1;
+						if (rdbtnMedio.isSelected()) dificuldade = 2;
+						if (rdbtnDifcil.isSelected()) dificuldade = 3;
+						int tempo = Integer.parseInt(txtTempo.getText());
+						String receita = textArea.getText();
+						List<Insumo> insumos = new ArrayList<Insumo>(); 
+						for (Object insumo : listModel.toArray()) {
+							insumos.add((Insumo) insumo);
+						};
+						
+						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));					
+						if (p == null) {
+							p = Fachada.cadastrarPrato(nome, receita,dificuldade,tempo,lactose,glutem,insumos);
+						}else {
+							Fachada.atualizarPrato(p.getId(),nome, receita,dificuldade,tempo,lactose,glutem,insumos);
+						}
+						atualizaDados(p);	
+						lblmsg.setText("cadastrado/atualizado "+p.getNome());
+					}
 					
-					Insumo i = Fachada.cadastrarInsumo(codigo,nome,lactose,glutem);
-					lblmsg.setText("cadastrado "+i.getNome());
-					
-					textFieldCod.setText("");
-					textFieldNome.setText("");
-					textFieldCod.requestFocus();
 				}
 				catch(Exception erro){
 					lblmsg.setText(erro.getMessage());
@@ -118,6 +135,23 @@ public class TelaCadastroPrato extends JFrame {
 		contentPane.add(checkBoxGlutem);
 		
 		btnNovo = new JButton("Novo prato");
+		btnNovo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textFieldCod.setText("0");
+				textFieldCod.setEnabled(false);
+				textFieldNome.setText("Digite o nome do produto");
+				chckbxLactose.setSelected(false);
+				checkBoxGlutem.setSelected(false);
+				rdbtnFacil.setSelected(false);
+				txtTempo.setText("0");
+				rdbtnMedio.setSelected(false);
+				rdbtnDifcil.setSelected(false);
+				textArea.setText("");
+				listModel.clear();
+
+			}
+		});
 		btnNovo.setBounds(327, 8, 117, 25);
 		contentPane.add(btnNovo);
 		
@@ -126,19 +160,10 @@ public class TelaCadastroPrato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Prato selecionado;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do prato", "Localiza prato", 0);
-				List<Prato> pratos = new ArrayList <Prato>();
-				for (Prato prato : Fachada.listarPratos()) {
-					if (prato.getNome().toUpperCase().contains(nome.toUpperCase())) 
-						pratos.add(prato);
-				}
+				List<Prato> pratos = Fachada.listarPratos(nome); 
+				
 				if (pratos.size()>1) {
-					selecionado = (Prato) JOptionPane.showInputDialog(btnLocalizar, 
-				        "Escolha apenas um prato",
-				        "Prato selecionado",
-				        JOptionPane.QUESTION_MESSAGE, 
-				        null, 
-				        pratos.toArray(), 
-				        pratos.toArray()[0]);
+					selecionado = seleciona (pratos);
 				}else {
 					selecionado = (Prato) pratos.toArray()[0];
 				}
@@ -148,7 +173,12 @@ public class TelaCadastroPrato extends JFrame {
 		btnLocalizar.setBounds(456, 8, 117, 25);
 		contentPane.add(btnLocalizar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnCancelar.setBounds(342, 363, 117, 25);
 		contentPane.add(btnCancelar);
 		
@@ -198,19 +228,10 @@ public class TelaCadastroPrato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Insumo selecionado;
 				String nome = JOptionPane.showInputDialog(btnAddInsumo, "Nome do insumo", "Localiza insumo",1);
-				List<Insumo> insumos = new ArrayList <Insumo>();
-				for (Insumo insumo : Fachada.listarInsumo()) {
-					if (insumo.getNome().toUpperCase().contains(nome.toUpperCase())) 
-						insumos.add(insumo);
-				}
+				List<Insumo> insumos = Fachada.listarInsumo(nome);
+
 				if (insumos.size()>1) {
-					selecionado = (Insumo) JOptionPane.showInputDialog(btnLocalizar, 
-				        "Escolha apenas um insumo",
-				        "Insumo selecionado",
-				        JOptionPane.QUESTION_MESSAGE, 
-				        null, 
-				        insumos.toArray(), 
-				        insumos.toArray()[0]);
+					selecionado = seleciona(insumos);
 				}else {
 					if (insumos.size()==1) {
 						selecionado = (Insumo) insumos.toArray()[0];
@@ -218,21 +239,27 @@ public class TelaCadastroPrato extends JFrame {
 						selecionado = null;
 					}					
 				}
-				Prato prato = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())); 
-				if (prato.getInsumos()!=null) {
-					prato.getInsumos().add(selecionado);
-				}else {
-					prato.setInsumos(new ArrayList<Insumo>());
-					prato.getInsumos().add(selecionado);
-				}
-				Fachada.atualizarPrato (prato);
-				atualizaDados(prato);
+				listModel.addElement(selecionado);
+//				Prato prato = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())); 
+//				if (prato.getInsumos()!=null) {
+//					prato.getInsumos().add(selecionado);
+//				}else {
+//					prato.setInsumos(new ArrayList<Insumo>());
+//					prato.getInsumos().add(selecionado);
+//				}
+//				Fachada.atualizarPrato (prato);
+//				atualizaDados(prato);
 			}
 		});
 		btnAddInsumo.setBounds(582, 166, 117, 25);
 		contentPane.add(btnAddInsumo);
 		
 		btnRemoverInsumo = new JButton("Remover Insumo");
+		btnRemoverInsumo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				listModel.removeElementAt(list.getSelectedIndex());
+			}
+		});
 		btnRemoverInsumo.setBounds(582, 203, 156, 25);
 		contentPane.add(btnRemoverInsumo);
 		
@@ -258,6 +285,9 @@ public class TelaCadastroPrato extends JFrame {
 		chckbxLactose.setSelected(selecionado.isLactose());
 		checkBoxGlutem.setSelected(selecionado.isGlutem());
 		txtTempo.setText(Integer.toString(selecionado.getTempoProduzir()));
+		rdbtnFacil.setSelected(false);
+		rdbtnMedio.setSelected(false);
+		rdbtnDifcil.setSelected(false);
 		switch (selecionado.getDificuldade()) {
 		case 1:
 			rdbtnFacil.setSelected(true);
@@ -271,11 +301,23 @@ public class TelaCadastroPrato extends JFrame {
 			
 		}
 		textArea.setText(selecionado.getReceita());
+		listModel.clear();
 		if (selecionado.getInsumos() != null) {
 			for (Insumo i : selecionado.getInsumos()) {
 				listModel.addElement(i);
 			}
 		}
-				
+		lblmsg.setText("");
+	}
+	
+	private <T> T seleciona (List<T> lista) {
+			T selecionado = (T) JOptionPane.showInputDialog(contentPane, 
+		        "Escolha apenas um item",
+		        "Selecione",
+		        JOptionPane.QUESTION_MESSAGE, 
+		        null, 
+		        lista.toArray(), 
+		        lista.toArray()[0]);
+		return selecionado;
 	}
 }

@@ -21,7 +21,7 @@ public class Funcionario {
 	public Funcionario(int matricula, String nome) {
 		super();
 		this.matricula = matricula;
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 
 	public int getMatricula() {
@@ -37,7 +37,7 @@ public class Funcionario {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 
 	public int getCpf() {
@@ -61,7 +61,7 @@ public class Funcionario {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.toLowerCase();
 	}
 
 	public String getSenha() {

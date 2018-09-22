@@ -10,7 +10,7 @@ public class Insumo {
 	public Insumo(int codinsumo, String nome, boolean lactose, boolean glutem) {
 		super();
 		this.codinsumo = codinsumo;
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 		this.lactose = lactose;
 		this.glutem = glutem;
 	}
@@ -28,7 +28,7 @@ public class Insumo {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 
 	public boolean isLactose() {

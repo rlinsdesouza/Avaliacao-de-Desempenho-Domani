@@ -16,7 +16,7 @@ public class Avaliacao {
 		this.produto = produto;
 		this.notaSabor = notaSabor;
 		this.notaAparencia = notaAparencia;
-		this.justificativa = justificativa;
+		this.justificativa = justificativa.toUpperCase();
 		this.avaliador = avaliador;
 	}
 
@@ -57,7 +57,7 @@ public class Avaliacao {
 	}
 
 	public void setJustificativa(String justificativa) {
-		this.justificativa = justificativa;
+		this.justificativa = justificativa.toUpperCase();
 	}
 
 	public Funcionario getAvaliador() {

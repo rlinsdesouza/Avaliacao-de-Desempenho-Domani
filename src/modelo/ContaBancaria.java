@@ -9,9 +9,9 @@ public class ContaBancaria {
 	public ContaBancaria(int banco, String agencia, String operacao, String conta) {
 		super();
 		this.banco = banco;
-		this.agencia = agencia;
-		this.operacao = operacao;
-		this.conta = conta;
+		this.agencia = agencia.toUpperCase();
+		this.operacao = operacao.toUpperCase();
+		this.conta = conta.toUpperCase();
 	}
 
 	public int getBanco() {
@@ -27,7 +27,7 @@ public class ContaBancaria {
 	}
 
 	public void setAgencia(String agencia) {
-		this.agencia = agencia;
+		this.agencia = agencia.toUpperCase();
 	}
 
 	public String getOperacao() {
@@ -35,7 +35,7 @@ public class ContaBancaria {
 	}
 
 	public void setOperacao(String operacao) {
-		this.operacao = operacao;
+		this.operacao = operacao.toUpperCase();
 	}
 
 	public String getConta() {
@@ -43,7 +43,7 @@ public class ContaBancaria {
 	}
 
 	public void setConta(String conta) {
-		this.conta = conta;
+		this.conta = conta.toUpperCase();
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public class Endereco {
 		super();
 		this.cep = cep;
 		this.numero = numero;
-		this.logradouro = logradouro;
+		this.logradouro = logradouro.toUpperCase();
 	}
 	
 	public int getCep() {
@@ -29,7 +29,7 @@ public class Endereco {
 		return logradouro;
 	}
 	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
+		this.logradouro = logradouro.toUpperCase();
 	}
 
 	@Override
