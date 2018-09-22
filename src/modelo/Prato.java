@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prato {
-	private int codprato;
+	private int id;
 	private String nome;
 	private String receita;
 	private int dificuldade;
@@ -13,10 +13,10 @@ public class Prato {
 	private boolean glutem;
 	private List<Insumo> insumos = new ArrayList<Insumo>();
 	
-	public Prato(int codprato, String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
+	public Prato(int id, String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
 			boolean glutem, List<Insumo> insumos) {
 		super();
-		this.codprato = codprato;
+		this.id = id;
 		this.nome = nome;
 		this.receita = receita;
 		this.dificuldade = dificuldade;
@@ -26,12 +26,12 @@ public class Prato {
 		this.insumos = insumos;
 	}
 
-	public int getCodprato() {
-		return codprato;
+	public int getId() {
+		return id;
 	}
 
-	public void setCodprato(int codprato) {
-		this.codprato = codprato;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -93,7 +93,7 @@ public class Prato {
 
 	@Override
 	public String toString() {
-		return "Prato [codprato=" + codprato + ", nome=" + nome + ", receita=" + receita + ", dificuldade="
+		return "Prato [id=" + id + ", nome=" + nome + ", receita=" + receita + ", dificuldade="
 				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glutem=" + glutem
 				+ ", insumos=" + insumos + "]";
 	}

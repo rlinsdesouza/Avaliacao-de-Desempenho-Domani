@@ -138,7 +138,7 @@ public class TelaCadastroPrato extends JFrame {
 				}else {
 					selecionado = (Prato) pratos.toArray()[0];
 				}
-				textFieldCod.setText(Integer.toString(selecionado.getCodprato()));
+				textFieldCod.setText(Integer.toString(selecionado.getId()));
 				textFieldNome.setText(selecionado.getNome());
 				chckbxLactose.setSelected(selecionado.isLactose());
 				checkBoxGlutem.setSelected(selecionado.isGlutem());
@@ -226,9 +226,13 @@ public class TelaCadastroPrato extends JFrame {
 				        insumos.toArray(), 
 				        insumos.toArray()[0]);
 				}else {
-					selecionado = (Insumo) insumos.toArray()[0];
+					if (insumos.size()==1) {
+						selecionado = (Insumo) insumos.toArray()[0];
+					}else {
+						selecionado = null;
+					}					
 				}
-				Prato prato = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())); 				
+				Prato prato = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())); 
 				if (prato.getInsumos()!=null) {
 					prato.getInsumos().add(selecionado);
 				}else {
