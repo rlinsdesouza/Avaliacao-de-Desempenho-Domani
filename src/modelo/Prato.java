@@ -17,7 +17,7 @@ public class Prato {
 			boolean glutem, List<Insumo> insumos) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 		this.receita = receita;
 		this.dificuldade = dificuldade;
 		this.tempoProduzir = tempoProduzir;

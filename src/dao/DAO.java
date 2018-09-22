@@ -18,6 +18,7 @@ import com.db4o.cs.Db4oClientServer;
 import com.db4o.cs.config.ClientConfiguration;
 import com.db4o.query.Query;
 
+import fachada.Fachada;
 import modelo.Avaliacao;
 import modelo.ContaBancaria;
 import modelo.Endereco;
@@ -148,6 +149,17 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		q.constrain(type);
 		return (List<T>) q.execute();
 	}
+	
+	public List<T> readAll(String nome){
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+		Query q = manager.query();
+		q.constrain(type);
+		q.descend("nome").constrain(nome.toUpperCase()).contains();
+		return (List<T>) q.execute();
+	}
+	
+	
 	
 	//--------transa��o---------------
 	public static void begin(){	}		// tem que ser vazio

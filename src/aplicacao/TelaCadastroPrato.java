@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -40,10 +41,13 @@ public class TelaCadastroPrato extends JFrame {
 	private JRadioButton rdbtnMedio;
 	private JRadioButton rdbtnDifcil;
 	private JTextArea textArea;
+	private DefaultListModel listModel;
 	private JList list;
 	private JButton btnAddInsumo;
 	private JButton btnRemoverInsumo;
 	private JButton btnAtualizarCarac;
+	private JScrollPane scrollPane;
+	private JScrollPane scrollPane_1;
 
 	
 	/**
@@ -138,26 +142,7 @@ public class TelaCadastroPrato extends JFrame {
 				}else {
 					selecionado = (Prato) pratos.toArray()[0];
 				}
-				textFieldCod.setText(Integer.toString(selecionado.getId()));
-				textFieldNome.setText(selecionado.getNome());
-				chckbxLactose.setSelected(selecionado.isLactose());
-				checkBoxGlutem.setSelected(selecionado.isGlutem());
-				txtTempo.setText(Integer.toString(selecionado.getTempoProduzir()));
-				switch (selecionado.getDificuldade()) {
-				case 1:
-					rdbtnFacil.setSelected(true);
-					break;
-				case 2:
-					rdbtnMedio.setSelected(true);
-					break;
-				case 3:
-					rdbtnDifcil.setSelected(true);
-					break;
-					
-				}
-				textArea.setText(selecionado.getReceita());
-				if (selecionado.getInsumos() != null) 
-					list = new JList(selecionado.getInsumos().toArray());
+				atualizaDados(selecionado);		
 			}
 		});
 		btnLocalizar.setBounds(456, 8, 117, 25);
@@ -192,15 +177,16 @@ public class TelaCadastroPrato extends JFrame {
 		rdbtnDifcil.setBounds(582, 107, 78, 23);
 		contentPane.add(rdbtnDifcil);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(359, 138, 214, 188);
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(347, 138, 214, 188);
 		contentPane.add(scrollPane);
 		
-		list = new JList();
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		listModel = new DefaultListModel<Insumo>();
+		list = new JList(listModel);
 		scrollPane.setViewportView(list);
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(29, 138, 286, 188);
 		contentPane.add(scrollPane_1);
 		
@@ -240,6 +226,7 @@ public class TelaCadastroPrato extends JFrame {
 					prato.getInsumos().add(selecionado);
 				}
 				Fachada.atualizarPrato (prato);
+				atualizaDados(prato);
 			}
 		});
 		btnAddInsumo.setBounds(582, 166, 117, 25);
@@ -264,5 +251,31 @@ public class TelaCadastroPrato extends JFrame {
 		});
 		btnAtualizarCarac.setBounds(317, 74, 211, 25);
 		contentPane.add(btnAtualizarCarac);
+	}
+	private void atualizaDados (Prato selecionado) {
+		textFieldCod.setText(Integer.toString(selecionado.getId()));
+		textFieldNome.setText(selecionado.getNome());
+		chckbxLactose.setSelected(selecionado.isLactose());
+		checkBoxGlutem.setSelected(selecionado.isGlutem());
+		txtTempo.setText(Integer.toString(selecionado.getTempoProduzir()));
+		switch (selecionado.getDificuldade()) {
+		case 1:
+			rdbtnFacil.setSelected(true);
+			break;
+		case 2:
+			rdbtnMedio.setSelected(true);
+			break;
+		case 3:
+			rdbtnDifcil.setSelected(true);
+			break;
+			
+		}
+		textArea.setText(selecionado.getReceita());
+		if (selecionado.getInsumos() != null) {
+			for (Insumo i : selecionado.getInsumos()) {
+				listModel.addElement(i);
+			}
+		}
+				
 	}
 }

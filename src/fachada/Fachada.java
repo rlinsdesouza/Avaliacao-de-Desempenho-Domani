@@ -66,6 +66,10 @@ public class Fachada {
 	public static List<Insumo> listarInsumo() {
 		return daoinsumo.readAll();
 	}
+	
+	public static List<Insumo> listarInsumo(String nome) {
+		return daoinsumo.readAll(nome);
+	}
 
 	public static Prato localizarPrato(int id) {
 		return daoprato.read(id);
