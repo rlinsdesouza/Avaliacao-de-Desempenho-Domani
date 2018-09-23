@@ -14,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
 import modelo.Funcionario;
-import uteis.CriarPDF;
+import uteis.CreateEtiquetasPDF;
 
 public class TelaConsulta extends JFrame {
 
@@ -90,8 +90,13 @@ public class TelaConsulta extends JFrame {
 		btnPDFPlacasPratos = new JButton("PDF placas pratos");
 		btnPDFPlacasPratos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CriarPDF pdf = new CriarPDF ();
-				pdf.criarDocumento(Fachada.listarPratos("arroz"));
+				try {
+					CreateEtiquetasPDF pdf = new CreateEtiquetasPDF();
+					pdf.createPdf("teste.pdf", Fachada.listarPratos("arroz"));					
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+
 			}
 		});
 		btnPDFPlacasPratos.setBounds(412, 48, 273, 25);
