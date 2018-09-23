@@ -8,8 +8,6 @@ package aplicacao;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -20,23 +18,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import com.db4o.Db4oEmbedded;
-import com.db4o.ObjectContainer;
-import com.db4o.config.EmbeddedConfiguration;
-import com.db4o.cs.Db4oClientServer;
-import com.db4o.cs.config.ClientConfiguration;
-
 import fachada.Fachada;
-import modelo.Avaliacao;
-import modelo.ContaBancaria;
-import modelo.Endereco;
-import modelo.Funcionario;
-import modelo.Insumo;
-import modelo.Prato;
-import modelo.Producao;
 
 public class TelaPrincipal {
 	private JFrame frmPrincipal;
+	private JMenuBar menuBar;
 	private JMenuItem mntmInsumos;
 	private JMenuItem mntmCadastrarGarcom;
 	private JMenuItem mntmMesasGarcom;
@@ -46,6 +32,11 @@ public class TelaPrincipal {
 	private JMenu mnCadastrar;
 	private JMenu mnGarcom;
 	private JMenuItem mntmPratos;
+	private JMenu mnConsulta;
+	private JMenuItem mntmConsultaGeral;
+	private JMenuItem mntmGerarEtiquetas;
+
+	
 
 	/**
 	 * Launch the application.
@@ -78,7 +69,7 @@ public class TelaPrincipal {
 	 */
 	private void initialize() {
 		frmPrincipal = new JFrame();
-		frmPrincipal.setTitle("Restaurante Domani - Rafael Lins");
+		frmPrincipal.setTitle("Restaurante Domani - Gestão");
 		try {
 			frmPrincipal.setContentPane(new FundoTela("domani.jpg"));
 		} catch (IOException e1) {
@@ -106,7 +97,7 @@ public class TelaPrincipal {
 		frmPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmPrincipal.getContentPane().setLayout(null);
 
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		frmPrincipal.setJMenuBar(menuBar);
 
 		mnCadastrar = new JMenu("Cadastrar");
@@ -225,16 +216,29 @@ public class TelaPrincipal {
 			}
 		});
 		mnMesas.add(mntmRemoverProduto);
+
+		mnConsulta = new JMenu("Consulta");
+		menuBar.add(mnConsulta);
 		
-		JMenu mnConsulta = new JMenu("Consulta");
-		mnConsulta.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+		
+		mntmConsultaGeral = new JMenuItem("Consulta Geral");
+		mntmConsultaGeral.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 				TelaConsulta j = new TelaConsulta();
 				j.setVisible(true);
 			}
 		});
-		menuBar.add(mnConsulta);
+		mnConsulta.add(mntmConsultaGeral);
+		
+		mntmGerarEtiquetas = new JMenuItem("Gerar etiquetas");
+		mntmGerarEtiquetas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaGeraEtiquetas j = new TelaGeraEtiquetas();
+				j.setVisible(true);
+			}
+		});
+		mnConsulta.add(mntmGerarEtiquetas);
+	
 	
 	}
 }
