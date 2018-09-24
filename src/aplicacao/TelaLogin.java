@@ -1,7 +1,6 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -14,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
 import modelo.Funcionario;
+import uteis.PasswordUtils;
 
 public class TelaLogin extends JFrame {
 
@@ -63,10 +63,11 @@ public class TelaLogin extends JFrame {
 				try{
 					int tentativas=0;
 					String senha = passwordField.getText(); 
+					
 					List<Funcionario> funcionarios = Fachada.listarFuncionarios();
 					
 					for (Funcionario funcionario : funcionarios) {
-						if (senha.equals(funcionario.getSenha())) {
+						if (PasswordUtils.verifyUserPassword(senha, funcionario.getSenha(), funcionario.getSalt())) {
 							dispose();
 						}else {
 							lblmsg.setText("Senha não reconhecida");
