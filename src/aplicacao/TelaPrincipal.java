@@ -26,7 +26,7 @@ public class TelaPrincipal {
 	private JMenuItem mntmInsumos;
 	private JMenuItem mntmCadastrarGarcom;
 	private JMenuItem mntmMesasGarcom;
-	private JMenuItem mntmListar;
+	private JMenuItem mntmFuncionario;
 	private JMenuItem mntmListarGarcom;
 	private JMenuItem mntmApagarGarcom;
 	private JMenu mnCadastrar;
@@ -59,6 +59,8 @@ public class TelaPrincipal {
 	 */
 	public TelaPrincipal() {
 		Fachada.inicializar();
+		TelaLogin j = new TelaLogin();
+		j.setVisible(true);
 		initialize();
 //		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplica��o");
 
@@ -112,11 +114,11 @@ public class TelaPrincipal {
 		});
 		mnCadastrar.add(mntmInsumos);
 
-		mntmListar = new JMenuItem("Listar");
-		mntmListar.addActionListener(new ActionListener() {
+		mntmFuncionario = new JMenuItem("Funcionario");
+		mntmFuncionario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				TelaConsultaSelecao j = new TelaConsultaSelecao((Fachada.listarFuncionarios());
-//				j.setVisible(true);
+				TelaCadastroFuncionario j = new TelaCadastroFuncionario();
+				j.setVisible(true);
 			}
 		});
 		
@@ -128,7 +130,7 @@ public class TelaPrincipal {
 			}
 		});
 		mnCadastrar.add(mntmPratos);
-		mnCadastrar.add(mntmListar);
+		mnCadastrar.add(mntmFuncionario);
 		
 		mnGarcom = new JMenu("Garcom");
 		menuBar.add(mnGarcom);

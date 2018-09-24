@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Funcionario {
 	
+	private int id;
 	private int matricula;
 	private String nome;
 	private int cpf;
@@ -16,13 +17,34 @@ public class Funcionario {
 	private Date dataDemissao;
 	private ContaBancaria conta;
 	private Endereco endereco;
-	private List<Producao> producoes = new ArrayList<Producao>();
-	
-	public Funcionario(int matricula, String nome) {
+	private List<Producao> producoes;
+		
+	public Funcionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,
+			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		super();
+		this.id = id;
 		this.matricula = matricula;
-		this.nome = nome.toUpperCase();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.dataAdmissao = dataAdmissao;
+		this.dataDemissao = dataDemissao;
+		this.conta = conta;
+		this.endereco = endereco;
+		this.producoes = new ArrayList<Producao>();
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public int getMatricula() {
 		return matricula;

@@ -2,25 +2,25 @@ package modelo;
 
 public class Insumo {
 
-	private int codinsumo;
+	private int id;
 	private String nome;
 	private boolean lactose;
 	private boolean glutem;
 	
 	public Insumo(int codinsumo, String nome, boolean lactose, boolean glutem) {
 		super();
-		this.codinsumo = codinsumo;
+		this.id = codinsumo;
 		this.nome = nome.toUpperCase();
 		this.lactose = lactose;
 		this.glutem = glutem;
 	}
 
-	public int getCodinsumo() {
-		return codinsumo;
+	public int getId() {
+		return id;
 	}
 
-	public void setCodinsumo(int codinsumo) {
-		this.codinsumo = codinsumo;
+	public void setId(int codinsumo) {
+		this.id = codinsumo;
 	}
 
 	public String getNome() {
@@ -49,7 +49,7 @@ public class Insumo {
 
 	@Override
 	public String toString() {
-		return "Insumo [codinsumo=" + codinsumo + ", nome=" + nome + ", lactose=" + lactose + ", glutem=" + glutem
+		return "Insumo [codinsumo=" + id + ", nome=" + nome + ", lactose=" + lactose + ", glutem=" + glutem
 				+ "]";
 	}
 	
