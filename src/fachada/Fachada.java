@@ -44,7 +44,7 @@ public class Fachada {
 		System.out.println("pre-cadastro realizado com sucesso!");
 	}	
 
-	public static Funcionario cadastrarFuncionario (int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,
+	public static Funcionario cadastrarFuncionario (int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) throws Exception {
 		
 		int key = daofuncionario.getKey();
@@ -53,7 +53,7 @@ public class Fachada {
 		if(i != null) {
 			throw new Exception("ja cadastrado:" + nome);
 		}
-		i = new Funcionario(key,matricula, nome, cpf, telefone, email,senha,dataAdmissao, dataDemissao, conta, endereco,producoes);
+		i = new Funcionario(key,matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, conta, endereco,producoes);
 		daofuncionario.create(i);		
 		DAO.commit();
 		return i;
@@ -149,7 +149,7 @@ public class Fachada {
 		return p;
 	}
 	
-	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,
+	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
@@ -157,8 +157,11 @@ public class Fachada {
 //		p.setCpf(cpf);
 //		p.setTelefone(telefone);
 //		p.setEmail(email);
-		if (senha != null) 
+		if (senha != null) {
 			p.setSenha(senha);
+			p.setSalt(salt);
+		}
+			
 //		p.setDataAdmissao(dataAdmissao);
 //		p.setDataDemissao(dataDemissao);
 //		p.setConta(conta);

@@ -111,9 +111,9 @@ public class TelaCadastroFuncionario extends JFrame {
 						
 						Funcionario p = Fachada.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
 						if (p == null) {
-							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,dataAdmissao,dataDemissao, conta, endereco, producoes);
+							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
 						}else {
-							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,dataAdmissao,dataDemissao, conta, endereco, producoes);
+							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
 						}
 						atualizaDados(p);	
 						lblmsg.setText("cadastrado/atualizado "+p.getNome());
