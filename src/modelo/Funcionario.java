@@ -13,13 +13,14 @@ public class Funcionario {
 	private List<Integer> telefone = new ArrayList<Integer>();
 	private String email;
 	private String senha;
+	private String salt;
 	private Date dataAdmissao;
 	private Date dataDemissao;
 	private ContaBancaria conta;
 	private Endereco endereco;
 	private List<Producao> producoes;
 		
-	public Funcionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,
+	public Funcionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		super();
 		this.id = id;
@@ -29,6 +30,7 @@ public class Funcionario {
 		this.telefone = telefone;
 		this.email = email;
 		this.senha = senha;
+		this.salt = salt;
 		this.dataAdmissao = dataAdmissao;
 		this.dataDemissao = dataDemissao;
 		this.conta = conta;
@@ -92,6 +94,15 @@ public class Funcionario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	public Date getDataAdmissao() {

@@ -1,13 +1,11 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -24,8 +22,8 @@ import modelo.ContaBancaria;
 import modelo.Endereco;
 import modelo.Funcionario;
 import modelo.Insumo;
-import modelo.Prato;
 import modelo.Producao;
+import uteis.PasswordUtils;
 
 public class TelaCadastroFuncionario extends JFrame {
 
@@ -100,8 +98,10 @@ public class TelaCadastroFuncionario extends JFrame {
 						List<Integer> telefone = null;
 						
 						String email = null;
-						String senha = passwordField.getText();
-
+						String senhadigitada = passwordField.getText();
+						String salt = PasswordUtils.getSalt(30);
+						String senha = PasswordUtils.generateSecurePassword(senhadigitada, salt);
+						
 						Date dataAdmissao = null;
 						Date dataDemissao = null;
 						ContaBancaria conta = null;
