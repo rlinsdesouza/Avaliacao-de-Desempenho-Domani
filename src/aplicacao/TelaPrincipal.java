@@ -46,13 +46,8 @@ public class TelaPrincipal {
 			public void run() {
 				try {
 					TelaPrincipal window = new TelaPrincipal();
-					TelaLogin login = new TelaLogin();
-					if (login.isSucceeded()) {
-						window.frmPrincipal.setVisible(true);
-					}else {
-						Fachada.finalizar();
-						System.exit(0);
-					}
+					
+					window.frmPrincipal.setVisible(true);
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -66,7 +61,8 @@ public class TelaPrincipal {
 	 */
 	public TelaPrincipal() {
 		Fachada.inicializar();
-		initialize();
+		initialize();	
+
 //		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplica��o");
 
 	}
@@ -77,7 +73,6 @@ public class TelaPrincipal {
 	private void initialize() {
 		frmPrincipal = new JFrame();
 		frmPrincipal.setTitle("Restaurante Domani - Gestão");
-		
 			try {
 				frmPrincipal.setContentPane(new FundoTela("domani.jpg"));
 			} catch (IOException e1) {
@@ -87,9 +82,21 @@ public class TelaPrincipal {
 				@Override
 				public void windowOpened(WindowEvent arg0) {
 					try{
+						frmPrincipal.setVisible(false);
+						TelaLogin login = new TelaLogin(frmPrincipal);
+						login.setVisible(true);
+						if (login.isSucceeded()) {
+							frmPrincipal.setVisible(true);
+							login.dispose();
+						}else {
+						Fachada.finalizar();
+						System.exit(0);
+					}
+					
 						//  pre-cadastro
 //						Fachada.cadastrar();
 					}catch(Exception e){
+
 						System.out.println(e.getMessage());
 						e.printStackTrace();
 					}
@@ -138,92 +145,92 @@ public class TelaPrincipal {
 			mnCadastrar.add(mntmPratos);
 			mnCadastrar.add(mntmFuncionario);
 			
-			mnGarcom = new JMenu("Garcom");
-			menuBar.add(mnGarcom);
+//			mnGarcom = new JMenu("Garcom");
+//			menuBar.add(mnGarcom);
 
-			mntmCadastrarGarcom = new JMenuItem("Cadastrar Garcom");
-			mntmCadastrarGarcom.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//			mntmCadastrarGarcom = new JMenuItem("Cadastrar Garcom");
+//			mntmCadastrarGarcom.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaCadastroGarcom j = new TelaCadastroGarcom();
 //					j.setVisible(true);
-				}
-			});
-			mnGarcom.add(mntmCadastrarGarcom);
-			
-			mntmMesasGarcom = new JMenuItem("Definir mesas Garcom");
-			mntmMesasGarcom.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//				}
+//			});
+//			mnGarcom.add(mntmCadastrarGarcom);
+//			
+//			mntmMesasGarcom = new JMenuItem("Definir mesas Garcom");
+//			mntmMesasGarcom.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaCadastroGarcom j = new TelaCadastroGarcom();
 //					j.setVisible(true);
-				}
-			});
-			mnGarcom.add(mntmMesasGarcom);
-
-			mntmListarGarcom = new JMenuItem("Listar Garcom");
-			mntmListarGarcom.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//				}
+//			});
+//			mnGarcom.add(mntmMesasGarcom);
+//
+//			mntmListarGarcom = new JMenuItem("Listar Garcom");
+//			mntmListarGarcom.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaListagemGarcom j = new TelaListagemGarcom();
 //					j.setVisible(true);
-				}
-			});
-			
-			mntmApagarGarcom = new JMenuItem("Apagar Garcom");
-			mntmApagarGarcom.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//				}
+//			});
+//			
+//			mntmApagarGarcom = new JMenuItem("Apagar Garcom");
+//			mntmApagarGarcom.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaRemoverGarcom j = new TelaRemoverGarcom();
 //					j.setVisible(true);
-				}
-			});
-			mnGarcom.add(mntmApagarGarcom);
-			mnGarcom.add(mntmListarGarcom);
-
-			JMenu mnMesas = new JMenu("Mesas/Pedidos");
-			menuBar.add(mnMesas);
-
-			JMenuItem mntmCriar = new JMenuItem("Adicionar mesa");
-			mntmCriar.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//				}
+//			});
+//			mnGarcom.add(mntmApagarGarcom);
+//			mnGarcom.add(mntmListarGarcom);
+//
+//			JMenu mnMesas = new JMenu("Mesas/Pedidos");
+//			menuBar.add(mnMesas);
+//
+//			JMenuItem mntmCriar = new JMenuItem("Adicionar mesa");
+//			mntmCriar.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaCadastroMesas j = new TelaCadastroMesas();
 //					j.setVisible(true);
-				}
-			});
-			mnMesas.add(mntmCriar);
+//				}
+//			});
+//			mnMesas.add(mntmCriar);
 			
-			JMenuItem mntmCriar2 = new JMenuItem("Controle de contas");
-			mntmCriar2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//			JMenuItem mntmCriar2 = new JMenuItem("Controle de contas");
+//			mntmCriar2.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaControleConta j = new TelaControleConta();
 //					j.setVisible(true);
-				}
-			});
-			mnMesas.add(mntmCriar2);
-
-			JMenuItem mntmListar_1 = new JMenuItem("Listar");
-			mntmListar_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+//				}
+//			});
+//			mnMesas.add(mntmCriar2);
+//
+//			JMenuItem mntmListar_1 = new JMenuItem("Listar");
+//			mntmListar_1.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent e) {
 //					TelaListagemMesas j = new TelaListagemMesas();
 //					j.setVisible(true);
-				}
-			});
-			mnMesas.add(mntmListar_1);
+//				}
+//			});
+//			mnMesas.add(mntmListar_1);
 
-			JMenuItem mntmInserirProduto = new JMenuItem("Solicitar produto");
-			mntmInserirProduto.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//			JMenuItem mntmInserirProduto = new JMenuItem("Solicitar produto");
+//			mntmInserirProduto.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaInserirProdutoMesas j = new TelaInserirProdutoMesas();
 //					j.setVisible(true);
-				}
-			});
-			mnMesas.add(mntmInserirProduto);
-			
-			JMenuItem mntmRemoverProduto = new JMenuItem("Remover produto");
-			mntmRemoverProduto.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+//				}
+//			});
+//			mnMesas.add(mntmInserirProduto);
+//			
+//			JMenuItem mntmRemoverProduto = new JMenuItem("Remover produto");
+//			mntmRemoverProduto.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
 //					TelaRemoverProdutoMesas j = new TelaRemoverProdutoMesas();
 //					j.setVisible(true);
-				}
-			});
-			mnMesas.add(mntmRemoverProduto);
+//				}
+//			});
+//			mnMesas.add(mntmRemoverProduto);
 
 			mnConsulta = new JMenu("Consulta");
 			menuBar.add(mnConsulta);
