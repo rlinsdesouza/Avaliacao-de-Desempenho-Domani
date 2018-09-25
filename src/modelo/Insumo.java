@@ -49,8 +49,7 @@ public class Insumo {
 
 	@Override
 	public String toString() {
-		return "Insumo [codinsumo=" + id + ", nome=" + nome + ", lactose=" + lactose + ", glutem=" + glutem
-				+ "]";
+		return nome;
 	}
 	
 }

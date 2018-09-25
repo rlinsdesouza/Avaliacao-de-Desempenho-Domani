@@ -95,6 +95,7 @@ public class TelaPrincipal {
 					
 						//  pre-cadastro
 //						Fachada.cadastrar();
+//						frmPrincipal.setVisible(true);
 					}catch(Exception e){
 
 						System.out.println(e.getMessage());

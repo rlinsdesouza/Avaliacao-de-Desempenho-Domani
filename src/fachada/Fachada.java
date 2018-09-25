@@ -30,11 +30,14 @@ public class Fachada {
 	}
 		
 	public static void cadastrar(){
-//		Funcionario p1;
-//		System.out.println("cadastrando...");
-//		p1 = new Funcionario(1,"Rafael Lins");
-//		daofuncionario.create(p1);
-//	
+		System.out.println("cadastrando...");
+		try {
+			cadastrarFuncionario(0, "Rafael Lins", 0, null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 
 	
 		List<Prato> pratos = CSVReader.read("pratosbd.csv");

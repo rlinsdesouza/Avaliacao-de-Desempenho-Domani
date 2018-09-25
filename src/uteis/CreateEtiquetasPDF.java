@@ -38,8 +38,8 @@ public class CreateEtiquetasPDF {
         
         PdfWriter.getInstance(document, new FileOutputStream(dest));
         
-        Font smallfont = new Font(FontFamily.HELVETICA, 10);
-        Font pratofont = new Font(FontFamily.HELVETICA, 15);
+        Font smallfont = new Font(FontFamily.HELVETICA, 12);
+        Font pratofont = new Font(FontFamily.HELVETICA, 20);
         Font glutemfont = new Font(FontFamily.HELVETICA, 12);
         
         
@@ -48,7 +48,7 @@ public class CreateEtiquetasPDF {
         
         int qntcolunas = 2;
         PdfPTable table2 = new PdfPTable(qntcolunas);
-        table2.setTotalWidth(new float[]{240,240});
+        table2.setTotalWidth(new float[]{260,260});
         table2.setLockedWidth(true);
 
         
@@ -72,7 +72,7 @@ public class CreateEtiquetasPDF {
             cell.setBorder(Rectangle.NO_BORDER);
             table.addCell(cell);
             // third row
-            cell = new PdfPCell(new Phrase("Glutem: "+ prato.isGlutem() +" / Lactose: "+prato.isLactose(), glutemfont));
+            cell = new PdfPCell(new Phrase("Possui Glúten? "+(prato.isGlutem() == true ? "SIM" : "NÃO")+" / Possui Lactose? "+(prato.isLactose() == true ? "SIM" : "NÃO"), glutemfont));
             cell.setBorder(Rectangle.NO_BORDER);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cell);
