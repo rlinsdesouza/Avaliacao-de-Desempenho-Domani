@@ -46,7 +46,14 @@ public class TelaPrincipal {
 			public void run() {
 				try {
 					TelaPrincipal window = new TelaPrincipal();
-					window.frmPrincipal.setVisible(true);
+					TelaLogin login = new TelaLogin();
+					if (login.isSucceeded()) {
+						window.frmPrincipal.setVisible(true);
+					}else {
+						Fachada.finalizar();
+						System.exit(0);
+					}
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,14 +66,7 @@ public class TelaPrincipal {
 	 */
 	public TelaPrincipal() {
 		Fachada.inicializar();
-		TelaLogin j = new TelaLogin();
-		j.setVisible(true);
-//		if (j.getDefaultCloseOperation()==2) {	
-			initialize();
-//		}else {
-//			Fachada.finalizar();
-//			System.exit(0);
-//		}
+		initialize();
 //		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplica��o");
 
 	}

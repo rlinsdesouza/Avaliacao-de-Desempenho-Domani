@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -15,14 +14,14 @@ import fachada.Fachada;
 import modelo.Funcionario;
 import uteis.PasswordUtils;
 
-public class TelaLogin extends JFrame {
+public class TelaLogin {
 
 	private JPanel contentPane;
 	private JLabel lblCodInsumo;
 	private JButton btnLogin;
 	private JLabel lblmsg;
 	private JPasswordField passwordField;
-
+	private boolean succeeded;
 	/**
 	 * Launch the application.
 	 */
@@ -42,8 +41,15 @@ public class TelaLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaLogin() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public TelaLogin()  {
+//		addWindowListener(new WindowAdapter() {
+//			@Override
+//			public void windowClosing(WindowEvent e) {
+//				JOptionPane.showMessageDialog(null, "ate breve !");
+//				Fachada.finalizar();
+//				System.exit(0);
+//			}
+//		});
 		setAlwaysOnTop(true);
 		setTitle("Identifica\u00E7\u00E3o do Usu\u00E1rio");
 		setResizable(false);
@@ -70,13 +76,15 @@ public class TelaLogin extends JFrame {
 						if (PasswordUtils.verifyUserPassword(senha, funcionario.getSenha(), funcionario.getSalt())) {
 							dispose();
 						}else {
-							lblmsg.setText("Senha não reconhecida");
+							lblmsg.setText("Senha nï¿½o reconhecida");
 							tentativas++;
 						}
-						if (tentativas == 3)
-						JOptionPane.showMessageDialog(null, "tentativas excedidas!");
-						Fachada.finalizar();
-						System.exit(0);	
+						if (tentativas == 3) {
+							JOptionPane.showMessageDialog(null, "tentativas excedidas!");
+							Fachada.finalizar();
+							System.exit(0);	
+						}
+							
 					}
 				}
 				catch(Exception erro){
@@ -94,12 +102,10 @@ public class TelaLogin extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(105, 40, 115, 20);
 		contentPane.add(passwordField);
+		
 	}
+    public boolean isSucceeded() {
+        return succeeded;
+    }
 	
-//	@Override
-//	public void windowClosing(WindowEvent e) {
-//		JOptionPane.showMessageDialog(null, "ate breve !");
-//		Fachada.finalizar();
-//		System.exit(0);	
-//	}
 }
