@@ -39,22 +39,22 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	private static void abrirBancoLocal(){
 		EmbeddedConfiguration config =  Db4oEmbedded.newConfiguration(); 
 		config.common().messageLevel(0);  // 0,1,2,3...
-		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(true);;
+		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(false);;
 		config.common().objectClass(ContaBancaria.class).cascadeOnUpdate(true);;
 		config.common().objectClass(ContaBancaria.class).cascadeOnActivate(true);
-		config.common().objectClass(Endereco.class).cascadeOnDelete(true);;
+		config.common().objectClass(Endereco.class).cascadeOnDelete(false);;
 		config.common().objectClass(Endereco.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Endereco.class).cascadeOnActivate(true);
-		config.common().objectClass(Funcionario.class).cascadeOnDelete(true);;
+		config.common().objectClass(Funcionario.class).cascadeOnDelete(false);;
 		config.common().objectClass(Funcionario.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Funcionario.class).cascadeOnActivate(true);
-		config.common().objectClass(Avaliacao.class).cascadeOnDelete(true);;
+		config.common().objectClass(Avaliacao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Avaliacao.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Avaliacao.class).cascadeOnActivate(true);		
-		config.common().objectClass(Producao.class).cascadeOnDelete(true);;
+		config.common().objectClass(Producao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Producao.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Producao.class).cascadeOnActivate(true);
-		config.common().objectClass(Insumo.class).cascadeOnDelete(true);;
+		config.common().objectClass(Insumo.class).cascadeOnDelete(false);;
 		config.common().objectClass(Insumo.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Insumo.class).cascadeOnActivate(true);
 		config.common().objectClass(Prato.class).cascadeOnDelete(false);;
@@ -68,22 +68,22 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
 		config.common().messageLevel(0);   //0,1,2,3,4
-		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(true);;
+		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(false);;
 		config.common().objectClass(ContaBancaria.class).cascadeOnUpdate(true);;
 		config.common().objectClass(ContaBancaria.class).cascadeOnActivate(true);
-		config.common().objectClass(Endereco.class).cascadeOnDelete(true);;
+		config.common().objectClass(Endereco.class).cascadeOnDelete(false);;
 		config.common().objectClass(Endereco.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Endereco.class).cascadeOnActivate(true);
-		config.common().objectClass(Funcionario.class).cascadeOnDelete(true);;
+		config.common().objectClass(Funcionario.class).cascadeOnDelete(false);;
 		config.common().objectClass(Funcionario.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Funcionario.class).cascadeOnActivate(true);
-		config.common().objectClass(Avaliacao.class).cascadeOnDelete(true);;
+		config.common().objectClass(Avaliacao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Avaliacao.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Avaliacao.class).cascadeOnActivate(true);
-		config.common().objectClass(Producao.class).cascadeOnDelete(true);;
+		config.common().objectClass(Producao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Producao.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Producao.class).cascadeOnActivate(true);
-		config.common().objectClass(Insumo.class).cascadeOnDelete(true);;
+		config.common().objectClass(Insumo.class).cascadeOnDelete(false);;
 		config.common().objectClass(Insumo.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Insumo.class).cascadeOnActivate(true);
 		config.common().objectClass(Prato.class).cascadeOnDelete(false);;

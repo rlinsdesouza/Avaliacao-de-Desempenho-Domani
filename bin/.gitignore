@@ -1,4 +1,5 @@
 /aplicacao/
-/modelo/
-/fachada/
 /dao/
+/fachada/
+/modelo/
+/uteis/

@@ -1,6 +1,9 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,16 +20,14 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
+import com.db4o.internal.query.processor.ParentCandidate;
 import com.toedter.calendar.JDateChooser;
 
 import fachada.Fachada;
-import modelo.ContaBancaria;
-import modelo.Endereco;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
 import modelo.Producao;
-import uteis.PasswordUtils;
 
 public class TelaCadastroProducao extends JFrame {
 
@@ -45,7 +46,9 @@ public class TelaCadastroProducao extends JFrame {
 	private JLabel lblPratos;
 	private JDateChooser datePicker;
 	private JTextField textFieldCodFuncionario;
-	private JTextField textFieldCodProducao;
+	
+	private DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	private SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
 
 	
 	/**
@@ -79,36 +82,34 @@ public class TelaCadastroProducao extends JFrame {
 					
 						Funcionario f = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
 						
-//						int matricula = Integer.parseInt(txtData.getText());
-//						List<Insumo> insumos = new ArrayList<Insumo>(); 
-//						for (Object insumo : listModel.toArray()) {
-//							insumos.add((Insumo) insumo);
-//						};
-//						
-						int cpf = 0;
+						String data = sf.format(datePicker.getDate());
+						List<Producao> producoes = Fachada.listarProducoesPorData(data, f.getId());
+						List<Prato> pratosproducao = new ArrayList<Prato>();
+						List<Prato> pratoslist = new ArrayList<Prato>();
 						
-						List<Integer> telefone = null;
-						
-						String email = null;
-//						String senhadigitada = passwordField.getText();
-						String salt = PasswordUtils.getSalt(30);
-//						String senha = PasswordUtils.generateSecurePassword(senhadigitada, salt);
-						
-						Date dataAdmissao = null;
-						Date dataDemissao = null;
-						ContaBancaria conta = null;
-						Endereco endereco = null;
-						List<Producao> producoes=null;
+						for (Producao producao : producoes) {
+							pratosproducao.add(producao.getPrato());
+						}
 		
 						
-//						Funcionario p = Fachada.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
-//						if (p == null) {
-//							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
-//						}else {
-//							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
-//						}
-//						atualizaDados(p);	
-//						lblmsg.setText("cadastrado/atualizado "+p.getNome());
+						for (int i=0;i<listModel.getSize();i++) {
+							Prato p = (Prato) listModel.get(i);
+							pratoslist.add(p);
+							if (!pratosproducao.contains(p))
+								Fachada.cadastrarProducao (data,p,f);
+						}
+						
+						
+						for (Prato prato : pratosproducao) {
+							if (!pratoslist.contains(prato)) {
+								for (Producao p : producoes) {
+									if (p.getPrato().getId()==prato.getId())
+										Fachada.removerProducao (p);
+								}
+							}
+								
+						}
+						lblmsg.setText("Salvo/Atualizado com sucesso!");
 					}
 					
 				}
@@ -141,8 +142,7 @@ public class TelaCadastroProducao extends JFrame {
 
 				textFieldNome.setText(selecionado.getNome());
 				textFieldCodFuncionario.setText(Integer.toString(selecionado.getId()));
-				textFieldCodProducao.setText("0");
-				
+
 				
 				
 
@@ -220,32 +220,30 @@ public class TelaCadastroProducao extends JFrame {
 		buttonLocalizarProducao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				String data = datePicker.getDateFormatString();
-				int opcao = JOptionPane.showConfirmDialog(contentPane, "Confirma a data para busca:"+data, "Confirmação",0);
-				if (opcao == 0) {
-					String nome = JOptionPane.showInputDialog(contentPane, "Nome do cozinheiro", "Localiza cozinheiro",1);
-					List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome);
+				if (datePicker.getDate() == null) {
+					JOptionPane.showMessageDialog(contentPane, "Favor selecionar uma data", "Atencao", 2);
+				}else {
+					String data = sf.format(datePicker.getDate());
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Confirma a data para busca:"+data, "Confirmação",0);
+					if (opcao == 0) {
+						String nome = JOptionPane.showInputDialog(contentPane, "Nome do cozinheiro", "Localiza cozinheiro",1);
+						List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome);
 
-					Funcionario selecionado;
-					if (funcionarios.size()>1) {
-						selecionado = seleciona(funcionarios);
-					}else {
-						if (funcionarios.size()==1) {
-							selecionado = (Funcionario) funcionarios.toArray()[0];
+						Funcionario selecionado;
+						if (funcionarios.size()>1) {
+							selecionado = seleciona(funcionarios);
 						}else {
-							selecionado = null;
-						}					
-					}
-					
-					
-					List<Producao> producoes = Fachada.listarProducoesPorData(data);
-					List<Producao> producoesfiltro = new ArrayList<Producao>();
-					for (Producao producao : producoes) {
-						if (producao.getCozinheiro().getId()==selecionado.getId()) {
-							producoesfiltro.add(producao);
+							if (funcionarios.size()==1) {
+								selecionado = (Funcionario) funcionarios.toArray()[0];
+							}else {
+								selecionado = null;
+							}					
 						}
+						
+						
+						List<Producao> producoes = Fachada.listarProducoesPorData(data,selecionado.getId());
+						atualizaDados(producoes);
 					}
-					atualizaDados(producoesfiltro);
 				}
 			}
 		});
@@ -259,20 +257,14 @@ public class TelaCadastroProducao extends JFrame {
 		textFieldCodFuncionario.setVisible(false);
 		textFieldCodFuncionario.setText("0");
 		
-		textFieldCodProducao = new JTextField();
-		textFieldCodFuncionario.setBounds(28, 87, 96, 30);
-		contentPane.add(textFieldCodProducao);
-		textFieldCodProducao.setColumns(10);
-		textFieldCodProducao.setVisible(false);
-		textFieldCodProducao.setText("0");
 	}
 	
 	private void atualizaDados (List<Producao> producoes) {
 		
-		datePicker.setDateFormatString(producoes.get(0).getData());
+		LocalDate data = LocalDate.parse(producoes.get(0).getData(), f);
+		
 		textFieldNome.setText(producoes.get(0).getCozinheiro().getNome());
 		textFieldCodFuncionario.setText(Integer.toString(producoes.get(0).getCozinheiro().getId()));
-//		textFieldCodProducao.setText(Integer.toString(selecionado.getId()));
 
 
 		listModel.clear();

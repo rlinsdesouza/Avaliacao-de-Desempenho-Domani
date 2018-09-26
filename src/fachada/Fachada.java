@@ -94,12 +94,38 @@ public class Fachada {
 		return i;
 	}
 	
+	public static Producao cadastrarProducao (String data, Prato prato, Funcionario cozinheiro) throws Exception {
+		
+		int key = daoproducao.getKey();
+		DAO.begin();			
+		Producao i = daoproducao.read(key);
+		if(i != null) {
+			throw new Exception("ja cadastrado:" + prato.getNome());
+		}
+
+		i = new Producao(key,data,prato,cozinheiro);
+		daoproducao.create(i);		
+		DAO.commit();
+		return i;
+	}
+	
+	public static Producao removerProducao (Producao p) {
+		DAO.begin();			
+		daoproducao.delete(p);		
+		DAO.commit();
+		return p;
+	}
+	
 	public static List <Producao> listarProduces () {
 		return daoproducao.readAll();
 	}
 	
 	public static List <Producao> listarProducoesPorData (String data) {
-		return daoproducao.consultarProducoesPorData(data);
+		return daoproducao.consultarProducoesPorDiaFuncionario(data);
+	}
+	
+	public static List <Producao> listarProducoesPorData (String data, int id) {
+		return daoproducao.consultarProducoesPorDiaFuncionario(data,id);
 	}
 	
 	public static List <Funcionario> listarFuncionarios () {
