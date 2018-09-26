@@ -24,13 +24,13 @@ public class TelaPrincipal {
 	private JFrame frmPrincipal;
 	private JMenuBar menuBar;
 	private JMenuItem mntmInsumos;
-	private JMenuItem mntmCadastrarGarcom;
+	private JMenuItem mntmControleProducao;
 	private JMenuItem mntmMesasGarcom;
 	private JMenuItem mntmFuncionario;
 	private JMenuItem mntmListarGarcom;
 	private JMenuItem mntmApagarGarcom;
 	private JMenu mnCadastrar;
-	private JMenu mnGarcom;
+	private JMenu mnProducao;
 	private JMenuItem mntmPratos;
 	private JMenu mnConsulta;
 	private JMenuItem mntmConsultaGeral;
@@ -146,17 +146,17 @@ public class TelaPrincipal {
 			mnCadastrar.add(mntmPratos);
 			mnCadastrar.add(mntmFuncionario);
 			
-//			mnGarcom = new JMenu("Garcom");
-//			menuBar.add(mnGarcom);
+			mnProducao = new JMenu("Producao");
+			menuBar.add(mnProducao);
 
-//			mntmCadastrarGarcom = new JMenuItem("Cadastrar Garcom");
-//			mntmCadastrarGarcom.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaCadastroGarcom j = new TelaCadastroGarcom();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnGarcom.add(mntmCadastrarGarcom);
+			mntmControleProducao = new JMenuItem("Controle de Producao");
+			mntmControleProducao.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					TelaCadastroProducao j = new TelaCadastroProducao();
+					j.setVisible(true);
+				}
+			});
+			mnProducao.add(mntmControleProducao);
 //			
 //			mntmMesasGarcom = new JMenuItem("Definir mesas Garcom");
 //			mntmMesasGarcom.addActionListener(new ActionListener() {

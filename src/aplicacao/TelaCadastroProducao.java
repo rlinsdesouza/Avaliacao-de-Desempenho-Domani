@@ -16,15 +16,14 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
+import com.toedter.calendar.JDateChooser;
 
 import fachada.Fachada;
 import modelo.ContaBancaria;
 import modelo.Endereco;
 import modelo.Funcionario;
 import modelo.Insumo;
+import modelo.Prato;
 import modelo.Producao;
 import uteis.PasswordUtils;
 
@@ -38,7 +37,6 @@ public class TelaCadastroProducao extends JFrame {
 	private JButton btnCriar;
 	private JLabel lblmsg;
 	private JButton btnNovo;
-	private JButton btnLocalizar;
 	private DefaultListModel listModel;
 	private JList list;
 	private JButton btnAddPrato;
@@ -46,6 +44,7 @@ public class TelaCadastroProducao extends JFrame {
 	private JScrollPane scrollPane;
 	private JButton btnCancelar;
 	private JLabel lblPratos;
+	private JDateChooser datePicker;
 
 	
 	/**
@@ -137,21 +136,9 @@ public class TelaCadastroProducao extends JFrame {
 		btnNovo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				textFieldCod.setText("0");
 				textFieldCod.setEnabled(false);
-				textFieldNome.setText("Digite o nome do funcionario");
-
-				listModel.clear();
-			}
-		});
-		btnNovo.setBounds(411, 9, 117, 25);
-		contentPane.add(btnNovo);
-		
-		btnLocalizar = new JButton("Localizar Funcion\u00E1rio");
-		btnLocalizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
 				Funcionario selecionado;
-				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do funcionário", "Localiza funcionário", 0);
+				String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcionário", "Localiza funcionário", 0);
 				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
 				
 				if (funcionarios.size()>1) {
@@ -159,11 +146,15 @@ public class TelaCadastroProducao extends JFrame {
 				}else {
 					selecionado = (Funcionario) funcionarios.toArray()[0];
 				}
-				atualizaDados(selecionado);		
+				datePicker.setDate(new Date ());
+				
+				
+
+				listModel.clear();
 			}
 		});
-		btnLocalizar.setBounds(553, 11, 146, 25);
-		contentPane.add(btnLocalizar);
+		btnNovo.setBounds(411, 9, 117, 25);
+		contentPane.add(btnNovo);
 		
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
@@ -175,15 +166,15 @@ public class TelaCadastroProducao extends JFrame {
 		contentPane.add(btnCancelar);
 		
 		JLabel lblData = new JLabel("Data");
-		lblData.setBounds(184, 14, 46, 15);
+		lblData.setBounds(162, 14, 46, 15);
 		contentPane.add(lblData);
 		
-		
-		UtilDateModel model = new UtilDateModel();
-		JDatePanelImpl datePanel = new JDatePanelImpl(model);
-		JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, null);
-		 
+
+		datePicker = new JDateChooser ();
+		datePicker.setBounds(201, 11, 200, 20);
+
 		contentPane.add(datePicker);
+		contentPane.add(calendar);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(240, 137, 214, 188);
@@ -197,20 +188,20 @@ public class TelaCadastroProducao extends JFrame {
 		btnAddPrato = new JButton("Add Prato");
 		btnAddPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				Insumo selecionado;
-//				String nome = JOptionPane.showInputDialog(btnAddPermissoes, "Nome do insumo", "Localiza insumo",1);
-//				List<Insumo> insumos = Fachada.listarInsumo(nome);
-//
-//				if (insumos.size()>1) {
-//					selecionado = seleciona(insumos);
-//				}else {
-//					if (insumos.size()==1) {
-//						selecionado = (Insumo) insumos.toArray()[0];
-//					}else {
-//						selecionado = null;
-//					}					
-//				}
-//				listModel.addElement(selecionado);
+				Prato selecionado;
+				String nome = JOptionPane.showInputDialog(btnAddPrato, "Nome do prato", "Localiza prato",1);
+				List<Prato> pratos = Fachada.listarPratos(nome);
+
+				if (pratos.size()>1) {
+					selecionado = seleciona(pratos);
+				}else {
+					if (pratos.size()==1) {
+						selecionado = (Prato) pratos.toArray()[0];
+					}else {
+						selecionado = null;
+					}					
+				}
+				listModel.addElement(selecionado);
 			}
 		});
 		btnAddPrato.setBounds(476, 168, 117, 25);
@@ -228,6 +219,10 @@ public class TelaCadastroProducao extends JFrame {
 		lblPratos = new JLabel("Pratos produzidos");
 		lblPratos.setBounds(272, 111, 134, 15);
 		contentPane.add(lblPratos);
+		
+		JButton buttonLocalizarProducao = new JButton("Localizar Produ\u00E7\u00E3o");
+		buttonLocalizarProducao.setBounds(540, 9, 146, 25);
+		contentPane.add(buttonLocalizarProducao);
 	}
 	private void atualizaDados (Funcionario selecionado) {
 		textFieldCod.setText(Integer.toString(selecionado.getId()));
