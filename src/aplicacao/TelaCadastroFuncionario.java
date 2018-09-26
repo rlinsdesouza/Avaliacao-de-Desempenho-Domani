@@ -93,7 +93,7 @@ public class TelaCadastroFuncionario extends JFrame {
 //							insumos.add((Insumo) insumo);
 //						};
 //						
-						int cpf = 0;
+						String cpf = null;
 						
 						List<Integer> telefone = null;
 						

@@ -9,7 +9,7 @@ public class Funcionario {
 	private int id;
 	private int matricula;
 	private String nome;
-	private int cpf;
+	private String cpf;
 	private List<Integer> telefone = new ArrayList<Integer>();
 	private String email;
 	private String senha;
@@ -20,7 +20,7 @@ public class Funcionario {
 	private Endereco endereco;
 	private List<Producao> producoes;
 		
-	public Funcionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha, String salt,
+	public Funcionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		super();
 		this.id = id;
@@ -64,11 +64,11 @@ public class Funcionario {
 		this.nome = nome.toUpperCase();
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 

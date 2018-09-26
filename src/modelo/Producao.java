@@ -5,20 +5,30 @@ import java.util.Date;
 import java.util.List;
 
 public class Producao {
-	private Date data;
+	private int id;
+	private String data;
 	private Prato prato;
 	private Funcionario cozinheiro;
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();
-	public Producao(Date data, Prato prato, Funcionario cozinheiro) {
+	public Producao(String data, Prato prato, Funcionario cozinheiro) {
 		super();
 		this.data = data;
 		this.prato = prato;
 		this.cozinheiro = cozinheiro;
 	}
-	public Date getData() {
+		
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public Prato getPrato() {

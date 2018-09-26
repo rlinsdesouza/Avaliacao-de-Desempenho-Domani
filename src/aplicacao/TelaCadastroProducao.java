@@ -1,6 +1,7 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,10 +31,8 @@ import uteis.PasswordUtils;
 public class TelaCadastroProducao extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textFieldCod;
 	private JTextField textFieldNome;
 	private JLabel lblNomeInsumo;
-	private JLabel lblCodInsumo;
 	private JButton btnCriar;
 	private JLabel lblmsg;
 	private JButton btnNovo;
@@ -45,6 +44,8 @@ public class TelaCadastroProducao extends JFrame {
 	private JButton btnCancelar;
 	private JLabel lblPratos;
 	private JDateChooser datePicker;
+	private JTextField textFieldCodFuncionario;
+	private JTextField textFieldCodProducao;
 
 	
 	/**
@@ -60,19 +61,9 @@ public class TelaCadastroProducao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		textFieldCod = new JTextField();
-		textFieldCod.setEnabled(false);
-		textFieldCod.setBounds(66, 11, 86, 20);
-		contentPane.add(textFieldCod);
-		textFieldCod.setColumns(10);
-
 		lblNomeInsumo = new JLabel("Nome");
 		lblNomeInsumo.setBounds(10, 52, 46, 14);
 		contentPane.add(lblNomeInsumo);
-
-		lblCodInsumo = new JLabel("Cod");
-		lblCodInsumo.setBounds(10, 14, 46, 14);
-		contentPane.add(lblCodInsumo);
 
 		textFieldNome = new JTextField();
 		textFieldNome.setBounds(66, 49, 233, 20);
@@ -83,9 +74,10 @@ public class TelaCadastroProducao extends JFrame {
 		btnCriar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar o funcion·rio?", "Confirma√ß√£o",0);
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar essas producıes para o funcion·rio?", "Confirma√ß√£o",0);
 					if (opcao==0) {
-						String nome = textFieldNome.getText();
+					
+						Funcionario f = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
 						
 //						int matricula = Integer.parseInt(txtData.getText());
 //						List<Insumo> insumos = new ArrayList<Insumo>(); 
@@ -109,14 +101,14 @@ public class TelaCadastroProducao extends JFrame {
 						List<Producao> producoes=null;
 		
 						
-						Funcionario p = Fachada.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
-						if (p == null) {
-							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
-						}else {
-							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
-						}
-						atualizaDados(p);	
-						lblmsg.setText("cadastrado/atualizado "+p.getNome());
+//						Funcionario p = Fachada.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
+//						if (p == null) {
+//							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
+//						}else {
+//							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
+//						}
+//						atualizaDados(p);	
+//						lblmsg.setText("cadastrado/atualizado "+p.getNome());
 					}
 					
 				}
@@ -136,7 +128,6 @@ public class TelaCadastroProducao extends JFrame {
 		btnNovo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				textFieldCod.setEnabled(false);
 				Funcionario selecionado;
 				String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcion·rio", "Localiza funcion·rio", 0);
 				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
@@ -147,13 +138,18 @@ public class TelaCadastroProducao extends JFrame {
 					selecionado = (Funcionario) funcionarios.toArray()[0];
 				}
 				datePicker.setDate(new Date ());
+
+				textFieldNome.setText(selecionado.getNome());
+				textFieldCodFuncionario.setText(Integer.toString(selecionado.getId()));
+				textFieldCodProducao.setText("0");
+				
 				
 				
 
 				listModel.clear();
 			}
 		});
-		btnNovo.setBounds(411, 9, 117, 25);
+		btnNovo.setBounds(302, 9, 157, 25);
 		contentPane.add(btnNovo);
 		
 		btnCancelar = new JButton("Cancelar");
@@ -166,24 +162,24 @@ public class TelaCadastroProducao extends JFrame {
 		contentPane.add(btnCancelar);
 		
 		JLabel lblData = new JLabel("Data");
-		lblData.setBounds(162, 14, 46, 15);
+		lblData.setBounds(22, 14, 46, 15);
 		contentPane.add(lblData);
 		
 
 		datePicker = new JDateChooser ();
-		datePicker.setBounds(201, 11, 200, 20);
+		datePicker.setBounds(66, 9, 200, 20);
 
 		contentPane.add(datePicker);
-		contentPane.add(calendar);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(240, 137, 214, 188);
 		contentPane.add(scrollPane);
+		listModel = new DefaultListModel<Insumo>();
 		list = new JList(listModel);
 		scrollPane.setViewportView(list);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
-		listModel = new DefaultListModel<Insumo>();
+
 		
 		btnAddPrato = new JButton("Add Prato");
 		btnAddPrato.addActionListener(new ActionListener() {
@@ -221,21 +217,70 @@ public class TelaCadastroProducao extends JFrame {
 		contentPane.add(lblPratos);
 		
 		JButton buttonLocalizarProducao = new JButton("Localizar Produ\u00E7\u00E3o");
-		buttonLocalizarProducao.setBounds(540, 9, 146, 25);
-		contentPane.add(buttonLocalizarProducao);
-	}
-	private void atualizaDados (Funcionario selecionado) {
-		textFieldCod.setText(Integer.toString(selecionado.getId()));
-		textFieldNome.setText(selecionado.getNome());
+		buttonLocalizarProducao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String data = datePicker.getDateFormatString();
+				int opcao = JOptionPane.showConfirmDialog(contentPane, "Confirma a data para busca:"+data, "Confirma√ß√£o",0);
+				if (opcao == 0) {
+					String nome = JOptionPane.showInputDialog(contentPane, "Nome do cozinheiro", "Localiza cozinheiro",1);
+					List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome);
 
-		txtData.setText(Integer.toString(selecionado.getMatricula()));
+					Funcionario selecionado;
+					if (funcionarios.size()>1) {
+						selecionado = seleciona(funcionarios);
+					}else {
+						if (funcionarios.size()==1) {
+							selecionado = (Funcionario) funcionarios.toArray()[0];
+						}else {
+							selecionado = null;
+						}					
+					}
+					
+					
+					List<Producao> producoes = Fachada.listarProducoesPorData(data);
+					List<Producao> producoesfiltro = new ArrayList<Producao>();
+					for (Producao producao : producoes) {
+						if (producao.getCozinheiro().getId()==selecionado.getId()) {
+							producoesfiltro.add(producao);
+						}
+					}
+					atualizaDados(producoesfiltro);
+				}
+			}
+		});
+		buttonLocalizarProducao.setBounds(488, 9, 146, 25);
+		contentPane.add(buttonLocalizarProducao);
+		
+		textFieldCodFuncionario = new JTextField();
+		textFieldCodFuncionario.setBounds(32, 225, 86, 20);
+		contentPane.add(textFieldCodFuncionario);
+		textFieldCodFuncionario.setColumns(10);
+		textFieldCodFuncionario.setVisible(false);
+		textFieldCodFuncionario.setText("0");
+		
+		textFieldCodProducao = new JTextField();
+		textFieldCodFuncionario.setBounds(28, 87, 96, 30);
+		contentPane.add(textFieldCodProducao);
+		textFieldCodProducao.setColumns(10);
+		textFieldCodProducao.setVisible(false);
+		textFieldCodProducao.setText("0");
+	}
+	
+	private void atualizaDados (List<Producao> producoes) {
+		
+		datePicker.setDateFormatString(producoes.get(0).getData());
+		textFieldNome.setText(producoes.get(0).getCozinheiro().getNome());
+		textFieldCodFuncionario.setText(Integer.toString(producoes.get(0).getCozinheiro().getId()));
+//		textFieldCodProducao.setText(Integer.toString(selecionado.getId()));
+
 
 		listModel.clear();
-//		if (selecionado.getInsumos() != null) {
-//			for (Insumo i : selecionado.getInsumos()) {
-//				listModel.addElement(i);
-//			}
-//		}
+		if (producoes != null) {
+			for (Producao p : producoes) {
+				listModel.addElement(p.getPrato());
+			}
+		}
 		lblmsg.setText("");
 	}
 	

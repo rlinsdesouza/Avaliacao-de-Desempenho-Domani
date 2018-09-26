@@ -8,6 +8,7 @@ import dao.DAO;
 import dao.DAOFuncionario;
 import dao.DAOInsumo;
 import dao.DAOPrato;
+import dao.DAOProducao;
 import modelo.ContaBancaria;
 import modelo.Endereco;
 import modelo.Funcionario;
@@ -19,7 +20,7 @@ public class Fachada {
 	private static DAOInsumo daoinsumo = new DAOInsumo();
 	private static DAOFuncionario daofuncionario = new DAOFuncionario() ;
 	private static DAOPrato daoprato = new DAOPrato ();
-	
+	private static DAOProducao daoproducao = new DAOProducao ();
 	
 	public static void inicializar () {
 		DAO.open();
@@ -32,7 +33,7 @@ public class Fachada {
 	public static void cadastrar(){
 		System.out.println("cadastrando...");
 		try {
-			cadastrarFuncionario(0, "Rafael Lins", 0, null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
+			cadastrarFuncionario(0, "Rafael Lins", "073.975.104-26", null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -47,7 +48,7 @@ public class Fachada {
 		System.out.println("pre-cadastro realizado com sucesso!");
 	}	
 
-	public static Funcionario cadastrarFuncionario (int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha, String salt,
+	public static Funcionario cadastrarFuncionario (int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) throws Exception {
 		
 		int key = daofuncionario.getKey();
@@ -93,6 +94,13 @@ public class Fachada {
 		return i;
 	}
 	
+	public static List <Producao> listarProduces () {
+		return daoproducao.readAll();
+	}
+	
+	public static List <Producao> listarProducoesPorData (String data) {
+		return daoproducao.consultarProducoesPorData(data);
+	}
 	
 	public static List <Funcionario> listarFuncionarios () {
 		return daofuncionario.readAll();
@@ -152,7 +160,7 @@ public class Fachada {
 		return p;
 	}
 	
-	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, int cpf, List<Integer> telefone, String email, String senha,String salt,
+	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha,String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
