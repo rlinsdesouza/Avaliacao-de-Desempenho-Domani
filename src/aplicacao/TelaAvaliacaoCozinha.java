@@ -1,4 +1,5 @@
 package aplicacao;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -40,7 +41,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 	private JList listSabor;
 	private JLabel lblPratosNoAvaliados;
 	private JLabel lblNomeDoAvaliador;
-	private String[] opcoes = {"RUIM","SATISFATÓRIO","BOM"};
+	private String[] opcoes = {"RUIM","SATISFATï¿½RIO","BOM"};
 	private JLabel lblPrato;
 	private JTextField textFieldPrato;
 	private Avaliacao avaliacao;
@@ -51,6 +52,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 	 * Create the frame.
 	 */
 	public TelaAvaliacaoCozinha(final Producao producao, final Funcionario avaliador) {
+		setModal(true);
 		setTitle("Avalia\u00E7\u00E3o de um prato");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -69,7 +71,8 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
 		textFieldNome.setText(producao.getCozinheiro().getNome());
-
+		textFieldNome.setEnabled(false);
+		
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,7 +108,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 						}
 						
 						avaliacao = Fachada.cadastrarAvaliacao(producao,notaSabor,notaAparencia,textFieldJusiticativa.getText(),avaliador);					
-						JOptionPane.showMessageDialog(contentPane, "Salvo/Atualizado com sucesso!", "Confirmação",2);
+						JOptionPane.showMessageDialog(contentPane, "Salvo/Atualizado com sucesso!", "Confirmaï¿½ï¿½o",2);
 						dispose();
 					}
 					
@@ -138,6 +141,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		contentPane.add(datePicker);
 		try {
 			datePicker.setDate(sf.parse(producao.getData()));
+			datePicker.setEnabled(false);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -162,7 +166,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		textFieldAvaliador.setBounds(66, 74, 233, 20);
 		contentPane.add(textFieldAvaliador);
 		textFieldAvaliador.setText(avaliador.getNome());
-		
+		textFieldAvaliador.setEnabled(false);
 		
 		listSabor = new JList(opcoes);
 		listSabor.setBounds(33, 159, 82, 56);
@@ -182,6 +186,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		textFieldPrato.setBounds(66, 102, 233, 20);
 		contentPane.add(textFieldPrato);
 		textFieldPrato.setText(producao.getPrato().getNome());
+		textFieldPrato.setEnabled(false);
 		
 		lblJustificativa = new JLabel("Justificativa");
 		lblJustificativa.setBounds(0, 227, 59, 14);

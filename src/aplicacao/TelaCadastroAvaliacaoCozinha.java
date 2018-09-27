@@ -1,8 +1,6 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -32,7 +30,6 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 	private JPanel contentPane;
 	private JTextField textFieldNome;
 	private JLabel lblNomeCozinheiro;
-	private JButton btnSalvar;
 	private JLabel lblmsg;
 	private DefaultListModel listModel;
 	private DefaultListModel listModel2;
@@ -77,30 +74,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		textFieldNome.setBounds(128, 49, 233, 20);
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
-
-		btnSalvar = new JButton("Salvar");
-		btnSalvar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try{
-					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar essas producï¿½es para o funcionï¿½rio?", "ConfirmaÃ§Ã£o",0);
-					if (opcao==0) {
-					
-						Funcionario f = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
-						
-						String data = sf.format(datePicker.getDate());
-						List<Producao> producoes = Fachada.listarProducoesPorData(data, f.getId());
-						atualizaDados(producoes);
-						lblmsg.setText("Salvo/Atualizado com sucesso!");
-					}
-					
-				}
-				catch(Exception erro){
-					lblmsg.setText(erro.getMessage());
-				}
-			}
-		});
-		btnSalvar.setBounds(213, 364, 115, 23);
-		contentPane.add(btnSalvar);
+		textFieldNome.setEnabled(false);
 		
 		lblmsg = new JLabel("");
 		lblmsg.setBounds(181, 399, 347, 14);
@@ -154,25 +128,15 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 				
 				TelaAvaliacaoCozinha t = new TelaAvaliacaoCozinha(p, avaliador);
 				t.setVisible(true);
-				t.addWindowListener( new WindowAdapter() {
-                    @Override
-                    public void windowClosing(WindowEvent we) {
-                    	String data = sf.format(datePicker.getDate());
-        				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
-        				System.out.println(producoes);
-        				atualizaDados(producoes);
-//        				textFieldNomeAvaliador.setText(avaliador.getNome());
-//        				textFieldCodAvaliador.setText(Integer.toString(avaliador.getId()));
-                    }
-                } );
-				
-			
+             	String data = sf.format(datePicker.getDate());
+				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+				atualizaDados(producoes);				
 			}
 		});
 		btnAddAvaliacao.setBounds(302, 202, 117, 25);
 		contentPane.add(btnAddAvaliacao);
 		
-		btnRemoverPrato = new JButton("Remover Avaliação");
+		btnRemoverPrato = new JButton("Remover Avaliaï¿½ï¿½o");
 		btnRemoverPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fachada.removerAvaliacao ((Avaliacao) listModel.getElementAt(listPratosAvaliados.getSelectedIndex()));
@@ -257,6 +221,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		textFieldNomeAvaliador.setColumns(10);
 		textFieldNomeAvaliador.setBounds(474, 49, 233, 20);
 		contentPane.add(textFieldNomeAvaliador);
+		textFieldNomeAvaliador.setEnabled(false);
 		
 		textFieldCodAvaliador = new JTextField();
 		textFieldCodAvaliador.setColumns(10);

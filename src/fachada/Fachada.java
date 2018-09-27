@@ -142,7 +142,9 @@ public class Fachada {
 	}
 	
 	public static Avaliacao removerAvaliacao (Avaliacao p) {
-		DAO.begin();			
+		DAO.begin();
+		p.getProduto().getAvaliacoes().remove(p);
+		daoproducao.update(p.getProduto());
 		daoavaliacao.delete(p);	
 		DAO.commit();
 		return p;
