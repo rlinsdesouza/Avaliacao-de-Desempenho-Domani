@@ -158,6 +158,7 @@ public class TelaPrincipal {
 			});
 			mnProducao.add(mntmControleProducao);
 			
+			mnAvaliacao = new JMenu("Avaliacao");
 			menuBar.add(mnAvaliacao);
 			
 			mntmAvaliacaoCozinha = new JMenuItem("Avaliacao Cozinha");

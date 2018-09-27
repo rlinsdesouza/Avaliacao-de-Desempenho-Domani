@@ -5,10 +5,12 @@ import java.util.List;
 
 import aplicacao.CSVReader;
 import dao.DAO;
+import dao.DAOAvaliacao;
 import dao.DAOFuncionario;
 import dao.DAOInsumo;
 import dao.DAOPrato;
 import dao.DAOProducao;
+import modelo.Avaliacao;
 import modelo.ContaBancaria;
 import modelo.Endereco;
 import modelo.Funcionario;
@@ -21,6 +23,7 @@ public class Fachada {
 	private static DAOFuncionario daofuncionario = new DAOFuncionario() ;
 	private static DAOPrato daoprato = new DAOPrato ();
 	private static DAOProducao daoproducao = new DAOProducao ();
+	private static DAOAvaliacao daoavaliacao = new DAOAvaliacao ();
 	
 	public static void inicializar () {
 		DAO.open();
@@ -104,19 +107,48 @@ public class Fachada {
 		}
 
 		i = new Producao(key,data,prato,cozinheiro);
-		daoproducao.create(i);		
+		daoproducao.create(i);
+		cozinheiro.getProducoes().add(i);
+		daofuncionario.update(cozinheiro);
+		DAO.commit();
+		return i;
+	}
+	
+	public static Avaliacao cadastrarAvaliacao (Producao producao, int notaSabor, int notaAparencia, String justificativa,
+			Funcionario avaliador) throws Exception {
+		
+		int key = daoavaliacao.getKey();
+		DAO.begin();			
+		Avaliacao i = daoavaliacao.read(key);
+		if(i != null) {
+			throw new Exception("ja cadastrado:" + i);
+		}
+
+		i = new Avaliacao(key,producao,notaSabor,notaAparencia,justificativa,avaliador);
+		daoavaliacao.create(i);
+		producao.getAvaliacoes().add(i);
+		daoproducao.update(producao);
 		DAO.commit();
 		return i;
 	}
 	
 	public static Producao removerProducao (Producao p) {
-		DAO.begin();			
+		DAO.begin();
+		p.getCozinheiro().getProducoes().remove(p);
+		daofuncionario.update(p.getCozinheiro());
 		daoproducao.delete(p);		
 		DAO.commit();
 		return p;
 	}
 	
-	public static List <Producao> listarProduces () {
+	public static Avaliacao removerAvaliacao (Avaliacao p) {
+		DAO.begin();			
+		daoavaliacao.delete(p);	
+		DAO.commit();
+		return p;
+	}
+	
+	public static List <Producao> listarProducoes () {
 		return daoproducao.readAll();
 	}
 	
