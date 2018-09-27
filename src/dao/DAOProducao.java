@@ -37,7 +37,7 @@ public class DAOProducao extends DAO<Producao>  {
 		q.constrain(Producao.class);
 		q.descend("data").constrain(data);
 		List<Producao> result = q.execute();
-		List<Producao> resultfilter = new ArrayList ();
+		List<Producao> resultfilter = new ArrayList<Producao> ();
 		for (Producao producao : result) {
 			if (producao.getCozinheiro().getId()==id)
 				resultfilter.add(producao);

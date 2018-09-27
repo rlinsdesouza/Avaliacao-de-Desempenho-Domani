@@ -1,6 +1,8 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -152,11 +154,18 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 				
 				TelaAvaliacaoCozinha t = new TelaAvaliacaoCozinha(p, avaliador);
 				t.setVisible(true);
-				String data = sf.format(datePicker.getDate());
-				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
-				atualizaDados(producoes);
-				textFieldNomeAvaliador.setText(avaliador.getNome());
-				textFieldCodAvaliador.setText(Integer.toString(avaliador.getId()));
+				t.addWindowListener( new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent we) {
+                    	String data = sf.format(datePicker.getDate());
+        				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+        				System.out.println(producoes);
+        				atualizaDados(producoes);
+//        				textFieldNomeAvaliador.setText(avaliador.getNome());
+//        				textFieldCodAvaliador.setText(Integer.toString(avaliador.getId()));
+                    }
+                } );
+				
 			
 			}
 		});
