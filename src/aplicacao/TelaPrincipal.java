@@ -23,15 +23,18 @@ import fachada.Fachada;
 public class TelaPrincipal {
 	private JFrame frmPrincipal;
 	private JMenuBar menuBar;
-	private JMenuItem mntmInsumos;
-	private JMenuItem mntmControleProducao;
-	private JMenuItem mntmMesasGarcom;
-	private JMenuItem mntmFuncionario;
-	private JMenuItem mntmListarGarcom;
-	private JMenuItem mntmApagarGarcom;
+	
 	private JMenu mnCadastrar;
-	private JMenu mnProducao;
+	private JMenuItem mntmInsumos;
 	private JMenuItem mntmPratos;
+	private JMenuItem mntmFuncionario;
+
+	private JMenu mnProducao;
+	private JMenuItem mntmControleProducao;
+
+	private JMenu mnAvaliacao;
+	private JMenuItem mntmAvaliacaoCozinha;
+	
 	private JMenu mnConsulta;
 	private JMenuItem mntmConsultaGeral;
 	private JMenuItem mntmGerarEtiquetas;
@@ -62,9 +65,6 @@ public class TelaPrincipal {
 	public TelaPrincipal() {
 		Fachada.inicializar();
 		initialize();	
-
-//		System.out.println("\n\naviso: feche sempre o plugin eclipse antes de executar aplica��o");
-
 	}
 
 	/**
@@ -157,81 +157,17 @@ public class TelaPrincipal {
 				}
 			});
 			mnProducao.add(mntmControleProducao);
-//			
-//			mntmMesasGarcom = new JMenuItem("Definir mesas Garcom");
-//			mntmMesasGarcom.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaCadastroGarcom j = new TelaCadastroGarcom();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnGarcom.add(mntmMesasGarcom);
-//
-//			mntmListarGarcom = new JMenuItem("Listar Garcom");
-//			mntmListarGarcom.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaListagemGarcom j = new TelaListagemGarcom();
-//					j.setVisible(true);
-//				}
-//			});
-//			
-//			mntmApagarGarcom = new JMenuItem("Apagar Garcom");
-//			mntmApagarGarcom.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaRemoverGarcom j = new TelaRemoverGarcom();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnGarcom.add(mntmApagarGarcom);
-//			mnGarcom.add(mntmListarGarcom);
-//
-//			JMenu mnMesas = new JMenu("Mesas/Pedidos");
-//			menuBar.add(mnMesas);
-//
-//			JMenuItem mntmCriar = new JMenuItem("Adicionar mesa");
-//			mntmCriar.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaCadastroMesas j = new TelaCadastroMesas();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnMesas.add(mntmCriar);
 			
-//			JMenuItem mntmCriar2 = new JMenuItem("Controle de contas");
-//			mntmCriar2.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaControleConta j = new TelaControleConta();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnMesas.add(mntmCriar2);
-//
-//			JMenuItem mntmListar_1 = new JMenuItem("Listar");
-//			mntmListar_1.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent e) {
-//					TelaListagemMesas j = new TelaListagemMesas();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnMesas.add(mntmListar_1);
-
-//			JMenuItem mntmInserirProduto = new JMenuItem("Solicitar produto");
-//			mntmInserirProduto.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaInserirProdutoMesas j = new TelaInserirProdutoMesas();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnMesas.add(mntmInserirProduto);
-//			
-//			JMenuItem mntmRemoverProduto = new JMenuItem("Remover produto");
-//			mntmRemoverProduto.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					TelaRemoverProdutoMesas j = new TelaRemoverProdutoMesas();
-//					j.setVisible(true);
-//				}
-//			});
-//			mnMesas.add(mntmRemoverProduto);
+			menuBar.add(mnAvaliacao);
+			
+			mntmAvaliacaoCozinha = new JMenuItem("Avaliacao Cozinha");
+			mntmAvaliacaoCozinha.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					TelaCadastroAvaliacaoCozinha j = new TelaCadastroAvaliacaoCozinha();
+					j.setVisible(true);
+				}
+			});
+			mnAvaliacao.add(mntmAvaliacaoCozinha);
 
 			mnConsulta = new JMenu("Consulta");
 			menuBar.add(mnConsulta);
