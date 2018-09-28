@@ -95,7 +95,7 @@ public class TelaCadastroProducao extends JFrame {
 						for (int i=0;i<listModel.getSize();i++) {
 							Prato p = (Prato) listModel.get(i);
 							pratoslist.add(p);
-							if (!pratosproducao.contains(p))
+							if (!pratosproducao.contains(p)&&p!=null)
 								Fachada.cadastrarProducao (data,p,f);
 						}
 						
@@ -184,20 +184,22 @@ public class TelaCadastroProducao extends JFrame {
 		btnAddPrato = new JButton("Add Prato");
 		btnAddPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Prato selecionado;
+				Prato selecionado = null;
 				String nome = JOptionPane.showInputDialog(btnAddPrato, "Nome do prato", "Localiza prato",1);
 				List<Prato> pratos = Fachada.listarPratos(nome);
-
-				if (pratos.size()>1) {
-					selecionado = seleciona(pratos);
-				}else {
-					if (pratos.size()==1) {
-						selecionado = (Prato) pratos.toArray()[0];
+				if (pratos.size() != 0) {
+					if (pratos.size()>1) {
+						selecionado = seleciona(pratos);
 					}else {
-						selecionado = null;
-					}					
+						if (pratos.size()==1) {
+							selecionado = (Prato) pratos.toArray()[0];
+						}					
+					}
+					listModel.addElement(selecionado);
+				}else {
+					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
 				}
-				listModel.addElement(selecionado);
+
 			}
 		});
 		btnAddPrato.setBounds(476, 168, 117, 25);

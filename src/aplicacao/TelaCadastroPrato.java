@@ -100,7 +100,8 @@ public class TelaCadastroPrato extends JFrame {
 						String receita = textArea.getText();
 						List<Insumo> insumos = new ArrayList<Insumo>(); 
 						for (Object insumo : listModel.toArray()) {
-							insumos.add((Insumo) insumo);
+							if (insumo!=null)
+								insumos.add((Insumo) insumo);
 						};
 						
 						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));					
@@ -158,16 +159,22 @@ public class TelaCadastroPrato extends JFrame {
 		btnLocalizar = new JButton("Localizar");
 		btnLocalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Prato selecionado;
+				Prato selecionado=null;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do prato", "Localiza prato", 0);
 				List<Prato> pratos = Fachada.listarPratos(nome); 
 				
-				if (pratos.size()>1) {
-					selecionado = seleciona (pratos);
+				if (pratos.size() != 0) {
+					if (pratos.size()>1) {
+						selecionado = seleciona(pratos);
+					}else {
+						if (pratos.size()==1) {
+							selecionado = (Prato) pratos.toArray()[0];
+						}					
+					}
+					atualizaDados(selecionado);	
 				}else {
-					selecionado = (Prato) pratos.toArray()[0];
-				}
-				atualizaDados(selecionado);		
+					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
+				}	
 			}
 		});
 		btnLocalizar.setBounds(456, 8, 117, 25);
@@ -226,31 +233,25 @@ public class TelaCadastroPrato extends JFrame {
 		btnAddInsumo = new JButton("Add Insumo");
 		btnAddInsumo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Insumo selecionado;
+				Insumo selecionado=null;
 				String nome = JOptionPane.showInputDialog(btnAddInsumo, "Nome do insumo", "Localiza insumo",1);
 				List<Insumo> insumos = Fachada.listarInsumo(nome);
 
-				if (insumos.size()>1) {
-					selecionado = seleciona(insumos);
-				}else {
-					if (insumos.size()==1) {
-						selecionado = (Insumo) insumos.toArray()[0];
+				if (insumos.size() != 0) {
+					if (insumos.size()>1) {
+						selecionado = seleciona(insumos);
 					}else {
-						selecionado = null;
-					}					
-				}
-				listModel.addElement(selecionado);
-//				Prato prato = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())); 
-//				if (prato.getInsumos()!=null) {
-//					prato.getInsumos().add(selecionado);
-//				}else {
-//					prato.setInsumos(new ArrayList<Insumo>());
-//					prato.getInsumos().add(selecionado);
-//				}
-//				Fachada.atualizarPrato (prato);
-//				atualizaDados(prato);
+						if (insumos.size()==1) {
+							selecionado = (Insumo) insumos.toArray()[0];
+						}					
+					}
+					listModel.addElement(selecionado);
+				}else {
+					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
+				}	
 			}
-		});
+		});	
+		
 		btnAddInsumo.setBounds(582, 166, 117, 25);
 		contentPane.add(btnAddInsumo);
 		
