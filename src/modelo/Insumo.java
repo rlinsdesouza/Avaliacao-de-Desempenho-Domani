@@ -5,14 +5,14 @@ public class Insumo {
 	private int id;
 	private String nome;
 	private boolean lactose;
-	private boolean glutem;
+	private boolean gluten;
 	
-	public Insumo(int codinsumo, String nome, boolean lactose, boolean glutem) {
+	public Insumo(int codinsumo, String nome, boolean lactose, boolean gluten) {
 		super();
 		this.id = codinsumo;
 		this.nome = nome.toUpperCase();
 		this.lactose = lactose;
-		this.glutem = glutem;
+		this.gluten = gluten;
 	}
 
 	public int getId() {
@@ -39,12 +39,12 @@ public class Insumo {
 		this.lactose = lactose;
 	}
 
-	public boolean isGlutem() {
-		return glutem;
+	public boolean isGluten() {
+		return gluten;
 	}
 
-	public void setGlutem(boolean glutem) {
-		this.glutem = glutem;
+	public void setGluten(boolean gluten) {
+		this.gluten = gluten;
 	}
 
 	@Override

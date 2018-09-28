@@ -136,7 +136,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		btnAddAvaliacao.setBounds(302, 202, 117, 25);
 		contentPane.add(btnAddAvaliacao);
 		
-		btnRemoverPrato = new JButton("Remover Avaliaï¿½ï¿½o");
+		btnRemoverPrato = new JButton("Remover Avaliação");
 		btnRemoverPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fachada.removerAvaliacao ((Avaliacao) listModel.getElementAt(listPratosAvaliados.getSelectedIndex()));

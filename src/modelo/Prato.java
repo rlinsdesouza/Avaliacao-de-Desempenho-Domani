@@ -10,11 +10,11 @@ public class Prato {
 	private int dificuldade;
 	private int tempoProduzir;
 	private boolean lactose;
-	private boolean glutem;
+	private boolean gluten;
 	private List<Insumo> insumos = new ArrayList<Insumo>();
 	
 	public Prato(int id, String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
-			boolean glutem, List<Insumo> insumos) {
+			boolean gluten, List<Insumo> insumos) {
 		super();
 		this.id = id;
 		this.nome = nome.toUpperCase();
@@ -22,7 +22,7 @@ public class Prato {
 		this.dificuldade = dificuldade;
 		this.tempoProduzir = tempoProduzir;
 		this.lactose = lactose;
-		this.glutem = glutem;
+		this.gluten = gluten;
 		this.insumos = insumos;
 	}
 
@@ -74,12 +74,12 @@ public class Prato {
 		this.lactose = lactose;
 	}
 
-	public boolean isGlutem() {
-		return glutem;
+	public boolean isGluten() {
+		return gluten;
 	}
 
-	public void setGlutem(boolean glutem) {
-		this.glutem = glutem;
+	public void setGluten(boolean gluten) {
+		this.gluten = gluten;
 	}
 
 
@@ -94,7 +94,7 @@ public class Prato {
 	@Override
 	public String toString() {
 		return "Prato [id=" + id + ", nome=" + nome + ", receita=" + receita + ", dificuldade="
-				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glutem=" + glutem
+				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glúten=" + gluten
 				+ ", insumos=" + insumos + "]";
 	}
 	

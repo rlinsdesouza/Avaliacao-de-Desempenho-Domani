@@ -75,6 +75,7 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(lblCodInsumo);
 
 		textFieldNome = new JTextField();
+		textFieldNome.setEditable(false);
 		textFieldNome.setBounds(66, 49, 233, 20);
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
@@ -138,9 +139,12 @@ public class TelaCadastroFuncionario extends JFrame {
 				
 				textFieldCod.setText("0");
 				textFieldCod.setEnabled(false);
+				textFieldNome.setEnabled(true);
 				textFieldNome.setText("Digite o nome do funcionario");
 				passwordField.setText(null);
+				passwordField.setEnabled(true);
 				txtMatricula.setText("0");
+				txtMatricula.setEnabled(true);
 				listModel.clear();
 			}
 		});
@@ -179,9 +183,11 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(lblMatricula);
 		
 		txtMatricula = new JTextField();
+		txtMatricula.setEnabled(false);
 		txtMatricula.setBounds(240, 11, 115, 19);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
+		
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(347, 138, 214, 188);
@@ -189,10 +195,12 @@ public class TelaCadastroFuncionario extends JFrame {
 		
 		listModel = new DefaultListModel<Insumo>();
 		list = new JList(listModel);
+		list.setEnabled(false);
 		scrollPane.setViewportView(list);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 		btnAddPermissoes = new JButton("Add Permiss\u00E3o");
+		btnAddPermissoes.setEnabled(false);
 		btnAddPermissoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				Insumo selecionado;
@@ -215,6 +223,7 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(btnAddPermissoes);
 		
 		btnRemoverInsumo = new JButton("Remover Permiss\u00E3o");
+		btnRemoverInsumo.setEnabled(false);
 		btnRemoverInsumo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				listModel.removeElementAt(list.getSelectedIndex());
@@ -232,6 +241,7 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(lblSenha);
 		
 		passwordField = new JPasswordField();
+		passwordField.setEditable(false);
 		passwordField.setBounds(66, 80, 97, 20);
 		contentPane.add(passwordField);
 	}

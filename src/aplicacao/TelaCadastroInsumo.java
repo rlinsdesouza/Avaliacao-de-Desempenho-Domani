@@ -27,7 +27,7 @@ public class TelaCadastroInsumo extends JFrame {
 	private JButton btnSalvar;
 	private JLabel lblmsg;
 	private JCheckBox chckbxLactose;
-	private JCheckBox checkBoxGlutem;
+	private JCheckBox checkBoxGluten;
 	private JButton btnNovoInsumo;
 	private JButton btnLocalizar;
 
@@ -54,27 +54,28 @@ public class TelaCadastroInsumo extends JFrame {
 		setTitle("Cadastrar Insumo");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 314, 174);
+		setBounds(100, 100, 337, 203);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		textFieldCodInsumo = new JTextField();
-		textFieldCodInsumo.setBounds(66, 23, 86, 20);
+		textFieldCodInsumo.setEnabled(false);
+		textFieldCodInsumo.setBounds(66, 43, 86, 20);
 		contentPane.add(textFieldCodInsumo);
 		textFieldCodInsumo.setColumns(10);
 
 		lblNomeInsumo = new JLabel("Nome");
-		lblNomeInsumo.setBounds(10, 64, 46, 14);
+		lblNomeInsumo.setBounds(10, 88, 46, 14);
 		contentPane.add(lblNomeInsumo);
 
 		lblCodInsumo = new JLabel("Cod");
-		lblCodInsumo.setBounds(10, 26, 46, 14);
+		lblCodInsumo.setBounds(10, 46, 46, 14);
 		contentPane.add(lblCodInsumo);
 
 		textFieldNomeInsumo = new JTextField();
-		textFieldNomeInsumo.setBounds(66, 61, 233, 20);
+		textFieldNomeInsumo.setBounds(88, 85, 233, 20);
 		contentPane.add(textFieldNomeInsumo);
 		textFieldNomeInsumo.setColumns(10);
 
@@ -86,13 +87,13 @@ public class TelaCadastroInsumo extends JFrame {
 					if (opcao==0) {
 						String nome = textFieldNomeInsumo.getText();
 						Boolean lactose = chckbxLactose.isSelected();
-						Boolean glutem = checkBoxGlutem.isSelected();
+						Boolean gluten = checkBoxGluten.isSelected();
 						
 						Insumo p = Fachada.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
 						if (p == null) {
-							p = Fachada.cadastrarInsumo(nome,lactose,glutem);
+							p = Fachada.cadastrarInsumo(nome,lactose,gluten);
 						}else {
-							Fachada.atualizarInsumo(p.getId(),nome,lactose,glutem);
+							Fachada.atualizarInsumo(p.getId(),nome,lactose,gluten);
 						}
 						JOptionPane.showMessageDialog(contentPane, "Cadastrado/atualizado com sucesso!");
 						btnNovoInsumo.doClick();						
@@ -103,20 +104,20 @@ public class TelaCadastroInsumo extends JFrame {
 				}
 			}
 		});
-		btnSalvar.setBounds(104, 88, 115, 23);
+		btnSalvar.setBounds(104, 112, 115, 23);
 		contentPane.add(btnSalvar);
 		
 		lblmsg = new JLabel("");
-		lblmsg.setBounds(26, 121, 273, 14);
+		lblmsg.setBounds(26, 153, 273, 14);
 		contentPane.add(lblmsg);
 		
 		chckbxLactose = new JCheckBox("Lactose");
-		chckbxLactose.setBounds(202, 22, 97, 23);
+		chckbxLactose.setBounds(172, 40, 63, 23);
 		contentPane.add(chckbxLactose);
 		
-		checkBoxGlutem = new JCheckBox("Glutem");
-		checkBoxGlutem.setBounds(202, 42, 97, 23);
-		contentPane.add(checkBoxGlutem);
+		checkBoxGluten = new JCheckBox("Glúten");
+		checkBoxGluten.setBounds(249, 42, 72, 23);
+		contentPane.add(checkBoxGluten);
 		
 		btnNovoInsumo = new JButton("Novo insumo");
 		btnNovoInsumo.addActionListener(new ActionListener() {
@@ -125,10 +126,10 @@ public class TelaCadastroInsumo extends JFrame {
 				textFieldCodInsumo.setEnabled(false);
 				textFieldNomeInsumo.setText("Digite o nome");
 				chckbxLactose.setSelected(false);
-				checkBoxGlutem.setSelected(false);
+				checkBoxGluten.setSelected(false);
 			}
 		});
-		btnNovoInsumo.setBounds(26, 0, 111, 23);
+		btnNovoInsumo.setBounds(41, 9, 111, 23);
 		contentPane.add(btnNovoInsumo);
 		
 		btnLocalizar = new JButton("Localizar");
@@ -146,7 +147,7 @@ public class TelaCadastroInsumo extends JFrame {
 				atualizaDados(selecionado);	
 			}
 		});
-		btnLocalizar.setBounds(162, 0, 89, 23);
+		btnLocalizar.setBounds(172, 9, 89, 23);
 		contentPane.add(btnLocalizar);
 	}
 	
@@ -154,7 +155,7 @@ public class TelaCadastroInsumo extends JFrame {
 		textFieldCodInsumo.setText(Integer.toString(selecionado.getId()));
 		textFieldNomeInsumo.setText(selecionado.getNome());
 		chckbxLactose.setSelected(selecionado.isLactose());
-		checkBoxGlutem.setSelected(selecionado.isGlutem());
+		checkBoxGluten.setSelected(selecionado.isGluten());
 		
 		lblmsg.setText("");
 	}

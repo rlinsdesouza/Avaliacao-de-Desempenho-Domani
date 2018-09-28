@@ -67,7 +67,7 @@ public class Fachada {
 	}
 	
 	public static Prato cadastrarPrato (String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
-			boolean glutem, List<Insumo> insumos) throws Exception {
+			boolean gluten, List<Insumo> insumos) throws Exception {
 		
 		int key = daoprato.getKey();
 		DAO.begin();			
@@ -75,14 +75,14 @@ public class Fachada {
 		if(i != null) {
 			throw new Exception("produto ja cadastrado:" + nome);
 		}
-		i = new Prato(key, nome,receita,dificuldade,tempoProduzir,lactose,glutem,insumos);
+		i = new Prato(key, nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
 		daoprato.create(i);		
 		DAO.commit();
 		return i;
 	}
 	
 	
-	public static Insumo cadastrarInsumo (String nome, boolean lactose, boolean glutem) throws Exception {
+	public static Insumo cadastrarInsumo (String nome, boolean lactose, boolean gluten) throws Exception {
 		
 		int key = daoinsumo.getKey();
 		DAO.begin();			
@@ -91,7 +91,7 @@ public class Fachada {
 			throw new Exception("produto ja cadastrado:" + nome);
 		}
 
-		i = new Insumo(key, nome, lactose, glutem);
+		i = new Insumo(key, nome, lactose, gluten);
 		daoinsumo.create(i);		
 		DAO.commit();
 		return i;
@@ -198,11 +198,11 @@ public class Fachada {
 		return daofuncionario.read(id);
 	}
 
-	public static Insumo atualizarInsumo(int id,String nome,boolean lactose,boolean glutem) {
+	public static Insumo atualizarInsumo(int id,String nome,boolean lactose,boolean gluten) {
 		Insumo p = daoinsumo.read(id);
 		p.setNome(nome);
 		p.setLactose(lactose);
-		p.setGlutem(glutem);
+		p.setGluten(gluten);
 		daoinsumo.refresh(p);
 		return p;
 	}
@@ -214,7 +214,7 @@ public class Fachada {
 		p.setDificuldade(dificuldade);
 		p.setTempoProduzir(tempo);
 		p.setLactose(lactose);
-		p.setGlutem(glutem);
+		p.setGluten(glutem);
 		p.setInsumos(insumos);
 		daoprato.refresh(p);
 		return p;

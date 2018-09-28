@@ -41,7 +41,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 	private JList listSabor;
 	private JLabel lblPratosNoAvaliados;
 	private JLabel lblNomeDoAvaliador;
-	private String[] opcoes = {"RUIM","SATISFATï¿½RIO","BOM"};
+	private String[] opcoes = {"RUIM","SATISFATÓRIO","BOM"};
 	private JLabel lblPrato;
 	private JTextField textFieldPrato;
 	private Avaliacao avaliacao;
@@ -56,7 +56,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		setTitle("Avalia\u00E7\u00E3o de um prato");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 328, 312);
+		setBounds(100, 100, 368, 312);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -148,13 +148,13 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		}
 		
 		lblAvaliados = new JLabel("Aparencia?");
-		lblAvaliados.setBounds(128, 133, 67, 15);
+		lblAvaliados.setBounds(199, 133, 67, 15);
 		contentPane.add(lblAvaliados);
 		
 
 		
 		lblPratosNoAvaliados = new JLabel("Sabor?");
-		lblPratosNoAvaliados.setBounds(54, 133, 33, 15);
+		lblPratosNoAvaliados.setBounds(54, 133, 61, 15);
 		contentPane.add(lblPratosNoAvaliados);
 		
 		lblNomeDoAvaliador = new JLabel("Avaliador");
@@ -169,11 +169,11 @@ public class TelaAvaliacaoCozinha extends JDialog {
 		textFieldAvaliador.setEnabled(false);
 		
 		listSabor = new JList(opcoes);
-		listSabor.setBounds(33, 159, 82, 56);
+		listSabor.setBounds(59, 159, 82, 56);
 		contentPane.add(listSabor);
 		listSabor.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listAparecencia = new JList(opcoes);
-		listAparecencia.setBounds(128, 159, 82, 56);
+		listAparecencia.setBounds(203, 159, 82, 56);
 		contentPane.add(listAparecencia);
 		listAparecencia.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		

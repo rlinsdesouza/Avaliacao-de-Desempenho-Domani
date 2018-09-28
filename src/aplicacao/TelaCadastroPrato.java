@@ -33,7 +33,7 @@ public class TelaCadastroPrato extends JFrame {
 	private JButton btnCriar;
 	private JLabel lblmsg;
 	private JCheckBox chckbxLactose;
-	private JCheckBox checkBoxGlutem;
+	private JCheckBox checkBoxGluten;
 	private JButton btnNovo;
 	private JRadioButton rdbtnFacil;
 	private JTextField txtTempo;
@@ -91,7 +91,7 @@ public class TelaCadastroPrato extends JFrame {
 						int dificuldade=1;
 						String nome = textFieldNome.getText();
 						Boolean lactose = chckbxLactose.isSelected();
-						Boolean glutem = checkBoxGlutem.isSelected();
+						Boolean gluten = checkBoxGluten.isSelected();
 						
 						if (rdbtnFacil.isSelected()) dificuldade = 1;
 						if (rdbtnMedio.isSelected()) dificuldade = 2;
@@ -105,9 +105,9 @@ public class TelaCadastroPrato extends JFrame {
 						
 						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));					
 						if (p == null) {
-							p = Fachada.cadastrarPrato(nome, receita,dificuldade,tempo,lactose,glutem,insumos);
+							p = Fachada.cadastrarPrato(nome, receita,dificuldade,tempo,lactose,gluten,insumos);
 						}else {
-							Fachada.atualizarPrato(p.getId(),nome, receita,dificuldade,tempo,lactose,glutem,insumos);
+							Fachada.atualizarPrato(p.getId(),nome, receita,dificuldade,tempo,lactose,gluten,insumos);
 						}
 						atualizaDados(p);	
 						lblmsg.setText("cadastrado/atualizado "+p.getNome());
@@ -130,9 +130,9 @@ public class TelaCadastroPrato extends JFrame {
 		chckbxLactose.setBounds(307, 48, 97, 23);
 		contentPane.add(chckbxLactose);
 		
-		checkBoxGlutem = new JCheckBox("Glutem");
-		checkBoxGlutem.setBounds(408, 48, 97, 23);
-		contentPane.add(checkBoxGlutem);
+		checkBoxGluten = new JCheckBox("Glúten");
+		checkBoxGluten.setBounds(408, 48, 97, 23);
+		contentPane.add(checkBoxGluten);
 		
 		btnNovo = new JButton("Novo prato");
 		btnNovo.addActionListener(new ActionListener() {
@@ -142,7 +142,7 @@ public class TelaCadastroPrato extends JFrame {
 				textFieldCod.setEnabled(false);
 				textFieldNome.setText("Digite o nome do produto");
 				chckbxLactose.setSelected(false);
-				checkBoxGlutem.setSelected(false);
+				checkBoxGluten.setSelected(false);
 				rdbtnFacil.setSelected(false);
 				txtTempo.setText("0");
 				rdbtnMedio.setSelected(false);
@@ -283,7 +283,7 @@ public class TelaCadastroPrato extends JFrame {
 		textFieldCod.setText(Integer.toString(selecionado.getId()));
 		textFieldNome.setText(selecionado.getNome());
 		chckbxLactose.setSelected(selecionado.isLactose());
-		checkBoxGlutem.setSelected(selecionado.isGlutem());
+		checkBoxGluten.setSelected(selecionado.isGluten());
 		txtTempo.setText(Integer.toString(selecionado.getTempoProduzir()));
 		rdbtnFacil.setSelected(false);
 		rdbtnMedio.setSelected(false);

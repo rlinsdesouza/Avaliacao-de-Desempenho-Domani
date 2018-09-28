@@ -72,7 +72,7 @@ public class CreateEtiquetasPDF {
             cell.setBorder(Rectangle.NO_BORDER);
             table.addCell(cell);
             // third row
-            cell = new PdfPCell(new Phrase("Possui Glúten? "+(prato.isGlutem() == true ? "SIM" : "NÃO")+" / Possui Lactose? "+(prato.isLactose() == true ? "SIM" : "NÃO"), glutemfont));
+            cell = new PdfPCell(new Phrase("Possui Glúten? "+(prato.isGluten() == true ? "SIM" : "NÃO")+" / Possui Lactose? "+(prato.isLactose() == true ? "SIM" : "NÃO"), glutemfont));
             cell.setBorder(Rectangle.NO_BORDER);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cell);

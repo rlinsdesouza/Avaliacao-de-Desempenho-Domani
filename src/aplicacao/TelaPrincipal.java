@@ -5,6 +5,7 @@ package aplicacao;
  * Prof. Fausto Maranhï¿½o Ayres
  **********************************/
 
+import java.awt.Desktop.Action;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
+import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -72,7 +74,7 @@ public class TelaPrincipal {
 	 */
 	private void initialize() {
 		frmPrincipal = new JFrame();
-		frmPrincipal.setTitle("Restaurante Domani - GestÃ£o");
+		frmPrincipal.setTitle("Restaurante Domani - Gestão");
 			try {
 				frmPrincipal.setContentPane(new FundoTela("domani.jpg"));
 			} catch (IOException e1) {
@@ -104,14 +106,27 @@ public class TelaPrincipal {
 				}
 				@Override
 				public void windowClosing(WindowEvent e) {
-					JOptionPane.showMessageDialog(null, "ate breve !");
+					JOptionPane.showMessageDialog(frmPrincipal, "até breve !");
 					Fachada.finalizar();
 				}
 			});
-
-			frmPrincipal.setBounds(100, 100, 450, 300);
+			frmPrincipal.setSize(1650,1080);
+//			frmPrincipal.setBounds(100, 100, 450, 300);
 			frmPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frmPrincipal.getContentPane().setLayout(null);
+			
+			AbstractAction logout = new AbstractAction()
+			{
+			    public void actionPerformed(ActionEvent e)
+			    {
+			        JFrame frame = (JFrame)e.getSource();
+					Fachada.finalizar();
+					System.exit(0);
+			    }
+			};
+			
+			InactivityListener listener = new InactivityListener(frmPrincipal, logout, 1);
+			listener.start();
 
 			menuBar = new JMenuBar();
 			frmPrincipal.setJMenuBar(menuBar);
@@ -128,7 +143,7 @@ public class TelaPrincipal {
 			});
 			mnCadastrar.add(mntmInsumos);
 
-			mntmFuncionario = new JMenuItem("Funcionario");
+			mntmFuncionario = new JMenuItem("Funcionário");
 			mntmFuncionario.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					TelaCadastroFuncionario j = new TelaCadastroFuncionario();
@@ -146,10 +161,10 @@ public class TelaPrincipal {
 			mnCadastrar.add(mntmPratos);
 			mnCadastrar.add(mntmFuncionario);
 			
-			mnProducao = new JMenu("Producao");
+			mnProducao = new JMenu("Produção");
 			menuBar.add(mnProducao);
 
-			mntmControleProducao = new JMenuItem("Controle de Producao");
+			mntmControleProducao = new JMenuItem("Controle de Produção");
 			mntmControleProducao.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					TelaCadastroProducao j = new TelaCadastroProducao();
@@ -158,10 +173,10 @@ public class TelaPrincipal {
 			});
 			mnProducao.add(mntmControleProducao);
 			
-			mnAvaliacao = new JMenu("Avaliacao");
+			mnAvaliacao = new JMenu("Avaliação");
 			menuBar.add(mnAvaliacao);
 			
-			mntmAvaliacaoCozinha = new JMenuItem("Avaliacao Cozinha");
+			mntmAvaliacaoCozinha = new JMenuItem("Avaliação Cozinha");
 			mntmAvaliacaoCozinha.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					TelaCadastroAvaliacaoCozinha j = new TelaCadastroAvaliacaoCozinha();
