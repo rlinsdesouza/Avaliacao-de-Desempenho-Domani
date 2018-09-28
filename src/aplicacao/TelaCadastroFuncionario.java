@@ -75,7 +75,7 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(lblCodInsumo);
 
 		textFieldNome = new JTextField();
-		textFieldNome.setEditable(false);
+		textFieldNome.setEnabled(false);
 		textFieldNome.setBounds(66, 49, 233, 20);
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
@@ -154,6 +154,9 @@ public class TelaCadastroFuncionario extends JFrame {
 		btnLocalizar = new JButton("Localizar");
 		btnLocalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textFieldNome.setEnabled(true);
+				passwordField.setEnabled(true);
+				txtMatricula.setEnabled(true);
 				Funcionario selecionado;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do funcionário", "Localiza funcionário", 0);
 				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
@@ -241,7 +244,7 @@ public class TelaCadastroFuncionario extends JFrame {
 		contentPane.add(lblSenha);
 		
 		passwordField = new JPasswordField();
-		passwordField.setEditable(false);
+		passwordField.setEnabled(false);
 		passwordField.setBounds(66, 80, 97, 20);
 		contentPane.add(passwordField);
 	}
