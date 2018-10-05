@@ -105,7 +105,6 @@ public class Fachada {
 		if(i != null) {
 			throw new Exception("ja cadastrado:" + prato.getNome());
 		}
-
 		i = new Producao(key,data,prato,cozinheiro);
 		daoproducao.create(i);
 		cozinheiro.getProducoes().add(i);

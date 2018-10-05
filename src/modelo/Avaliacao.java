@@ -1,6 +1,6 @@
 package modelo;
 
-public class Avaliacao {
+public class Avaliacao  {
 
 	private int idavaliacao;
 	private Producao produto;
@@ -72,6 +72,18 @@ public class Avaliacao {
 	public String toString() {
 		return "Avaliacao [idavaliacao=" + idavaliacao + ", notaSabor=" + notaSabor + ", notaAparencia=" + notaAparencia
 				+ ", justificativa=" + justificativa + "]";
+	}
+
+
+	public int getId() {
+		// TODO Auto-generated method stub
+		return this.idavaliacao;
+	}
+
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		this.idavaliacao = id;
+		
 	}
 	
 	

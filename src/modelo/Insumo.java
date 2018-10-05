@@ -1,6 +1,6 @@
 package modelo;
 
-public class Insumo {
+public class Insumo{
 
 	private int id;
 	private String nome;

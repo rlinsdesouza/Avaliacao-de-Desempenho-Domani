@@ -46,8 +46,6 @@ public class Funcionario {
 		this.id = id;
 	}
 
-
-
 	public int getMatricula() {
 		return matricula;
 	}
