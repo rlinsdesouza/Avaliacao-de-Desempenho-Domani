@@ -1,6 +1,7 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -51,6 +52,8 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 	private JScrollPane scrollPane_1;
 	private JLabel lblPratosNoAvaliados;
 	private JLabel lblNomeDoAvaliador;
+	private JLabel lblNotaAvaliados;
+	private JTextField txtNotaAvaliados;
 
 	
 	/**
@@ -129,19 +132,19 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 				TelaAvaliacaoCozinha t = new TelaAvaliacaoCozinha(p, avaliador);
 				t.setVisible(true);
              	String data = sf.format(datePicker.getDate());
-				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+				List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
 				atualizaDados(producoes);				
 			}
 		});
 		btnAddAvaliacao.setBounds(302, 202, 117, 25);
 		contentPane.add(btnAddAvaliacao);
 		
-		btnRemoverPrato = new JButton("Remover Avaliação");
+		btnRemoverPrato = new JButton("Remover Avaliaï¿½ï¿½o");
 		btnRemoverPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fachada.removerAvaliacao ((Avaliacao) listModel.getElementAt(listPratosAvaliados.getSelectedIndex()));
 				String data = sf.format(datePicker.getDate());
-				List<Producao> producoes = Fachada.listarProducoesPorData(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+				List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
 				atualizaDados(producoes);
 			}
 		});
@@ -177,7 +180,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 						}
 						
 						
-						List<Producao> producoes = Fachada.listarProducoesPorData(data,selecionado.getId());
+						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,selecionado.getId());
 						
 						nome = JOptionPane.showInputDialog(contentPane, "Nome do avaliador", "Localiza avaliador",1);
 						List<Funcionario> avaliadores = Fachada.listarFuncionarios(nome);
@@ -230,6 +233,16 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		textFieldCodAvaliador.setVisible(false);
 		textFieldCodAvaliador.setText("0");
 		
+		lblNotaAvaliados = new JLabel("Nota avaliados:");
+		lblNotaAvaliados.setBounds(33, 363, 126, 15);
+		contentPane.add(lblNotaAvaliados);
+		
+		txtNotaAvaliados = new JTextField();
+		txtNotaAvaliados.setEditable(false);
+		txtNotaAvaliados.setBounds(152, 361, 114, 19);
+		contentPane.add(txtNotaAvaliados);
+		txtNotaAvaliados.setColumns(10);
+		
 		
 	}
 	
@@ -257,6 +270,10 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 				}
 			}
 		}
+		DecimalFormat dc = new DecimalFormat("#.##");  
+		dc.setMinimumFractionDigits(2);
+		dc.setMaximumFractionDigits(2);
+		txtNotaAvaliados.setText(dc.format((Fachada.calculaNotaProducoes(producoes))));
 		lblmsg.setText("");
 	}
 	

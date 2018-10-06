@@ -117,16 +117,26 @@ public class Fachada {
 		return i;
 	}
 	
-	public static Prato removerPrato (Prato p) {
+	public static Prato removerPrato (Prato p) throws Exception {
 		DAO.begin();
-		daoprato.delete(p);		
+		List<Producao> l = daoprato.ProducoesComPrato(p.getNome());
+		if (l.isEmpty()) {
+			daoprato.delete(p);			
+		}else {
+			throw new Exception ("Impossível excluir, prato com producao vinculada!");
+		}
 		DAO.commit();
 		return p;
 	}
 	
-	public static Insumo removerInsumo (Insumo p) {
+	public static Insumo removerInsumo (Insumo p) throws Exception {
 		DAO.begin();
-		daoinsumo.delete(p);		
+		List<Prato> l = daoinsumo.PratosComInsumo(p.getNome());
+		if (l.isEmpty()) {
+			daoinsumo.delete(p);		
+		}else {
+			throw new Exception ("Impossível excluir, insumo com pratos vinculados!");
+		}
 		DAO.commit();
 		return p;
 	}
@@ -154,11 +164,15 @@ public class Fachada {
 	}
 	
 	public static List <Producao> listarProducoesPorData (String data) {
-		return daoproducao.consultarProducoesPorDiaFuncionario(data);
+		return daoproducao.consultarProducoesPorDia(data);
 	}
 	
-	public static List <Producao> listarProducoesPorData (String data, int id) {
+	public static List <Producao> listarProducoesPorDataFuncionario (String data, int id) {
 		return daoproducao.consultarProducoesPorDiaFuncionario(data,id);
+	}
+	
+	public static List <Producao> listarProducoesPorDataFuncionario (String datainicial, String datafinal, int id) {
+		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
 	}
 	
 	public static List <Funcionario> listarFuncionarios () {
@@ -202,7 +216,7 @@ public class Fachada {
 		p.setNome(nome);
 		p.setLactose(lactose);
 		p.setGluten(gluten);
-		daoinsumo.refresh(p);
+		daoinsumo.update(p);
 		return p;
 	}
 	
@@ -215,7 +229,7 @@ public class Fachada {
 		p.setLactose(lactose);
 		p.setGluten(glutem);
 		p.setInsumos(insumos);
-		daoprato.refresh(p);
+		daoprato.update(p);
 		return p;
 	}
 	
@@ -236,8 +250,43 @@ public class Fachada {
 //		p.setDataDemissao(dataDemissao);
 //		p.setConta(conta);
 
-		daofuncionario.refresh(p);
+		daofuncionario.update(p);
 		return p;
+	}
+	
+	public static Prato atualizarLactoseGluten (Prato p) throws Exception {
+		List<Insumo> insumos = p.getInsumos();
+		if (insumos != null && !insumos.isEmpty()) {
+			p.setLactose(false);
+			p.setGluten(false);
+			for (Insumo insumo : insumos) {
+				if (insumo.isGluten())
+					p.setGluten(true);
+				if (insumo.isLactose())
+					p.setLactose(true);
+			}
+			daoprato.update(p);
+			return p;	
+		}else {
+			throw new Exception ("Produto sem insumos cadastrados!");
+		}
+	}
+	
+	public static double calculaNotaProducoes (List<Producao> p) {
+		double nota = 0.0;
+		double numerador=0.0;
+		double denominador=0.0;
+		
+		for (Producao producao : p) {
+			if (!producao.getAvaliacoes().isEmpty()) {
+				for (Avaliacao a : producao.getAvaliacoes()) {
+					numerador = numerador + ((((a.getNotaAparencia()+a.getNotaSabor())/2)*producao.getPrato().getDificuldade()));
+					denominador = denominador + producao.getPrato().getDificuldade();
+				}
+			}
+		}
+		nota = numerador/denominador;		
+		return nota;
 	}
 
 }

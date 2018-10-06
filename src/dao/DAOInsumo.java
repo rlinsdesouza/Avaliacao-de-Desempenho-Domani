@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.db4o.query.Query;
 
-import modelo.Funcionario;
 import modelo.Insumo;
+import modelo.Prato;
 
 public class DAOInsumo extends DAO<Insumo>  {
 	public Insumo readByNome (String nome){	
@@ -20,6 +20,14 @@ public class DAOInsumo extends DAO<Insumo>  {
 			return (Insumo) resultados.get(0);
 		else
 			return null;
+	}
+	
+	public List<Prato> PratosComInsumo (String nome){	
+		Query q = manager.query();
+		q.constrain(Prato.class);
+		q.descend("insumos").descend("nome").constrain(nome);
+		List<Prato> resultados = q.execute();
+		return resultados;
 	}
 	
 }

@@ -275,6 +275,19 @@ public class TelaCadastroPrato extends JFrame {
 		btnAtualizarCarac = new JButton("Atualizar p/ insumos");
 		btnAtualizarCarac.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					if (textFieldCod.getText() != null) {
+						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));
+						btnCriar.doClick();
+						p = Fachada.atualizarLactoseGluten(p);
+						JOptionPane.showMessageDialog(contentPane, "Atualizado com sucesso", "Confirmacao", 2);
+						atualizaDados(p);
+					}else {
+						throw new Exception ("Favor localizar um produto!");
+					}
+				} catch (Exception e2) {
+					lblmsg.setText(e2.getMessage());
+				}
 			}
 		});
 		btnAtualizarCarac.setBounds(317, 74, 211, 25);
@@ -283,10 +296,15 @@ public class TelaCadastroPrato extends JFrame {
 		JButton btnExcluirPrato = new JButton("Excluir prato");
 		btnExcluirPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o produto?", "Confirmação",0);
-				if (opcao==0) {
-					Fachada.removerPrato(Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())));
-					JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!", "Confirmção",2);
+				try {
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o produto?", "Confirmação",0);
+					if (opcao==0) {
+						Fachada.removerPrato(Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())));
+						JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!", "Confirmção",2);
+						btnNovo.doClick();
+					}	
+				} catch (Exception e2) {
+					lblmsg.setText(e2.getMessage());
 				}
 			}
 		});

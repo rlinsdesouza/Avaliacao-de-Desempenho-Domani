@@ -77,13 +77,13 @@ public class TelaCadastroProducao extends JFrame {
 		btnCriar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar essas producões para o funcionário?", "ConfirmaÃ§Ã£o",0);
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar essas producï¿½es para o funcionï¿½rio?", "ConfirmaÃ§Ã£o",0);
 					if (opcao==0) {
 					
 						Funcionario f = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
 						
 						String data = sf.format(datePicker.getDate());
-						List<Producao> producoes = Fachada.listarProducoesPorData(data, f.getId());
+						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data, f.getId());
 						List<Prato> pratosproducao = new ArrayList<Prato>();
 						List<Prato> pratoslist = new ArrayList<Prato>();
 						
@@ -130,7 +130,7 @@ public class TelaCadastroProducao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Funcionario selecionado;
-				String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcionário", "Localiza funcionário", 0);
+				String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcionï¿½rio", "Localiza funcionï¿½rio", 0);
 				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
 				
 				if (funcionarios.size()>1) {
@@ -197,7 +197,7 @@ public class TelaCadastroProducao extends JFrame {
 					}
 					listModel.addElement(selecionado);
 				}else {
-					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
+					JOptionPane.showMessageDialog(contentPane, "Nï¿½o localizado!", "Atenï¿½ï¿½o", 2);
 				}
 
 			}
@@ -243,7 +243,7 @@ public class TelaCadastroProducao extends JFrame {
 						}
 						
 						
-						List<Producao> producoes = Fachada.listarProducoesPorData(data,selecionado.getId());
+						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,selecionado.getId());
 						atualizaDados(producoes);
 					}
 				}

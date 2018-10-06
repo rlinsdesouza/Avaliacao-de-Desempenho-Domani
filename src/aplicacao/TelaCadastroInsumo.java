@@ -1,7 +1,6 @@
 package aplicacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -15,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
 import modelo.Insumo;
-import modelo.Prato;
 
 public class TelaCadastroInsumo extends JFrame {
 
@@ -104,7 +102,7 @@ public class TelaCadastroInsumo extends JFrame {
 				}
 			}
 		});
-		btnSalvar.setBounds(104, 112, 115, 23);
+		btnSalvar.setBounds(37, 114, 115, 23);
 		contentPane.add(btnSalvar);
 		
 		lblmsg = new JLabel("");
@@ -115,7 +113,7 @@ public class TelaCadastroInsumo extends JFrame {
 		chckbxLactose.setBounds(172, 40, 63, 23);
 		contentPane.add(chckbxLactose);
 		
-		checkBoxGluten = new JCheckBox("Gl�ten");
+		checkBoxGluten = new JCheckBox("Gl�ten");
 		checkBoxGluten.setBounds(249, 42, 72, 23);
 		contentPane.add(checkBoxGluten);
 		
@@ -149,6 +147,30 @@ public class TelaCadastroInsumo extends JFrame {
 		});
 		btnLocalizar.setBounds(172, 9, 89, 23);
 		contentPane.add(btnLocalizar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o insumo?", "Confirmação",0);
+					if (opcao==0) {					
+						Insumo p = Fachada.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
+						if (p == null) {
+							JOptionPane.showMessageDialog(contentPane, "Localize um insumo!");
+						}else {
+							Fachada.removerInsumo(p);
+						}
+						JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!");
+						btnNovoInsumo.doClick();						
+					}	
+				} catch (Exception e2) {
+					lblmsg.setText(e2.getMessage());
+				}
+				
+			}
+		});
+		btnExcluir.setBounds(184, 114, 115, 23);
+		contentPane.add(btnExcluir);
 	}
 	
 	private void atualizaDados (Insumo selecionado) {

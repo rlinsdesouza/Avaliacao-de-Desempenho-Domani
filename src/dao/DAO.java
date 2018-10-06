@@ -142,9 +142,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	}
 
 	public void refresh(T obj){
-		manager.delete(obj);
-		manager.store(obj);
-//		manager.ext().refresh(obj, Integer.MAX_VALUE);
+		manager.ext().refresh(obj, Integer.MAX_VALUE);
 	}
 
 	@SuppressWarnings("unchecked")

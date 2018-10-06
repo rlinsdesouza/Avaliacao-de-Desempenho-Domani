@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.db4o.query.Query;
 
-import modelo.Funcionario;
 import modelo.Prato;
+import modelo.Producao;
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
  * Persistencia de Objetos
@@ -25,6 +25,14 @@ public class DAOPrato  extends DAO<Prato>{
 			return (Prato) resultados.get(0);
 		else
 			return null;
+	}
+	
+	public List<Producao> ProducoesComPrato (String nome){	
+		Query q = manager.query();
+		q.constrain(Producao.class);
+		q.descend("prato").descend("nome").constrain(nome);
+		List<Producao> resultados = q.execute();
+		return resultados;
 	}
 
 	
