@@ -27,7 +27,7 @@ public class CSVReader {
 			int i=1;
 			boolean glutem, lactose;
 			
-			line = br.readLine(); //primeira linha cabeçalho
+			line = br.readLine(); //primeira linha cabeï¿½alho
 			
 			while ((line = br.readLine()) != null) {
 				tempArr = line.split(delimiter);
@@ -44,7 +44,7 @@ public class CSVReader {
 						glutem = false;
 					}
 		
-					prato = new Prato (i,tempArr[0],null,1,0,lactose,glutem,null);
+					prato = new Prato (tempArr[0],null,1,0,lactose,glutem,null);
 					pratos.add(prato);
 					i++;
 				}

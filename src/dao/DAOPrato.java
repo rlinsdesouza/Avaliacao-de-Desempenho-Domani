@@ -3,13 +3,29 @@
  */
 package dao;
 
+import java.util.List;
+
+import com.db4o.query.Query;
+
+import modelo.Funcionario;
 import modelo.Prato;
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
  * Persistencia de Objetos
- * Prof. Fausto Maranhão Ayres
+ * Prof. Fausto Maranhï¿½o Ayres
  **********************************/
 public class DAOPrato  extends DAO<Prato>{
+	
+	public Prato readByNome (String nome){	
+		Query q = manager.query();
+		q.constrain(Prato.class);
+		q.descend("nome").constrain(nome);
+		List<Prato> resultados = q.execute();
+		if (resultados.size()>0)
+			return (Prato) resultados.get(0);
+		else
+			return null;
+	}
 
 	
 }

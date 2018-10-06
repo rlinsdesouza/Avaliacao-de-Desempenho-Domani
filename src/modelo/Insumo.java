@@ -1,15 +1,16 @@
 package modelo;
 
-public class Insumo{
+import dao.IDInterface;
+
+public class Insumo implements IDInterface {
 
 	private int id;
 	private String nome;
 	private boolean lactose;
 	private boolean gluten;
 	
-	public Insumo(int codinsumo, String nome, boolean lactose, boolean gluten) {
+	public Insumo(String nome, boolean lactose, boolean gluten) {
 		super();
-		this.id = codinsumo;
 		this.nome = nome.toUpperCase();
 		this.lactose = lactose;
 		this.gluten = gluten;

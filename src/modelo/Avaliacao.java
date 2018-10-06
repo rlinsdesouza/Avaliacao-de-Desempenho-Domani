@@ -1,18 +1,19 @@
 package modelo;
 
-public class Avaliacao  {
+import dao.IDInterface;
 
-	private int idavaliacao;
+public class Avaliacao implements IDInterface  {
+
+	private int id;
 	private Producao produto;
 	private int notaSabor;
 	private int notaAparencia;
 	private String justificativa;
 	private Funcionario avaliador;
 	
-	public Avaliacao(int idavaliacao, Producao produto, int notaSabor, int notaAparencia, String justificativa,
+	public Avaliacao(Producao produto, int notaSabor, int notaAparencia, String justificativa,
 			Funcionario avaliador) {
 		super();
-		this.idavaliacao = idavaliacao;
 		this.produto = produto;
 		this.notaSabor = notaSabor;
 		this.notaAparencia = notaAparencia;
@@ -21,11 +22,11 @@ public class Avaliacao  {
 	}
 
 	public int getIdavaliacao() {
-		return idavaliacao;
+		return id;
 	}
 
 	public void setIdavaliacao(int idavaliacao) {
-		this.idavaliacao = idavaliacao;
+		this.id = idavaliacao;
 	}
 
 	public Producao getProduto() {
@@ -70,19 +71,19 @@ public class Avaliacao  {
 
 	@Override
 	public String toString() {
-		return "Avaliacao [idavaliacao=" + idavaliacao + ", notaSabor=" + notaSabor + ", notaAparencia=" + notaAparencia
+		return "Avaliacao [idavaliacao=" + id + ", notaSabor=" + notaSabor + ", notaAparencia=" + notaAparencia
 				+ ", justificativa=" + justificativa + "]";
 	}
 
 
 	public int getId() {
 		// TODO Auto-generated method stub
-		return this.idavaliacao;
+		return this.id;
 	}
 
 	public void setId(int id) {
 		// TODO Auto-generated method stub
-		this.idavaliacao = id;
+		this.id = id;
 		
 	}
 	

@@ -131,7 +131,7 @@ public class TelaCadastroPrato extends JFrame {
 		chckbxLactose.setBounds(307, 48, 97, 23);
 		contentPane.add(chckbxLactose);
 		
-		checkBoxGluten = new JCheckBox("Glúten");
+		checkBoxGluten = new JCheckBox("Glï¿½ten");
 		checkBoxGluten.setBounds(408, 48, 97, 23);
 		contentPane.add(checkBoxGluten);
 		
@@ -173,7 +173,7 @@ public class TelaCadastroPrato extends JFrame {
 					}
 					atualizaDados(selecionado);	
 				}else {
-					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
+					JOptionPane.showMessageDialog(contentPane, "Nï¿½o localizado!", "Atenï¿½ï¿½o", 2);
 				}	
 			}
 		});
@@ -247,7 +247,7 @@ public class TelaCadastroPrato extends JFrame {
 					}
 					listModel.addElement(selecionado);
 				}else {
-					JOptionPane.showMessageDialog(contentPane, "Não localizado!", "Atenção", 2);
+					JOptionPane.showMessageDialog(contentPane, "Nï¿½o localizado!", "Atenï¿½ï¿½o", 2);
 				}	
 			}
 		});	
@@ -279,6 +279,19 @@ public class TelaCadastroPrato extends JFrame {
 		});
 		btnAtualizarCarac.setBounds(317, 74, 211, 25);
 		contentPane.add(btnAtualizarCarac);
+		
+		JButton btnExcluirPrato = new JButton("Excluir prato");
+		btnExcluirPrato.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o produto?", "ConfirmaÃ§Ã£o",0);
+				if (opcao==0) {
+					Fachada.removerPrato(Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())));
+					JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!", "ConfirmÃ§Ã£o",2);
+				}
+			}
+		});
+		btnExcluirPrato.setBounds(582, 399, 144, 25);
+		contentPane.add(btnExcluirPrato);
 	}
 	private void atualizaDados (Prato selecionado) {
 		textFieldCod.setText(Integer.toString(selecionado.getId()));

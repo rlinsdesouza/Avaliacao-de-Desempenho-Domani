@@ -36,7 +36,7 @@ public class Fachada {
 	public static void cadastrar(){
 		System.out.println("cadastrando...");
 		try {
-			cadastrarFuncionario(0, "Rafael Lins", "073.975.104-26", null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
+			cadastrarFuncionario(0,"Rafael Lins", "073.975.104-26", null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,13 +54,12 @@ public class Fachada {
 	public static Funcionario cadastrarFuncionario (int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) throws Exception {
 		
-		int key = daofuncionario.getKey();
 		DAO.begin();			
-		Funcionario i = daofuncionario.read(key);
+		Funcionario i = daofuncionario.readByNome(nome);
 		if(i != null) {
 			throw new Exception("ja cadastrado:" + nome);
 		}
-		i = new Funcionario(key,matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, conta, endereco,producoes);
+		i = new Funcionario(matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, conta, endereco,producoes);
 		daofuncionario.create(i);		
 		DAO.commit();
 		return i;
@@ -69,13 +68,12 @@ public class Fachada {
 	public static Prato cadastrarPrato (String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
 			boolean gluten, List<Insumo> insumos) throws Exception {
 		
-		int key = daoprato.getKey();
 		DAO.begin();			
-		Prato i = daoprato.read(key);
+		Prato i = daoprato.readByNome(nome);
 		if(i != null) {
 			throw new Exception("produto ja cadastrado:" + nome);
 		}
-		i = new Prato(key, nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
+		i = new Prato(nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
 		daoprato.create(i);		
 		DAO.commit();
 		return i;
@@ -84,14 +82,13 @@ public class Fachada {
 	
 	public static Insumo cadastrarInsumo (String nome, boolean lactose, boolean gluten) throws Exception {
 		
-		int key = daoinsumo.getKey();
 		DAO.begin();			
-		Insumo i = daoinsumo.read(key);
+		Insumo i = daoinsumo.readByNome(nome);
 		if(i != null) {
 			throw new Exception("produto ja cadastrado:" + nome);
 		}
 
-		i = new Insumo(key, nome, lactose, gluten);
+		i = new Insumo(nome, lactose, gluten);
 		daoinsumo.create(i);		
 		DAO.commit();
 		return i;
@@ -99,13 +96,8 @@ public class Fachada {
 	
 	public static Producao cadastrarProducao (String data, Prato prato, Funcionario cozinheiro) throws Exception {
 		
-		int key = daoproducao.getKey();
 		DAO.begin();			
-		Producao i = daoproducao.read(key);
-		if(i != null) {
-			throw new Exception("ja cadastrado:" + prato.getNome());
-		}
-		i = new Producao(key,data,prato,cozinheiro);
+		Producao i = new Producao(data,prato,cozinheiro);
 		daoproducao.create(i);
 		cozinheiro.getProducoes().add(i);
 		daofuncionario.update(cozinheiro);
@@ -116,19 +108,27 @@ public class Fachada {
 	public static Avaliacao cadastrarAvaliacao (Producao producao, int notaSabor, int notaAparencia, String justificativa,
 			Funcionario avaliador) throws Exception {
 		
-		int key = daoavaliacao.getKey();
 		DAO.begin();			
-		Avaliacao i = daoavaliacao.read(key);
-		if(i != null) {
-			throw new Exception("ja cadastrado:" + i);
-		}
-
-		i = new Avaliacao(key,producao,notaSabor,notaAparencia,justificativa,avaliador);
+		Avaliacao i = new Avaliacao(producao,notaSabor,notaAparencia,justificativa,avaliador);
 		daoavaliacao.create(i);
 		producao.getAvaliacoes().add(i);
 		daoproducao.update(producao);
 		DAO.commit();
 		return i;
+	}
+	
+	public static Prato removerPrato (Prato p) {
+		DAO.begin();
+		daoprato.delete(p);		
+		DAO.commit();
+		return p;
+	}
+	
+	public static Insumo removerInsumo (Insumo p) {
+		DAO.begin();
+		daoinsumo.delete(p);		
+		DAO.commit();
+		return p;
 	}
 	
 	public static Producao removerProducao (Producao p) {

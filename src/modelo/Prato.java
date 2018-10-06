@@ -3,7 +3,9 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Prato {
+import dao.IDInterface;
+
+public class Prato implements IDInterface {
 	private int id;
 	private String nome;
 	private String receita;
@@ -13,10 +15,9 @@ public class Prato {
 	private boolean gluten;
 	private List<Insumo> insumos = new ArrayList<Insumo>();
 	
-	public Prato(int id, String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
+	public Prato(String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
 			boolean gluten, List<Insumo> insumos) {
 		super();
-		this.id = id;
 		this.nome = nome.toUpperCase();
 		this.receita = receita;
 		this.dificuldade = dificuldade;
@@ -94,7 +95,7 @@ public class Prato {
 	@Override
 	public String toString() {
 		return "Prato [id=" + id + ", nome=" + nome + ", receita=" + receita + ", dificuldade="
-				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glúten=" + gluten
+				+ dificuldade + ", tempoProduzir=" + tempoProduzir + ", lactose=" + lactose + ", glï¿½ten=" + gluten
 				+ ", insumos=" + insumos + "]";
 	}
 	

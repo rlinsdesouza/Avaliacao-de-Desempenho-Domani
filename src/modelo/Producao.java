@@ -3,15 +3,16 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Producao {
+import dao.IDInterface;
+
+public class Producao implements IDInterface{
 	private int id;
 	private String data;
 	private Prato prato;
 	private Funcionario cozinheiro;
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();
-	public Producao(int id, String data, Prato prato, Funcionario cozinheiro) {
+	public Producao(String data, Prato prato, Funcionario cozinheiro) {
 		super();
-		this.id = id;
 		this.data = data;
 		this.prato = prato;
 		this.cozinheiro = cozinheiro;

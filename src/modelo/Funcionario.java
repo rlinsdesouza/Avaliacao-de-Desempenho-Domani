@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Funcionario {
+import dao.IDInterface;
+
+public class Funcionario implements IDInterface {
 	
 	private int id;
 	private int matricula;
@@ -20,10 +22,9 @@ public class Funcionario {
 	private Endereco endereco;
 	private List<Producao> producoes;
 		
-	public Funcionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
+	public Funcionario(int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		super();
-		this.id = id;
 		this.matricula = matricula;
 		this.nome = nome;
 		this.cpf = cpf;

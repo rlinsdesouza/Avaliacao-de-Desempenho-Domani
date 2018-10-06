@@ -65,7 +65,12 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 		
 		manager = 	Db4oEmbedded.openFile(config, "banco.db4o");
-//		IDControl.registrarManager(manager); 
+		IDControl.registrarManager(manager);
+		IDControl.atualizaTreeMapLegado(manager, Funcionario.class);
+		IDControl.atualizaTreeMapLegado(manager, Producao.class);
+		IDControl.atualizaTreeMapLegado(manager, Avaliacao.class);
+		IDControl.atualizaTreeMapLegado(manager, Insumo.class);
+		IDControl.atualizaTreeMapLegado(manager, Prato.class);
 	}
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
@@ -98,7 +103,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 			System.exit(0);
 		}
 		manager = Db4oClientServer.openClient(config,ip,34000,"usuario1","senha1");	
-//		IDControl.registrarManager(manager); 
+		IDControl.registrarManager(manager); 
 	}
 	public static void close(){
 		if(manager!=null) {
@@ -160,15 +165,16 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		return (List<T>) q.execute();
 	}
 	
-	public int getKey () {
-		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
-				.getGenericSuperclass()).getActualTypeArguments()[0];
-		Query q = manager.query();
-		q.constrain(type);
-		q.descend("id");
-		
-		return q.execute().size()+1;
-	}
+//	public int getKey () {
+//		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
+//				.getGenericSuperclass()).getActualTypeArguments()[0];
+//		Query q = manager.query();
+//		q.constrain(type);
+//		q.descend("id").orderAscending();
+//		q.execute().
+//		
+//		return q.execute().size()+1;
+//	}
 	
 	
 	
@@ -181,22 +187,4 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		manager.rollback();
 	}
 	
-}
-
-class FiltroKey implements Evaluation {
-//	private Class<T> type;
-//	public FiltroKey (Class<T> tipo) {
-//		this.type = tipo;
-//	}
-	
-	Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
-			.getGenericSuperclass()).getActualTypeArguments()[0];
-	
-	
-	
-	public void evaluate (Candidate candidate) {
-		Class<T> o = (Class<T>) candidate.getObject();
-		boolean filtro;
-		candidate.include (filtro);
-;	}
 }
