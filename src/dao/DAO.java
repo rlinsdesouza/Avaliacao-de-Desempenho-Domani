@@ -66,11 +66,11 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		
 		manager = 	Db4oEmbedded.openFile(config, "banco.db4o");
 		IDControl.registrarManager(manager);
-		IDControl.atualizaTreeMapLegado(manager, Funcionario.class);
-		IDControl.atualizaTreeMapLegado(manager, Producao.class);
-		IDControl.atualizaTreeMapLegado(manager, Avaliacao.class);
-		IDControl.atualizaTreeMapLegado(manager, Insumo.class);
-		IDControl.atualizaTreeMapLegado(manager, Prato.class);
+//		IDControl.atualizaTreeMapLegado(manager, Funcionario.class);
+//		IDControl.atualizaTreeMapLegado(manager, Producao.class);
+//		IDControl.atualizaTreeMapLegado(manager, Avaliacao.class);
+//		IDControl.atualizaTreeMapLegado(manager, Insumo.class);
+//		IDControl.atualizaTreeMapLegado(manager, Prato.class);
 	}
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
