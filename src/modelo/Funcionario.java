@@ -26,7 +26,7 @@ public class Funcionario implements IDInterface {
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
 		super();
 		this.matricula = matricula;
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.email = email;
