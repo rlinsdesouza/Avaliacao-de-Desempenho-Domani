@@ -17,7 +17,8 @@ public class Avaliacao implements IDInterface  {
 		this.produto = produto;
 		this.notaSabor = notaSabor;
 		this.notaAparencia = notaAparencia;
-		this.justificativa = justificativa.toUpperCase();
+		if (justificativa != null) 
+			this.justificativa = justificativa.toUpperCase();
 		this.avaliador = avaliador;
 	}
 

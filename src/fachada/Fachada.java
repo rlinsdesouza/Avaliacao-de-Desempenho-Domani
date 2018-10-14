@@ -1,5 +1,6 @@
 package fachada;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,24 +32,6 @@ public class Fachada {
 	
 	public static void finalizar () {
 		DAO.close();
-	}
-		
-	public static void cadastrar(){
-		System.out.println("cadastrando...");
-		try {
-			cadastrarFuncionario(0,"Rafael Lins", "073.975.104-26", null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-
-	
-		List<Prato> pratos = CSVReader.read("pratosbd.csv");
-		for (Prato prato : pratos) {
-			daoprato.create(prato);	
-		}
-		System.out.println("pre-cadastro realizado com sucesso!");
 	}	
 
 	public static Funcionario cadastrarFuncionario (int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
