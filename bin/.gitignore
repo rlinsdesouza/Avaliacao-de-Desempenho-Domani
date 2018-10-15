@@ -1,5 +1,5 @@
-/aplicacao/
-/dao/
 /fachada/
-/modelo/
 /teste/
+/aplicacao/
+/modelo/
+/dao/

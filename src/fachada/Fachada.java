@@ -216,8 +216,14 @@ public class Fachada {
 		return p;
 	}
 	
+	public static Prato adicionarInsumoAoPrato (Prato p, Insumo i) {
+		p.getInsumos().add(i);
+		daoprato.update(p);
+		return p;
+	}
+	
 	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha,String salt,
-			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
+			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco) {
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
 		p.setMatricula(matricula);

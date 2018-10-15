@@ -2,6 +2,8 @@ package teste;
 
 import java.util.Date;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import fachada.Fachada;
 import modelo.Funcionario;
 import modelo.Insumo;
@@ -20,6 +22,7 @@ public class TesteConsole {
 	public TesteConsole () {
 		Fachada.inicializar();
 		cadastrar();
+		alterar();
 	}
 
 	
@@ -52,5 +55,27 @@ public class TesteConsole {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void alterar () {
+		try {
+			System.out.println("adiconando um insumo ao prato");
+			Fachada.adicionarInsumoAoPrato(Fachada.localizarPrato(2), Fachada.localizarInsumo(1));
+			System.out.println("Prato antes de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
+			System.out.println("atualizando um prato em funcao do seus insumos");
+			Fachada.atualizarLactoseGluten(Fachada.localizarPrato(2));
+			System.out.println("Prato depois de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
+			System.out.println("Funcionario antes do update: "+Fachada.localizarFuncionario(1));
+			Fachada.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null, null, null);
+			System.out.println("Funcionario depois do update: "+Fachada.localizarFuncionario(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void remover () {
+		System.out.println("removendo um ");
 	}
 }

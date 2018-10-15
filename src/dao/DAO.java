@@ -26,6 +26,7 @@ import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
 import modelo.Producao;
+import uteis.PasswordUtils;
 
 
 public abstract class DAO<T> implements DAOInterface<T> {
@@ -66,7 +67,8 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		manager = 	Db4oEmbedded.openFile(config, "banco.db4o");
 		IDControl.registrarManager(manager);
 		try {
-			Fachada.cadastrarFuncionario (0,"admin",null,null,null,"admin","admin",null,null,null,null,null);
+			String salt = PasswordUtils.getSalt(30);
+			Fachada.cadastrarFuncionario (0,"admin",null,null,null,PasswordUtils.generateSecurePassword("admin",salt),salt,null,null,null,null,null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

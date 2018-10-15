@@ -24,7 +24,8 @@ public class Prato implements IDInterface {
 		this.tempoProduzir = tempoProduzir;
 		this.lactose = lactose;
 		this.gluten = gluten;
-		this.insumos = insumos;
+		if (insumos != null)
+			this.insumos = insumos;
 	}
 
 	public int getId() {
