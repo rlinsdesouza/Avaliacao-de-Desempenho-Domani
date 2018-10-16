@@ -45,9 +45,9 @@ public class TesteConsole {
 			Prato p2 = Fachada.cadastrarPrato("Lasanha de frango", "Prepare a massa e depois o recheio", 2,45,false,false,null);
 			Prato p3 = Fachada.cadastrarPrato("Feijoada", "Bote uma laranja pra cozinhar junto e absorver a gordura", 3,90,false,false,null);
 
-			Producao r1 = Fachada.cadastrarProducao("2018-10-14",p1,f2);
-			Producao r2 = Fachada.cadastrarProducao("2018-10-14", p2, f2);
-			Producao r3 = Fachada.cadastrarProducao("2018-10-01", p3, f2);
+			Producao r1 = Fachada.cadastrarProducao("14/10/2018",p1,f2);
+			Producao r2 = Fachada.cadastrarProducao("14/10/2018", p2, f2);
+			Producao r3 = Fachada.cadastrarProducao("01/10/2018", p3, f2);
 			
 			Fachada.cadastrarAvaliacao(r1, 10, 8,null,f1);
 			Fachada.cadastrarAvaliacao(r2, 7, 7, "muito molho", f2);
@@ -67,9 +67,9 @@ public class TesteConsole {
 			System.out.println("atualizando um prato em funcao do seus insumos");
 			Fachada.atualizarLactoseGluten(Fachada.localizarPrato(2));
 			System.out.println("Prato depois de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
-			System.out.println("Funcionario antes do update: "+Fachada.localizarFuncionario(1));
+			System.out.println("Funcionario antes do update: "+Fachada.localizarFuncionario(2));
 			Fachada.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null, null, null);
-			System.out.println("Funcionario depois do update: "+Fachada.localizarFuncionario(1));
+			System.out.println("Funcionario depois do update: "+Fachada.localizarFuncionario(2));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -86,7 +86,7 @@ public class TesteConsole {
 			System.out.println(e.getMessage());
 		}
 		try {
-			System.out.println("removendo um prato com produção vinculada: (FEIJOADA) ");
+			System.out.println("removendo um prato com produï¿½ï¿½o vinculada: (FEIJOADA) ");
 			Fachada.removerPrato(Fachada.localizarPrato(3));
 			
 		} catch (Exception e) {
@@ -94,16 +94,17 @@ public class TesteConsole {
 		}
 		try {
 			System.out.println("removendo uma producao com avaliacao vinculada: (PROUCAO DIA 14/10/2018) - FUNCIONARIA HELENA (COD 3) ");
-			Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("2018-10-14",3).get(0));
+			Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("14/10/2018",3).get(0));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		try {
-			System.out.println("removendo uma producao com avaliacao vinculada: (PROUCAO DIA 14/10/2018) - FUNCIONARIA HELENA (COD 3) ");
-			Producao p = Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("2018-10-01",3).get(0));
+			System.out.println("removendo uma producao sem avaliacao vinculada: (PROUCAO DIA 01/10/2018) - FUNCIONARIA HELENA (COD 3) ");
+			Producao p = Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("01/10/2018",3).get(0));
 			System.out.println("Removido com sucesso: "+p);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
+			System.out.println("FALHA TESTE");
 		}
 	}
 	
@@ -138,7 +139,7 @@ public class TesteConsole {
 			System.out.println(a);
 		}
 		
-		System.out.println("Notas das produções do funcionario Helena(id 3) entre 01/10/2018 a 15/10/2018: ");
+		System.out.println("Notas das produï¿½ï¿½es do funcionario Helena(id 3) entre 01/10/2018 a 15/10/2018: ");
 		List<Producao> lphelena = Fachada.listarProducoesPorDataFuncionario("01/10/2018", "15/10/2018", 3);
 		System.out.println(Fachada.calculaNotaProducoes(lphelena));
 	}

@@ -45,6 +45,7 @@ public class DAOProducao extends DAO<Producao>  {
 	public List<Avaliacao> ProducaoComAvaliacao (Producao p){	
 		Query q = manager.query();
 		q.constrain(Producao.class);
+		q.descend("id").constrain(p.getId());
 		q.descend("avaliacoes");
 		List<Avaliacao> resultados = q.execute();
 		return resultados;
@@ -58,7 +59,7 @@ class Filtro  implements Evaluation {
 	private int idf;
 	
 	DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	DateTimeFormatter f2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//	DateTimeFormatter f2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	
 	public Filtro (String datainicial, String datafinal, int id) {
 		this.datainicialf = LocalDate.parse(datainicial, f);
@@ -67,7 +68,7 @@ class Filtro  implements Evaluation {
 	}
 	public void evaluate(Candidate candidate) {
 		Producao p = (Producao) candidate.getObject();
-		LocalDate dataproducao = LocalDate.parse(p.getData(), f2);
+		LocalDate dataproducao = LocalDate.parse(p.getData(), f);
 		candidate.include((dataproducao.isAfter(this.datainicialf)||dataproducao.equals(this.datainicialf))
 						&& (dataproducao.isBefore(this.datafinalf)||dataproducao.equals(this.datafinalf))
 						&& p.getCozinheiro().getId()==this.idf);
