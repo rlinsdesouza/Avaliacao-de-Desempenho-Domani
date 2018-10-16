@@ -124,11 +124,16 @@ public class Fachada {
 		return p;
 	}
 	
-	public static Producao removerProducao (Producao p) {
+	public static Producao removerProducao (Producao p) throws Exception {
 		DAO.begin();
-		p.getCozinheiro().getProducoes().remove(p);
-		daofuncionario.update(p.getCozinheiro());
-		daoproducao.delete(p);		
+		List<Avaliacao> l = daoproducao.ProducaoComAvaliacao(p);
+		if (l.isEmpty()) {
+			p.getCozinheiro().getProducoes().remove(p);
+			daofuncionario.update(p.getCozinheiro());
+			daoproducao.delete(p);
+		}else {
+			throw new Exception ("Impossível excluir, producao com avaliacoes vinculados!");
+		}
 		DAO.commit();
 		return p;
 	}
@@ -140,6 +145,10 @@ public class Fachada {
 		daoavaliacao.delete(p);	
 		DAO.commit();
 		return p;
+	}
+	
+	public static List <Avaliacao> listarAvaliacaoes () {
+		return daoavaliacao.readAll();
 	}
 	
 	public static List <Producao> listarProducoes () {

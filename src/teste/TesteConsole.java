@@ -1,10 +1,9 @@
 package teste;
 
-import java.util.Date;
-
-import javax.swing.plaf.synth.SynthSeparatorUI;
+import java.util.List;
 
 import fachada.Fachada;
+import modelo.Avaliacao;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
@@ -22,7 +21,10 @@ public class TesteConsole {
 	public TesteConsole () {
 		Fachada.inicializar();
 		cadastrar();
+		consultar ();
 		alterar();
+		remover();
+		consultar();
 	}
 
 	
@@ -76,6 +78,68 @@ public class TesteConsole {
 	}
 	
 	public void remover () {
-		System.out.println("removendo um ");
+		try {
+			System.out.println("removendo um insumo com prato vinculado: (CREME DE LEITE)");
+			Fachada.removerInsumo(Fachada.localizarInsumo(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		try {
+			System.out.println("removendo um prato com produção vinculada: (FEIJOADA) ");
+			Fachada.removerPrato(Fachada.localizarPrato(3));
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			System.out.println("removendo uma producao com avaliacao vinculada: (PROUCAO DIA 14/10/2018) - FUNCIONARIA HELENA (COD 3) ");
+			Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("2018-10-14",3).get(0));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			System.out.println("removendo uma producao com avaliacao vinculada: (PROUCAO DIA 14/10/2018) - FUNCIONARIA HELENA (COD 3) ");
+			Producao p = Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("2018-10-01",3).get(0));
+			System.out.println("Removido com sucesso: "+p);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void consultar () {
+		System.out.println("Todos os funcionarios: ");
+		List<Funcionario> l = Fachada.listarFuncionarios();
+		for (Funcionario funcionario : l) {
+			System.out.println(funcionario);
+		}
+		
+		System.out.println("Todos os insumos: ");
+		List<Insumo> li = Fachada.listarInsumo();
+		for (Insumo i : li) {
+			System.out.println(i);
+		}
+		
+		System.out.println("Todos os pratos: ");
+		List<Prato> lp = Fachada.listarPratos();
+		for (Prato p : lp) {
+			System.out.println(p);
+		}
+		
+		System.out.println("Todos as producoes: ");
+		List<Producao> lprod = Fachada.listarProducoes();
+		for (Producao prod : lprod) {
+			System.out.println(prod);
+		}
+		
+		System.out.println("Todos as avaliacoes: ");
+		List<Avaliacao> la = Fachada.listarAvaliacaoes();
+		for (Avaliacao a : la) {
+			System.out.println(a);
+		}
+		
+		System.out.println("Notas das produções do funcionario Helena(id 3) entre 01/10/2018 a 15/10/2018: ");
+		List<Producao> lphelena = Fachada.listarProducoesPorDataFuncionario("01/10/2018", "15/10/2018", 3);
+		System.out.println(Fachada.calculaNotaProducoes(lphelena));
 	}
 }
