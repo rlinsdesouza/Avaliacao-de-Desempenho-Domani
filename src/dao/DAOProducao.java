@@ -11,6 +11,8 @@ import com.db4o.query.Candidate;
 import com.db4o.query.Evaluation;
 import com.db4o.query.Query;
 
+import modelo.Avaliacao;
+import modelo.Prato;
 import modelo.Producao;
 
 public class DAOProducao extends DAO<Producao>  {
@@ -39,27 +41,37 @@ public class DAOProducao extends DAO<Producao>  {
 		List<Producao> result = q.execute();
 		return result;	
 	}
+	
+	public List<Avaliacao> ProducaoComAvaliacao (Producao p){	
+		Query q = manager.query();
+		q.constrain(Producao.class);
+		q.descend("id").constrain(p.getId());
+		q.descend("avaliacoes");
+		List<Avaliacao> resultados = q.execute();
+		return resultados;
+	}
 
 //**************************************************************
 @SuppressWarnings("serial")
 class Filtro  implements Evaluation {
-	private LocalDate datainicial;
-	private LocalDate datafinal;
-	private int id;
+	private LocalDate datainicialf;
+	private LocalDate datafinalf;
+	private int idf;
 	
 	DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//	DateTimeFormatter f2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	
 	public Filtro (String datainicial, String datafinal, int id) {
-		this.datainicial = LocalDate.parse(datainicial, f);
-		this.datafinal = LocalDate.parse(datafinal, f);
-		this.id = id;
+		this.datainicialf = LocalDate.parse(datainicial, f);
+		this.datafinalf = LocalDate.parse(datafinal, f);
+		this.idf = id;
 	}
 	public void evaluate(Candidate candidate) {
 		Producao p = (Producao) candidate.getObject();
 		LocalDate dataproducao = LocalDate.parse(p.getData(), f);
-		candidate.include((dataproducao.isAfter(this.datainicial)||dataproducao.equals(this.datainicial))
-						&& (dataproducao.isBefore(this.datafinal)||dataproducao.equals(this.datafinal))
-						&& p.getCozinheiro().getId()==this.id);
+		candidate.include((dataproducao.isAfter(this.datainicialf)||dataproducao.equals(this.datainicialf))
+						&& (dataproducao.isBefore(this.datafinalf)||dataproducao.equals(this.datafinalf))
+						&& p.getCozinheiro().getId()==this.idf);
 	}
 }
 

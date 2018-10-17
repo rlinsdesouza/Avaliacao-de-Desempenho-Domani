@@ -16,10 +16,9 @@ import com.db4o.ObjectContainer;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.cs.Db4oClientServer;
 import com.db4o.cs.config.ClientConfiguration;
-import com.db4o.query.Candidate;
-import com.db4o.query.Evaluation;
 import com.db4o.query.Query;
 
+import fachada.Fachada;
 import modelo.Avaliacao;
 import modelo.ContaBancaria;
 import modelo.Endereco;
@@ -27,6 +26,7 @@ import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
 import modelo.Producao;
+import uteis.PasswordUtils;
 
 
 public abstract class DAO<T> implements DAOInterface<T> {
@@ -66,6 +66,13 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		
 		manager = 	Db4oEmbedded.openFile(config, "banco.db4o");
 		IDControl.registrarManager(manager);
+		try {
+			String salt = PasswordUtils.getSalt(30);
+			Fachada.cadastrarFuncionario (0,"admin",null,null,null,PasswordUtils.generateSecurePassword("admin",salt),salt,null,null,null,null,null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
 //		IDControl.atualizaTreeMapLegado(manager, Funcionario.class);
 //		IDControl.atualizaTreeMapLegado(manager, Producao.class);
 //		IDControl.atualizaTreeMapLegado(manager, Avaliacao.class);
@@ -104,6 +111,12 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		}
 		manager = Db4oClientServer.openClient(config,ip,34000,"usuario1","senha1");	
 		IDControl.registrarManager(manager); 
+		try {
+			Fachada.cadastrarFuncionario (0,"admin",null,null,null,"admin","admin",null,null,null,null,null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public static void close(){
 		if(manager!=null) {
