@@ -34,8 +34,8 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 	public static void open(){	
 		if(manager==null){		
-			abrirBancoLocal();
-			//abrirBancoServidor();
+//			abrirBancoLocal();
+			abrirBancoServidor();
 		}
 	}
 	private static void abrirBancoLocal(){
@@ -86,7 +86,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		config.common().objectClass(Funcionario.class).cascadeOnActivate(true);
 		config.common().objectClass(Avaliacao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Avaliacao.class).cascadeOnUpdate(true);;
-		config.common().objectClass(Avaliacao.class).cascadeOnActivate(true);
+		config.common().objectClass(Avaliacao.class).cascadeOnActivate(true);		
 		config.common().objectClass(Producao.class).cascadeOnDelete(false);;
 		config.common().objectClass(Producao.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Producao.class).cascadeOnActivate(true);
