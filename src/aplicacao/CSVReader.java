@@ -25,7 +25,7 @@ public class CSVReader {
 			List<Prato> pratos = new ArrayList<Prato>();
 			Prato prato;
 			int i=1;
-			boolean glutem, lactose;
+			boolean gluten, lactose;
 			
 			line = br.readLine(); //primeira linha cabe�alho
 			
@@ -39,12 +39,12 @@ public class CSVReader {
 					}
 					
 					if (tempArr[2].equalsIgnoreCase("SIM")) {
-						glutem = true; 
+						gluten = true; 
 					}else {
-						glutem = false;
+						gluten = false;
 					}
 		
-					prato = new Prato (tempArr[0],null,1,0,lactose,glutem,null);
+					prato = new Prato (tempArr[0],null,1,0,lactose,gluten,null);
 					pratos.add(prato);
 					i++;
 				}

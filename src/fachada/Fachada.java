@@ -1,5 +1,6 @@
 package fachada;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,24 +32,6 @@ public class Fachada {
 	
 	public static void finalizar () {
 		DAO.close();
-	}
-		
-	public static void cadastrar(){
-		System.out.println("cadastrando...");
-		try {
-			cadastrarFuncionario(0,"Rafael Lins", "073.975.104-26", null, "linsdesouza@hotmail.com", "teste", "teste", null, null, null, null, null);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-
-	
-		List<Prato> pratos = CSVReader.read("pratosbd.csv");
-		for (Prato prato : pratos) {
-			daoprato.create(prato);	
-		}
-		System.out.println("pre-cadastro realizado com sucesso!");
 	}	
 
 	public static Funcionario cadastrarFuncionario (int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
@@ -141,11 +124,16 @@ public class Fachada {
 		return p;
 	}
 	
-	public static Producao removerProducao (Producao p) {
+	public static Producao removerProducao (Producao p) throws Exception {
 		DAO.begin();
-		p.getCozinheiro().getProducoes().remove(p);
-		daofuncionario.update(p.getCozinheiro());
-		daoproducao.delete(p);		
+		List<Avaliacao> l = daoproducao.ProducaoComAvaliacao(p);
+		if (l.isEmpty()) {
+			p.getCozinheiro().getProducoes().remove(p);
+			daofuncionario.update(p.getCozinheiro());
+			daoproducao.delete(p);
+		}else {
+			throw new Exception ("Impossível excluir, producao com avaliacoes vinculados!");
+		}
 		DAO.commit();
 		return p;
 	}
@@ -157,6 +145,10 @@ public class Fachada {
 		daoavaliacao.delete(p);	
 		DAO.commit();
 		return p;
+	}
+	
+	public static List <Avaliacao> listarAvaliacaoes () {
+		return daoavaliacao.readAll();
 	}
 	
 	public static List <Producao> listarProducoes () {
@@ -233,8 +225,14 @@ public class Fachada {
 		return p;
 	}
 	
+	public static Prato adicionarInsumoAoPrato (Prato p, Insumo i) {
+		p.getInsumos().add(i);
+		daoprato.update(p);
+		return p;
+	}
+	
 	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha,String salt,
-			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
+			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco) {
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
 		p.setMatricula(matricula);
