@@ -48,7 +48,15 @@ public class Servidor implements Runnable{
 		System.out.println("Database size: "+databaseSize);
 		System.out.println("Servidor inicializado com sucesso: ");
 		thread = new Thread(this);
-		thread.start();		
+		thread.start();
+		
+		Runtime.getRuntime().addShutdownHook(
+			    new Thread(new Runnable() {
+			        @Override
+			        public void run() {
+			           close ();
+			        }
+			    }));
 	}
 
 	public void run() {

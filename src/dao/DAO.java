@@ -6,8 +6,10 @@
 
 package dao;
 
+import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+import java.util.Properties;
 
 import javax.swing.JOptionPane;
 
@@ -31,6 +33,7 @@ import uteis.PasswordUtils;
 
 public abstract class DAO<T> implements DAOInterface<T> {
 	protected static ObjectContainer manager;
+	private static Properties dadosserver; 
 
 	public static void open(){	
 		if(manager==null){		
@@ -73,11 +76,6 @@ public abstract class DAO<T> implements DAOInterface<T> {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}			
-//		IDControl.atualizaTreeMapLegado(manager, Funcionario.class);
-//		IDControl.atualizaTreeMapLegado(manager, Producao.class);
-//		IDControl.atualizaTreeMapLegado(manager, Avaliacao.class);
-//		IDControl.atualizaTreeMapLegado(manager, Insumo.class);
-//		IDControl.atualizaTreeMapLegado(manager, Prato.class);
 	}
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
@@ -104,12 +102,21 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		config.common().objectClass(Prato.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Prato.class).cascadeOnActivate(true);
 
-		String ip = JOptionPane.showInputDialog("Digite o IP do servidor");
-		if (ip==null || ip.isEmpty())	{
-			System.out.println("ip invalido");
-			System.exit(0);
+//		String ip = JOptionPane.showInputDialog("Digite o IP do servidor");
+//		if (ip==null || ip.isEmpty())	{
+//			System.out.println("ip invalido");
+//			System.exit(0);
+//		}
+		
+
+		try {
+			dadosserver = ManipuladorProperties.getProp();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, e1.getMessage());
 		}
-		manager = Db4oClientServer.openClient(config,ip,34000,"usuario1","senha1");	
+		
+		manager = Db4oClientServer.openClient(config,dadosserver.getProperty("prop.server.host"),34000,dadosserver.getProperty("prop.server.login"),dadosserver.getProperty("prop.server.password"));	
 		IDControl.registrarManager(manager); 
 		try {
 			Fachada.cadastrarFuncionario (0,"admin",null,null,null,"admin","admin",null,null,null,null,null);
