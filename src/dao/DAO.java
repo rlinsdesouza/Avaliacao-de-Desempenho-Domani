@@ -69,13 +69,13 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		
 		manager = 	Db4oEmbedded.openFile(config, "banco.db4o");
 		IDControl.registrarManager(manager);
-		try {
-			String salt = PasswordUtils.getSalt(30);
-			Fachada.cadastrarFuncionario (0,"admin",null,null,null,PasswordUtils.generateSecurePassword("admin",salt),salt,null,null,null,null,null);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}			
+//		try {
+//			String salt = PasswordUtils.getSalt(30);
+//			Fachada.cadastrarFuncionario (0,"admin",null,null,null,PasswordUtils.generateSecurePassword("admin",salt),salt,null,null,null,null,null);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}			
 	}
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
@@ -118,12 +118,13 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		
 		manager = Db4oClientServer.openClient(config,dadosserver.getProperty("prop.server.host"),34000,dadosserver.getProperty("prop.server.login"),dadosserver.getProperty("prop.server.password"));	
 		IDControl.registrarManager(manager); 
-		try {
-			Fachada.cadastrarFuncionario (0,"admin",null,null,null,"admin","admin",null,null,null,null,null);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			String salt = PasswordUtils.getSalt(30);
+//			Fachada.cadastrarFuncionario (0,"admin",null,null,null,PasswordUtils.generateSecurePassword("admin",salt),salt,null,null,null,null,null);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	public static void close(){
 		if(manager!=null) {
