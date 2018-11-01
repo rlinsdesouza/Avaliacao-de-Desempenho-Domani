@@ -182,13 +182,14 @@ public class TelaConsulta extends JFrame {
 						
 						List<Producao> lista1 = Fachada.listarProducoesPorDataFuncionario(datainicial, datafinal, selecionado.getId());
 						double nota = Fachada.calculaNotaProducoes(lista1);
+						int produtividade = Fachada.calculaProdutividadeProducoes(lista1);
 						texto = "Listagem de funcionarios: \n";
 //						if (lista1.isEmpty())
 //							texto += "n�o existe";
 //						else
 //							for(Producao f: lista1)
 //								texto +=  f + "\n";
-						texto += "Funcionario:" +selecionado.getNome()+" Nota:"+nota;
+						texto += "Funcionario:" +selecionado.getNome()+"\n Nota: "+nota+"\n Produtividade: "+produtividade;
 
 						textArea.setText(texto);	
 					}

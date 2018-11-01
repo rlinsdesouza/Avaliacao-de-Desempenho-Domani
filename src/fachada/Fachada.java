@@ -1,10 +1,8 @@
 package fachada;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import aplicacao.CSVReader;
 import dao.DAO;
 import dao.DAOAvaliacao;
 import dao.DAOFuncionario;
@@ -28,7 +26,12 @@ public class Fachada {
 	
 	public static void inicializar () {
 		DAO.open();
+		List<Producao> prod = listarProducoesPorDataFuncionario("01/10/2018", "31/10/2018", 4);
+	for (Producao p : prod) {
+		if (p.getAvaliacoes()) System.out.println("possui\n");
 	}
+	}
+	
 	
 	public static void finalizar () {
 		DAO.close();
@@ -278,13 +281,25 @@ public class Fachada {
 		for (Producao producao : p) {
 			if (!producao.getAvaliacoes().isEmpty()) {
 				for (Avaliacao a : producao.getAvaliacoes()) {
-					numerador = numerador + ((((a.getNotaAparencia()+a.getNotaSabor())/2)*producao.getPrato().getDificuldade()));
-					denominador = denominador + producao.getPrato().getDificuldade();
+					if (a != null) {
+						numerador = numerador + ((((a.getNotaAparencia()+a.getNotaSabor())/2)*producao.getPrato().getDificuldade()));
+						denominador = denominador + producao.getPrato().getDificuldade();	
+					}
 				}
 			}
 		}
 		nota = numerador/denominador;		
 		return nota;
+	}
+	
+	public static int calculaProdutividadeProducoes (List<Producao> p) {
+		int produtividade = 0;
+		
+		for (Producao producao : p) {
+			produtividade += producao.getPrato().getDificuldade();
+		}
+		
+		return produtividade;
 	}
 
 }
