@@ -26,12 +26,7 @@ public class Fachada {
 	
 	public static void inicializar () {
 		DAO.open();
-		List<Producao> prod = listarProducoesPorDataFuncionario("01/10/2018", "31/10/2018", 4);
-	for (Producao p : prod) {
-		if (p.getAvaliacoes()) System.out.println("possui\n");
 	}
-	}
-	
 	
 	public static void finalizar () {
 		DAO.close();
@@ -281,14 +276,12 @@ public class Fachada {
 		for (Producao producao : p) {
 			if (!producao.getAvaliacoes().isEmpty()) {
 				for (Avaliacao a : producao.getAvaliacoes()) {
-					if (a != null) {
-						numerador = numerador + ((((a.getNotaAparencia()+a.getNotaSabor())/2)*producao.getPrato().getDificuldade()));
-						denominador = denominador + producao.getPrato().getDificuldade();	
-					}
+					numerador = numerador + ((((a.getNotaAparencia()+a.getNotaSabor())/2)*producao.getPrato().getDificuldade()));
+					denominador = denominador + producao.getPrato().getDificuldade();	
 				}
 			}
 		}
-		nota = numerador/denominador;		
+		nota = numerador/denominador;
 		return nota;
 	}
 	
