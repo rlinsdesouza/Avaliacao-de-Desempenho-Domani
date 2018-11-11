@@ -1,11 +1,15 @@
 <?php
-namespace projeto\DAO;
-
+namespace projeto\dados;
+use \projeto\modelo\Funcionario;
+use \projeto\modelo\Prato;
+use \projeto\modelo\Insumo;
+use \projeto\modelo\Avaliacao;
+use \projeto\modelo\Producao;
 
 class Restaurante {
 
     private static $avaliacaoes =[];
-    private static$idavaliacaoes = 0;
+    private static $idavaliacaoes = 0;
     private static $funcionarios =[];
     private static $idfuncionarios = 0;
     private static $insumos =[];
@@ -14,6 +18,32 @@ class Restaurante {
     private static $idpratos=0;
     private static $producoes=[];
     private static $idproducoes=0;
+
+
+
+
+    public static function addAvaliacao (Avaliacao $ava) {
+        array_push(self::$avaliacoes, $ava);
+    }
+
+
+    public static function addFuncionario (Funcionario $ava) {
+        array_push(self::$funcionarios, $ava);
+    }
+
+
+    public static function addInsumo (Insumo $ava) {
+        array_push(self::$insumos, $ava);
+    }
+
+
+    public static function addPrato (Prato $ava) {
+        array_push(self::$pratos, $ava);
+    }
+
+    public static function addProducao (Producao $ava) {
+        array_push(self::$producoes, $ava);
+    }
 
 
     /**
@@ -118,7 +148,7 @@ class Restaurante {
     /**
      * Get the value of idpratos
      */ 
-    public function getIdpratos()
+    public static function getIdpratos()
     {
         return ++self::$idpratos;
     }
@@ -126,7 +156,7 @@ class Restaurante {
     /**
      * Get the value of idproducoes
      */ 
-    public function getIdproducoes()
+    public static function getIdproducoes()
     {
         return ++self::$idproducoes;
     }

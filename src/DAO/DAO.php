@@ -1,11 +1,12 @@
 <?php
 namespace projeto\DAO;
-use \projeto\DAO\Restaurante;
+use \projeto\dados\Restaurante;
 
 class DAO implements \projeto\DAO\DAOInterface {
-    
+
     public function create ($obj) {
-        
+        $classe = 'add'.$this->get_class_name(get_class($obj));
+        Restaurante::$classe($obj);
     }
 
     public function read (int $id) {
@@ -41,6 +42,12 @@ class DAO implements \projeto\DAO\DAOInterface {
     public static function rollback(){
 
     }
+
+    function get_class_name($classname)
+{
+    if ($pos = strrpos($classname, '\\')) return substr($classname, $pos + 1);
+    return $pos;
+}
 
 }
 

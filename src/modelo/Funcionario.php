@@ -2,7 +2,7 @@
 namespace projeto\modelo;
 use \projeto\DAO\IDInterface;
 use \projeto\traits\Nomeavel;
-// use modelo\Producao;
+// use \projeto\modelo\Producao;
 
 class Funcionario implements IDInterface {
     private $matricula;
@@ -21,6 +21,7 @@ class Funcionario implements IDInterface {
         $this->cpf =  $cpf;
         $this->email = $email;
         $this->dataAdmissao = $dataAdmissao;
+        $this->producoes = [];
     }
 
     public function getId() : int {
