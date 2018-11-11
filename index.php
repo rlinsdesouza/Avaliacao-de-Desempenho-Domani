@@ -18,15 +18,21 @@
     
 
     $prato = $fachada->cadastrarPrato('Testando', 'Faça devagar pra não se perder',1, 365, false, false,array($insumo1,$insumo2)); 
-    echo $prato.'<br>';
+    // echo $prato.'<br>';
+    echo Restaurante::getPratos()[0];
 
     $funcionario1 = $fachada->cadastrarFuncionario('Rafael Lins','1','073.975.104-26','linsdesousa@hotmail.com','2010-05-10');
     $funcionario2 = $fachada->cadastrarFuncionario('Dora','2','','','2010-05-10');
     
-    $producao = $fachada->cadastrarProducao('2018-10-14',$prato,$funcionario2);
-    echo $producao.'<br>';
+    // $producao = $fachada->cadastrarProducao('2018-10-14',$prato,$funcionario2);    
+    $producao = $fachada->cadastrarProducao('2018-10-14',$prato,Restaurante::getFuncionarios()[1]);
+    // echo $producao.'<br>';
+    echo Restaurante::getProducaos()[0].'<br>';
+    // print_r(Restaurante::getFuncionarios()[0]->getProducoes());
 
-    $avaliacao = new Avaliacao ($producao,10,5,'parecia uma gororoba',$funcionario1);
-    echo $avaliacao.'<br>';
+    $avaliacao = $fachada->cadastrarAvaliacao($producao,10,5,'parecia uma gororoba',$funcionario1);
+    // echo $avaliacao.'<br>';
+    echo Restaurante::getAvaliacaos()[0].'<br> ';
+
 
     ?>

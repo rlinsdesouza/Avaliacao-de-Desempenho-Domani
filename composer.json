@@ -1,5 +1,8 @@
 {
     "autoload": {
         "psr-4": {"projeto\\": "src/"}
+    },
+    "require": {
+        "twbs/bootstrap": "4.1.3"
     }
 }

@@ -85,19 +85,23 @@ class Fachada {
 		$this->dao->begin();			
 		$i = new Producao($data,$prato,$cozinheiro);
 		$this->daoproducao->create($i);
+		// var_dump($cozinheiro);
+		debug_zval_dump($cozinheiro);
 		array_push($cozinheiro->getProducoes(),$i);
+		debug_zval_dump($cozinheiro);
+		// var_dump($cozinheiro);
 		$this->daofuncionario->update($cozinheiro);
 		$this->dao->commit();
 		return $i;
 	}
 	
-	public function cadastrarAvaliacao (Producao $producao, int $notaSabor, int $notaAparencia, String $justificativa,
+	public function cadastrarAvaliacao (Producao &$producao, int $notaSabor, int $notaAparencia, String $justificativa,
 			Funcionario $avaliador) {
 		
 		$this->dao->begin();			
 		$i = new Avaliacao($producao,$notaSabor,$notaAparencia,$justificativa,$avaliador);
 		$this->daoavaliacao->create($i);
-		array_push($this->$producao->getAvaliacoes(),$i);
+		array_push($producao->getAvaliacoes(),$i);
 		$this->daoproducao->update($producao);
 		$this->dao->commit();
 		return $i;

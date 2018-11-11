@@ -8,22 +8,22 @@ use \projeto\modelo\Producao;
 
 class Restaurante {
 
-    private static $avaliacaoes =[];
-    private static $idavaliacaoes = 0;
+    private static $avaliacaos =[];
+    private static $idavaliacaos = 0;
     private static $funcionarios =[];
     private static $idfuncionarios = 0;
     private static $insumos =[];
     private static $idinsumos =0;
     private static $pratos=[];
     private static $idpratos=0;
-    private static $producoes=[];
-    private static $idproducoes=0;
+    private static $producaos=[];
+    private static $idproducaos=0;
 
 
 
 
     public static function addAvaliacao (Avaliacao $ava) {
-        array_push(self::$avaliacoes, $ava);
+        array_push(self::$avaliacaos, $ava);
     }
 
 
@@ -42,16 +42,16 @@ class Restaurante {
     }
 
     public static function addProducao (Producao $ava) {
-        array_push(self::$producoes, $ava);
+        array_push(self::$producaos, $ava);
     }
 
 
     /**
      * Get the value of avaliacaoes
      */ 
-    public static function getAvaliacaoes()
+    public static function getAvaliacaos()
     {
-        return self::$avaliacaoes;
+        return self::$avaliacaos;
     }
 
     /**
@@ -59,9 +59,9 @@ class Restaurante {
      *
      * @return  self
      */ 
-    public static function setAvaliacaoes($avaliacaoes)
+    public static function setAvaliacaos($avaliacaos)
     {
-        array_ṕush(self::$avaliacaoes, $avaliacaoes);
+        array_ṕush(self::$avaliacaos, $avaliacaos);
     }
 
     /**
@@ -103,30 +103,30 @@ class Restaurante {
     }
 
     /**
-     * Get the value of producoes
+     * Get the value of producaos
      */ 
-    public function getProducoes()
+    public static function getProducaos()
     {
-        return self::$producoes;
+        return self::$producaos;
     }
 
     /**
-     * Set the value of producoes
+     * Set the value of producaos
      *
      * @return  self
      */ 
-    public static function setProducoes($producoes)
+    public static function setProducaos($producaos)
     {
-        array_push(self::$producoes , $producoes);
+        array_push(self::$producaos , $producaos);
 
     }
 
     /**
      * Get the value of idavaliacaoes
      */ 
-    public static function getIdavaliacaoes()
+    public static function getIdavaliacaos()
     {
-        return ++self::$idavaliacaoes;
+        return ++self::$idavaliacaos;
     }
 
     /**
@@ -154,11 +154,19 @@ class Restaurante {
     }
 
     /**
-     * Get the value of idproducoes
+     * Get the value of idproducaos
      */ 
-    public static function getIdproducoes()
+    public static function getIdproducaos()
     {
-        return ++self::$idproducoes;
+        return ++self::$idproducaos;
+    }
+
+    /**
+     * Get the value of funcionarios
+     */ 
+    public static function getFuncionarios()
+    {
+        return self::$funcionarios;
     }
 }
 

@@ -14,7 +14,11 @@ class DAO implements \projeto\DAO\DAOInterface {
     }
 
     public function update ($obj) {
-
+        // $classe = 'get'.$this->get_class_name(get_class($obj)).'s';
+        // $producoes = Restaurante::$classe;
+        // foreach ($producoes as $key => $value) {
+        //     if 
+        // }
     }
 
     public function delete ($obj) {
