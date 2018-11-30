@@ -131,16 +131,21 @@ public class TelaConsulta extends JFrame {
 		btnTodasAsProducoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
-					String texto;
-					List<Producao> lista1 = Fachada.listarProducoes();
-					texto = "Listagem de funcionarios: \n";
-					if (lista1.isEmpty())
-						texto += "n�o existe";
-					else
-						for(Producao f: lista1)
-							texto +=  f + "\n";
-
-					textArea.setText(texto);
+					if (datePickerinicial.getDate() == null) {
+						JOptionPane.showMessageDialog(contentPane, "Favor selecionar a data que deseja no primeiro campo", "Atencao", 2);
+					}else {
+						String texto;
+						String data = sf.format(datePickerinicial.getDate());
+						List<Producao> lista1 = Fachada.listarProducoesPorData(data);
+						texto = "Listagem de funcionarios: \n";
+						if (lista1.isEmpty())
+							texto += "n�o existe";
+						else
+							for(Producao f: lista1)
+								texto +=  f + "\n";
+	
+						textArea.setText(texto);
+					}
 				}
 				catch(Exception erro){
 					JOptionPane.showMessageDialog(null,erro.getMessage());
