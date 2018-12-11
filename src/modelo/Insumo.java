@@ -1,13 +1,22 @@
 package modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import dao.IDInterface;
 
+@Entity
 public class Insumo implements IDInterface {
 
+	@Id
 	private int id;
 	private String nome;
 	private boolean lactose;
 	private boolean gluten;
+	
+	public Insumo () {
+		
+	}
 	
 	public Insumo(String nome, boolean lactose, boolean gluten) {
 		super();

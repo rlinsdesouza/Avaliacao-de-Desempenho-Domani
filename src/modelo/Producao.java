@@ -3,14 +3,26 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import dao.IDInterface;
 
+@Entity
 public class Producao implements IDInterface{
+	@Id
 	private int id;
 	private String data;
 	private Prato prato;
 	private Funcionario cozinheiro;
+	@OneToMany(mappedBy="produto")
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();
+	
+	public Producao () {
+		
+	}
+	
 	public Producao(String data, Prato prato, Funcionario cozinheiro) {
 		super();
 		this.data = data;

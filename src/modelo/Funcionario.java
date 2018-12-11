@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import dao.IDInterface;
 
+@Entity
 public class Funcionario implements IDInterface {
 	
+	@Id
 	private int id;
 	private int matricula;
 	private String nome;
@@ -20,7 +26,12 @@ public class Funcionario implements IDInterface {
 	private Date dataDemissao;
 	private ContaBancaria conta;
 	private Endereco endereco;
+	@OneToMany(mappedBy= "avaliador")
 	private List<Producao> producoes;
+	
+	public Funcionario () {
+		
+	}
 		
 	public Funcionario(int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
 			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {

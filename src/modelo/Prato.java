@@ -3,9 +3,14 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import dao.IDInterface;
 
+@Entity
 public class Prato implements IDInterface {
+	@Id
 	private int id;
 	private String nome;
 	private String receita;

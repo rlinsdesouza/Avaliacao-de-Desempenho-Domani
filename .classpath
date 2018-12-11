@@ -14,5 +14,8 @@
 	<classpathentry kind="lib" path="lib/jgoodies-common-1.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jgoodies-looks-2.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="lib-banco/postgresql-9.4-1206-jdbc42.jar"/>
+	<classpathentry kind="lib" path="eclipselink/eclipselink.jar"/>
+	<classpathentry kind="lib" path="eclipselink/javax.persistence_2.2.1.v201807122140.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

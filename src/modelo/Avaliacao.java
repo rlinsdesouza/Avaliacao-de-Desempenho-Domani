@@ -1,15 +1,31 @@
 package modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 import dao.IDInterface;
 
+@Entity
 public class Avaliacao implements IDInterface  {
 
+	@Id
+	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
+	@ManyToOne
 	private Producao produto;
 	private int notaSabor;
 	private int notaAparencia;
 	private String justificativa;
+	@ManyToOne
 	private Funcionario avaliador;
+	
+	public Avaliacao () {
+		
+	}
 	
 	public Avaliacao(Producao produto, int notaSabor, int notaAparencia, String justificativa,
 			Funcionario avaliador) {
