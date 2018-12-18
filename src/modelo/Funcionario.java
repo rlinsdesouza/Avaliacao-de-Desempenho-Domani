@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -14,6 +16,7 @@ import dao.IDInterface;
 public class Funcionario implements IDInterface {
 	
 	@Id
+	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
 	private int matricula;
 	private String nome;
@@ -24,9 +27,7 @@ public class Funcionario implements IDInterface {
 	private String salt;
 	private Date dataAdmissao;
 	private Date dataDemissao;
-	private ContaBancaria conta;
-	private Endereco endereco;
-	@OneToMany(mappedBy= "avaliador")
+	@OneToMany(mappedBy="cozinheiro")
 	private List<Producao> producoes;
 	
 	public Funcionario () {
@@ -34,7 +35,7 @@ public class Funcionario implements IDInterface {
 	}
 		
 	public Funcionario(int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
-			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) {
+			Date dataAdmissao, Date dataDemissao, List<Producao> producoes) {
 		super();
 		this.matricula = matricula;
 		this.nome = nome.toUpperCase();
@@ -45,8 +46,6 @@ public class Funcionario implements IDInterface {
 		this.salt = salt;
 		this.dataAdmissao = dataAdmissao;
 		this.dataDemissao = dataDemissao;
-		this.conta = conta;
-		this.endereco = endereco;
 		this.producoes = new ArrayList<Producao>();
 	}
 
@@ -131,21 +130,6 @@ public class Funcionario implements IDInterface {
 		this.dataDemissao = dataDemissao;
 	}
 
-	public ContaBancaria getConta() {
-		return conta;
-	}
-
-	public void setConta(ContaBancaria conta) {
-		this.conta = conta;
-	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
 
 	public List<Producao> getProducoes() {
 		return producoes;
@@ -159,7 +143,7 @@ public class Funcionario implements IDInterface {
 	public String toString() {
 		return "Funcionario [matricula=" + matricula + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone
 				+ ", email=" + email + ", senha=" + senha + ", dataAdmissao=" + dataAdmissao + ", dataDemissao="
-				+ dataDemissao + ", conta=" + conta + ", endereco=" + endereco + "]";
+				+ dataDemissao + "]";
 	}
 	
 

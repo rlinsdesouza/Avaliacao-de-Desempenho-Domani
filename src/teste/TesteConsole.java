@@ -20,19 +20,19 @@ public class TesteConsole {
 	
 	public TesteConsole () {
 		Fachada.inicializar();
-		cadastrar();
-		consultar ();
-		alterar();
-		remover();
-		consultar();
+//		cadastrar();
+//		consultar ();
+//		alterar();
+//		remover();
+//		consultar();
 	}
 
 	
 	public void cadastrar(){
 		System.out.println("cadastrando...");
 		try {
-			Funcionario f1 = Fachada.cadastrarFuncionario(1, "Rafael Lins","073.975.104-26",null, "linsdesouza@hotmail.com", "teste","teste",null,null, null, null,null);
-			Funcionario f2 = Fachada.cadastrarFuncionario(2, "Maria Helena",null,null,null,null,null,null,null, null, null,null);
+			Funcionario f1 = Fachada.cadastrarFuncionario(1, "Rafael Lins","073.975.104-26",null, "linsdesouza@hotmail.com", "teste","teste",null, null,null);
+			Funcionario f2 = Fachada.cadastrarFuncionario(2, "Maria Helena",null,null,null,null,null, null, null,null);
 
 			Insumo i1 = Fachada.cadastrarInsumo("CREME DE LEITE", true, false);
 			Insumo i2 = Fachada.cadastrarInsumo ("Farinha Yoki", true, true);
@@ -68,7 +68,7 @@ public class TesteConsole {
 			Fachada.atualizarLactoseGluten(Fachada.localizarPrato(2));
 			System.out.println("Prato depois de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
 			System.out.println("Funcionario antes do update: "+Fachada.localizarFuncionario(2));
-			Fachada.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null, null, null);
+			Fachada.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null);
 			System.out.println("Funcionario depois do update: "+Fachada.localizarFuncionario(2));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

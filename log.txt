@@ -1,0 +1,114 @@
+[EL Fine]: server: 2018-12-18 14:45:08.278--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2018-12-18 14:45:08.483--ServerSession(1776957250)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Insumo] is set to [FIELD].
+[EL Config]: metadata: 2018-12-18 14:45:08.507--ServerSession(1776957250)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Funcionario] is set to [FIELD].
+[EL Config]: metadata: 2018-12-18 14:45:08.519--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2018-12-18 14:45:08.519--ServerSession(1776957250)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Avaliacao] is set to [FIELD].
+[EL Config]: metadata: 2018-12-18 14:45:08.521--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2018-12-18 14:45:08.521--ServerSession(1776957250)--Thread(Thread[main,5,main])--The element [field avaliador] is being defaulted to a one to one mapping.
+[EL Config]: metadata: 2018-12-18 14:45:08.522--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field avaliador] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2018-12-18 14:45:08.523--ServerSession(1776957250)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Prato] is set to [FIELD].
+[EL Config]: metadata: 2018-12-18 14:45:08.523--ServerSession(1776957250)--Thread(Thread[main,5,main])--The element [field insumos] is being defaulted to a one to many mapping.
+[EL Config]: metadata: 2018-12-18 14:45:08.523--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field insumos] is being defaulted to: class modelo.Insumo.
+[EL Config]: metadata: 2018-12-18 14:45:08.524--ServerSession(1776957250)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Producao] is set to [FIELD].
+[EL Config]: metadata: 2018-12-18 14:45:08.525--ServerSession(1776957250)--Thread(Thread[main,5,main])--The element [field prato] is being defaulted to a one to one mapping.
+[EL Config]: metadata: 2018-12-18 14:45:08.525--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field prato] is being defaulted to: class modelo.Prato.
+[EL Config]: metadata: 2018-12-18 14:45:08.525--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
+[EL Config]: metadata: 2018-12-18 14:45:08.525--ServerSession(1776957250)--Thread(Thread[main,5,main])--The element [field cozinheiro] is being defaulted to a one to one mapping.
+[EL Config]: metadata: 2018-12-18 14:45:08.525--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field cozinheiro] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2018-12-18 14:45:08.526--ServerSession(1776957250)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Insumo] is being defaulted to: Insumo.
+[EL Config]: metadata: 2018-12-18 14:45:08.529--ServerSession(1776957250)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Insumo] is being defaulted to: INSUMO.
+[EL Config]: metadata: 2018-12-18 14:45:08.549--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2018-12-18 14:45:08.551--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2018-12-18 14:45:08.552--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.552--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2018-12-18 14:45:08.552--ServerSession(1776957250)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Funcionario] is being defaulted to: Funcionario.
+[EL Config]: metadata: 2018-12-18 14:45:08.552--ServerSession(1776957250)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Funcionario] is being defaulted to: FUNCIONARIO.
+[EL Config]: metadata: 2018-12-18 14:45:08.553--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
+[EL Config]: metadata: 2018-12-18 14:45:08.553--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [dataDemissao] is being defaulted to: DATADEMISSAO.
+[EL Config]: metadata: 2018-12-18 14:45:08.556--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [telefone] is being defaulted to: TELEFONE.
+[EL Fine]: metadata: 2018-12-18 14:45:08.557--Thread(Thread[main,5,main])--java.lang.ClassNotFoundException: java.util.Listjava.lang.Integer
+[EL Config]: metadata: 2018-12-18 14:45:08.561--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [salt] is being defaulted to: SALT.
+[EL Config]: metadata: 2018-12-18 14:45:08.561--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [matricula] is being defaulted to: MATRICULA.
+[EL Config]: metadata: 2018-12-18 14:45:08.562--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
+[EL Config]: metadata: 2018-12-18 14:45:08.562--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2018-12-18 14:45:08.562--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.562--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [dataAdmissao] is being defaulted to: DATAADMISSAO.
+[EL Config]: metadata: 2018-12-18 14:45:08.563--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2018-12-18 14:45:08.563--ServerSession(1776957250)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Avaliacao] is being defaulted to: Avaliacao.
+[EL Config]: metadata: 2018-12-18 14:45:08.563--ServerSession(1776957250)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Avaliacao] is being defaulted to: AVALIACAO.
+[EL Config]: metadata: 2018-12-18 14:45:08.564--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [notaAparencia] is being defaulted to: NOTAAPARENCIA.
+[EL Config]: metadata: 2018-12-18 14:45:08.564--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [justificativa] is being defaulted to: JUSTIFICATIVA.
+[EL Config]: metadata: 2018-12-18 14:45:08.564--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.564--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [notaSabor] is being defaulted to: NOTASABOR.
+[EL Config]: metadata: 2018-12-18 14:45:08.565--ServerSession(1776957250)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Prato] is being defaulted to: Prato.
+[EL Config]: metadata: 2018-12-18 14:45:08.565--ServerSession(1776957250)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Prato] is being defaulted to: PRATO.
+[EL Config]: metadata: 2018-12-18 14:45:08.565--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [receita] is being defaulted to: RECEITA.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [dificuldade] is being defaulted to: DIFICULDADE.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [tempoProduzir] is being defaulted to: TEMPOPRODUZIR.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.566--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2018-12-18 14:45:08.567--ServerSession(1776957250)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Producao] is being defaulted to: Producao.
+[EL Config]: metadata: 2018-12-18 14:45:08.567--ServerSession(1776957250)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Producao] is being defaulted to: PRODUCAO.
+[EL Config]: metadata: 2018-12-18 14:45:08.567--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [data] is being defaulted to: DATA.
+[EL Config]: metadata: 2018-12-18 14:45:08.567--ServerSession(1776957250)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.581--ServerSession(1776957250)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produto] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.581--ServerSession(1776957250)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produto] is being defaulted to: PRODUTO_ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.582--ServerSession(1776957250)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field avaliador] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.582--ServerSession(1776957250)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [avaliador] is being defaulted to: AVALIADOR_ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.598--ServerSession(1776957250)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [field insumos] is being defaulted to: PRATO_INSUMO.
+[EL Config]: metadata: 2018-12-18 14:45:08.598--ServerSession(1776957250)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field insumos] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.598--ServerSession(1776957250)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [insumos] is being defaulted to: Prato_ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field insumos] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [insumos] is being defaulted to: insumos_ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field prato] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [prato] is being defaulted to: PRATO_ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field cozinheiro] is being defaulted to: ID.
+[EL Config]: metadata: 2018-12-18 14:45:08.599--ServerSession(1776957250)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [cozinheiro] is being defaulted to: COZINHEIRO_ID.
+[EL Info]: 2018-12-18 14:45:09.023--ServerSession(1776957250)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.3.v20180807-4be1041
+[EL Fine]: connection: 2018-12-18 14:45:09.14--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
+[EL Config]: connection: 2018-12-18 14:45:09.149--ServerSession(1776957250)--Connection(1008315045)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "postgres"
+	datasource URL=> "jdbc:postgresql://localhost:5432/bancopgd"
+))
+[EL Config]: connection: 2018-12-18 14:45:09.183--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/bancopgd
+	User: postgres
+	Database: PostgreSQL  Version: 9.5.5
+	Driver: PostgreSQL Native Driver  Version: PostgreSQL 9.4 JDBC4.2 (build 1206)
+[EL Info]: connection: 2018-12-18 14:45:09.233--ServerSession(1776957250)--Thread(Thread[main,5,main])--/file:/Z:/20171370003/Documents/Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink login successful
+[EL Fine]: sql: 2018-12-18 14:45:09.252--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO DROP CONSTRAINT FK_PRODUCAO_COZINHEIRO_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.283--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO DROP CONSTRAINT FK_PRODUCAO_PRATO_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.285--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO DROP CONSTRAINT FK_AVALIACAO_PRODUTO_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.287--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO DROP CONSTRAINT FK_AVALIACAO_AVALIADOR_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.29--ServerSession(1776957250)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2018-12-18 14:45:09.303--ServerSession(1776957250)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.3.v20180807-4be1041): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: constraint "fk_avaliacao_avaliador_id" of relation "avaliacao" does not exist
+Error Code: 0
+Call: ALTER TABLE AVALIACAO DROP CONSTRAINT FK_AVALIACAO_AVALIADOR_ID
+Query: DataModifyQuery(sql="ALTER TABLE AVALIACAO DROP CONSTRAINT FK_AVALIACAO_AVALIADOR_ID")
+[EL Fine]: sql: 2018-12-18 14:45:09.304--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRATO_INSUMO DROP CONSTRAINT FK_PRATO_INSUMO_insumos_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.313--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRATO_INSUMO DROP CONSTRAINT FK_PRATO_INSUMO_Prato_ID
+[EL Fine]: sql: 2018-12-18 14:45:09.315--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE INSUMO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.322--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE PRODUCAO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.325--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE FUNCIONARIO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.33--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE AVALIACAO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.332--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE PRATO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.336--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--DROP TABLE PRATO_INSUMO CASCADE
+[EL Fine]: sql: 2018-12-18 14:45:09.344--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO (ID  SERIAL NOT NULL, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), PRIMARY KEY (ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.357--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE PRODUCAO (ID  SERIAL NOT NULL, DATA VARCHAR(255), COZINHEIRO_ID INTEGER, PRATO_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.399--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE FUNCIONARIO (ID  SERIAL NOT NULL, CPF VARCHAR(255), DATAADMISSAO TIMESTAMP, DATADEMISSAO TIMESTAMP, EMAIL VARCHAR(255), MATRICULA INTEGER, NOME VARCHAR(255), SALT VARCHAR(255), SENHA VARCHAR(255), TELEFONE BYTEA, PRIMARY KEY (ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.434--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE AVALIACAO (ID  SERIAL NOT NULL, JUSTIFICATIVA VARCHAR(255), NOTAAPARENCIA INTEGER, NOTASABOR INTEGER, PRODUTO_ID INTEGER, AVALIADOR_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.45--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE PRATO (ID  SERIAL NOT NULL, DIFICULDADE INTEGER, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), RECEITA VARCHAR(255), TEMPOPRODUZIR INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.477--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--CREATE TABLE PRATO_INSUMO (Prato_ID INTEGER NOT NULL, insumos_ID INTEGER NOT NULL, PRIMARY KEY (Prato_ID, insumos_ID))
+[EL Fine]: sql: 2018-12-18 14:45:09.485--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_COZINHEIRO_ID FOREIGN KEY (COZINHEIRO_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2018-12-18 14:45:09.507--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_PRATO_ID FOREIGN KEY (PRATO_ID) REFERENCES PRATO (ID)
+[EL Fine]: sql: 2018-12-18 14:45:09.512--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_PRODUTO_ID FOREIGN KEY (PRODUTO_ID) REFERENCES PRODUCAO (ID)
+[EL Fine]: sql: 2018-12-18 14:45:09.516--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_AVALIADOR_ID FOREIGN KEY (AVALIADOR_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2018-12-18 14:45:09.521--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRATO_INSUMO ADD CONSTRAINT FK_PRATO_INSUMO_insumos_ID FOREIGN KEY (insumos_ID) REFERENCES INSUMO (ID)
+[EL Fine]: sql: 2018-12-18 14:45:09.549--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--ALTER TABLE PRATO_INSUMO ADD CONSTRAINT FK_PRATO_INSUMO_Prato_ID FOREIGN KEY (Prato_ID) REFERENCES PRATO (ID)
+[EL Severe]: ejb: 2018-12-18 14:45:09.561--ServerSession(1776957250)--Thread(Thread[main,5,main])--java.lang.IllegalArgumentException: When generating DDL to scripts, a drop script target must be specified using the [javax.persistence.schema-generation.scripts.drop-target] property.
+[EL Config]: connection: 2018-12-18 14:45:09.561--ServerSession(1776957250)--Connection(860481979)--Thread(Thread[main,5,main])--disconnect
+[EL Info]: connection: 2018-12-18 14:45:09.562--ServerSession(1776957250)--Thread(Thread[main,5,main])--/file:/Z:/20171370003/Documents/Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink logout successful
+[EL Config]: connection: 2018-12-18 14:45:09.562--ServerSession(1776957250)--Connection(1008315045)--Thread(Thread[main,5,main])--disconnect

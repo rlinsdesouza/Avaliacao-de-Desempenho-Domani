@@ -3,15 +3,15 @@ package fachada;
 import java.util.Date;
 import java.util.List;
 
-import dao.DAO;
 import dao.DAOAvaliacao;
 import dao.DAOFuncionario;
 import dao.DAOInsumo;
 import dao.DAOPrato;
 import dao.DAOProducao;
+//import dao.DAO;
+import daojpa.DAO;
 import modelo.Avaliacao;
-import modelo.ContaBancaria;
-import modelo.Endereco;
+
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
@@ -33,14 +33,14 @@ public class Fachada {
 	}	
 
 	public static Funcionario cadastrarFuncionario (int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha, String salt,
-			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco, List<Producao> producoes) throws Exception {
+			Date dataAdmissao, Date dataDemissao, List<Producao> producoes) throws Exception {
 		
 		DAO.begin();			
 		Funcionario i = daofuncionario.readByNome(nome);
 		if(i != null) {
 			throw new Exception("ja cadastrado:" + nome);
 		}
-		i = new Funcionario(matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, conta, endereco,producoes);
+		i = new Funcionario(matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, producoes);
 		daofuncionario.create(i);		
 		DAO.commit();
 		return i;
@@ -230,7 +230,7 @@ public class Fachada {
 	}
 	
 	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha,String salt,
-			Date dataAdmissao, Date dataDemissao, ContaBancaria conta, Endereco endereco) {
+			Date dataAdmissao, Date dataDemissao) {
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
 		p.setMatricula(matricula);

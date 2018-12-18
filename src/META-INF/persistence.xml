@@ -17,21 +17,20 @@
 		    <property name="eclipselink.logging.level" 	value="fine"/>	    
 		    <property name="eclipselink.logging.file" 	value="log.txt"/>	
 		</properties>	
-		<!--	
 
-		<properties>
+<!-- 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 		    <property name="javax.persistence.jdbc.url"  value="jdbc:mysql://127.0.0.1:3306/bancopgd" />
 		    <property name="javax.persistence.jdbc.user"  value="root" />
 		    <property name="javax.persistence.jdbc.password" value="" />
 		    
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
-            <property name="javax.persistence.schema-generation.scripts.action" value="create"/>  
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>  
             <property name="javax.persistence.schema-generation.scripts.create-target" value="ddl.txt"/>
 		    <property name="eclipselink.logging.level" value="fine"/>	    
 		    <property name="eclipselink.logging.file" value="log.txt"/>	
-		</properties>
- -->
+		</properties> -->
+		
 	</persistence-unit>
 				
 </persistence>

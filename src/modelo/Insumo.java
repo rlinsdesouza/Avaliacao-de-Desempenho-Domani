@@ -1,6 +1,8 @@
 package modelo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import dao.IDInterface;
@@ -9,6 +11,7 @@ import dao.IDInterface;
 public class Insumo implements IDInterface {
 
 	@Id
+	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private boolean lactose;
