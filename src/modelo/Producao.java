@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import dao.IDInterface;
@@ -18,9 +19,11 @@ public class Producao implements IDInterface{
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
 	private String data;
+	@ManyToOne
 	private Prato prato;
+	@ManyToOne
 	private Funcionario cozinheiro;
-	@OneToMany(mappedBy="produto")
+	@OneToMany(mappedBy="produto",orphanRemoval=true)
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();
 	
 	public Producao () {

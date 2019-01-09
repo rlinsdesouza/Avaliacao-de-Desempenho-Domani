@@ -1,9 +1,13 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 import dao.IDInterface;
 
@@ -16,6 +20,8 @@ public class Insumo implements IDInterface {
 	private String nome;
 	private boolean lactose;
 	private boolean gluten;
+	@ManyToMany
+	private List<Prato> pratos = new ArrayList<Prato>();
 	
 	public Insumo () {
 		

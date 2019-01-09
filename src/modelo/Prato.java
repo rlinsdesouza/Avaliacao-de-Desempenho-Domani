@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import dao.IDInterface;
 
@@ -22,7 +24,10 @@ public class Prato implements IDInterface {
 	private int tempoProduzir;
 	private boolean lactose;
 	private boolean gluten;
+	@ManyToMany(mappedBy="pratos")
 	private List<Insumo> insumos = new ArrayList<Insumo>();
+	@OneToMany(mappedBy="prato")
+	private List<Producao> producoes = new ArrayList<Producao>();
 	
 	public Prato(String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,
 			boolean gluten, List<Insumo> insumos) {

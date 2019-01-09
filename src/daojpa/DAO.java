@@ -42,7 +42,6 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		//			properties.put(PersistenceUnitProperties.SCHEMA_GENERATION_SCRIPTS_ACTION, "create");
 		//			properties.put("hibernate.hbm2ddl.auto", "update");
 		factory = Persistence.createEntityManagerFactory("bancopgd-eclipselink", properties);
-		//factory = Persistence.createEntityManagerFactory("agenda-hibernate", properties);
 		manager = factory.createEntityManager();
 		
 //		EmbeddedConfiguration config =  Db4oEmbedded.newConfiguration(); 

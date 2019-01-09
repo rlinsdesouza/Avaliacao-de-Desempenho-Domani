@@ -1,7 +1,7 @@
-/modelo/
-/META-INF/
-/teste/
-/daojpa/
-/dao/
-/fachada/
 /aplicacao/
+/dao/
+/daojpa/
+/fachada/
+/modelo/
+/servidor/
+/teste/

@@ -21,6 +21,7 @@ public class Avaliacao implements IDInterface  {
 	private int notaSabor;
 	private int notaAparencia;
 	private String justificativa;
+	@ManyToOne
 	private Funcionario avaliador;
 	
 	public Avaliacao () {

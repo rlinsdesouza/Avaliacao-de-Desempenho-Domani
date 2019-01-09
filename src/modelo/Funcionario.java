@@ -29,6 +29,8 @@ public class Funcionario implements IDInterface {
 	private Date dataDemissao;
 	@OneToMany(mappedBy="cozinheiro")
 	private List<Producao> producoes;
+	@OneToMany(mappedBy="avaliador")
+	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 	
 	public Funcionario () {
 		
