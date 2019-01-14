@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachada;
+import fachada.Fachadaold;
 import modelo.Insumo;
 import modelo.Prato;
 
@@ -104,11 +104,11 @@ public class TelaCadastroPrato extends JFrame {
 								insumos.add((Insumo) insumo);
 						};
 						
-						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));					
+						Prato p = Fachadaold.localizarPrato(Integer.parseInt(textFieldCod.getText()));					
 						if (p == null) {
-							p = Fachada.cadastrarPrato(nome, receita,dificuldade,tempo,lactose,gluten,insumos);
+							p = Fachadaold.cadastrarPrato(nome, receita,dificuldade,tempo,lactose,gluten,insumos);
 						}else {
-							Fachada.atualizarPrato(p.getId(),nome, receita,dificuldade,tempo,lactose,gluten,insumos);
+							Fachadaold.atualizarPrato(p.getId(),nome, receita,dificuldade,tempo,lactose,gluten,insumos);
 						}
 						atualizaDados(p);	
 						lblmsg.setText("cadastrado/atualizado "+p.getNome());
@@ -161,7 +161,7 @@ public class TelaCadastroPrato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Prato selecionado=null;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do prato", "Localiza prato", 0);
-				List<Prato> pratos = Fachada.listarPratos(nome); 
+				List<Prato> pratos = Fachadaold.listarPratos(nome); 
 				
 				if (pratos.size() != 0) {
 					if (pratos.size()>1) {
@@ -235,7 +235,7 @@ public class TelaCadastroPrato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Insumo selecionado=null;
 				String nome = JOptionPane.showInputDialog(btnAddInsumo, "Nome do insumo", "Localiza insumo",1);
-				List<Insumo> insumos = Fachada.listarInsumo(nome);
+				List<Insumo> insumos = Fachadaold.listarInsumo(nome);
 
 				if (insumos.size() != 0) {
 					if (insumos.size()>1) {
@@ -277,9 +277,9 @@ public class TelaCadastroPrato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					if (textFieldCod.getText() != null) {
-						Prato p = Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText()));
+						Prato p = Fachadaold.localizarPrato(Integer.parseInt(textFieldCod.getText()));
 						btnCriar.doClick();
-						p = Fachada.atualizarLactoseGluten(p);
+						p = Fachadaold.atualizarLactoseGluten(p);
 						JOptionPane.showMessageDialog(contentPane, "Atualizado com sucesso", "Confirmacao", 2);
 						atualizaDados(p);
 					}else {
@@ -299,7 +299,7 @@ public class TelaCadastroPrato extends JFrame {
 				try {
 					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o produto?", "Confirmação",0);
 					if (opcao==0) {
-						Fachada.removerPrato(Fachada.localizarPrato(Integer.parseInt(textFieldCod.getText())));
+						Fachadaold.removerPrato(Fachadaold.localizarPrato(Integer.parseInt(textFieldCod.getText())));
 						JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!", "Confirmção",2);
 						btnNovo.doClick();
 					}	

@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import fachada.Fachada;
+import fachada.Fachadaold;
 import modelo.Avaliacao;
 import modelo.Funcionario;
 import modelo.Prato;
@@ -127,12 +127,12 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 				Prato selecionado;
 				
 				Producao p = (Producao) listModel2.getElementAt(listPratosNavaliados.getSelectedIndex());
-				Funcionario avaliador = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodAvaliador.getText()));
+				Funcionario avaliador = Fachadaold.localizarFuncionario(Integer.parseInt(textFieldCodAvaliador.getText()));
 				
 				TelaAvaliacaoCozinha t = new TelaAvaliacaoCozinha(p, avaliador);
 				t.setVisible(true);
              	String data = sf.format(datePicker.getDate());
-				List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+				List<Producao> producoes = Fachadaold.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
 				atualizaDados(producoes);				
 			}
 		});
@@ -142,9 +142,9 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		btnRemoverPrato = new JButton("Remover Avalia��o");
 		btnRemoverPrato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Fachada.removerAvaliacao ((Avaliacao) listModel.getElementAt(listPratosAvaliados.getSelectedIndex()));
+				Fachadaold.removerAvaliacao ((Avaliacao) listModel.getElementAt(listPratosAvaliados.getSelectedIndex()));
 				String data = sf.format(datePicker.getDate());
-				List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
+				List<Producao> producoes = Fachadaold.listarProducoesPorDataFuncionario(data,Integer.parseInt(textFieldCodFuncionario.getText()));
 				atualizaDados(producoes);
 			}
 		});
@@ -166,7 +166,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 					int opcao = JOptionPane.showConfirmDialog(contentPane, "Confirma a data para busca:"+data, "Confirmação",0);
 					if (opcao == 0) {
 						String nome = JOptionPane.showInputDialog(contentPane, "Nome do cozinheiro", "Localiza cozinheiro",1);
-						List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome);
+						List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(nome);
 
 						Funcionario selecionado;
 						if (funcionarios.size()>1) {
@@ -180,10 +180,10 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 						}
 						
 						
-						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,selecionado.getId());
+						List<Producao> producoes = Fachadaold.listarProducoesPorDataFuncionario(data,selecionado.getId());
 						
 						nome = JOptionPane.showInputDialog(contentPane, "Nome do avaliador", "Localiza avaliador",1);
-						List<Funcionario> avaliadores = Fachada.listarFuncionarios(nome);
+						List<Funcionario> avaliadores = Fachadaold.listarFuncionarios(nome);
 
 						if (avaliadores.size()>1) {
 							selecionado = seleciona(avaliadores);
@@ -273,7 +273,7 @@ public class TelaCadastroAvaliacaoCozinha extends JFrame {
 		DecimalFormat dc = new DecimalFormat("#.##");  
 		dc.setMinimumFractionDigits(2);
 		dc.setMaximumFractionDigits(2);
-		txtNotaAvaliados.setText(dc.format((Fachada.calculaNotaProducoes(producoes))));
+		txtNotaAvaliados.setText(dc.format((Fachadaold.calculaNotaProducoes(producoes))));
 		lblmsg.setText("");
 	}
 	

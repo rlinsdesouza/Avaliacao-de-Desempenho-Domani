@@ -5,29 +5,30 @@ package daojpa;
 
 import java.util.List;
 
-import com.db4o.query.Query;
+import javax.persistence.Query;
 
+import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
 
 public class DAOInsumo extends DAO<Insumo>  {
 	public Insumo readByNome (String nome){	
-		Query q = manager.query();
-		q.constrain(Insumo.class);
-		q.descend("nome").constrain(nome);
-		List<Insumo> resultados = q.execute();
+		Query q = manager.createQuery(
+				"select i from Insumo i where i.nome = :name");
+		q.setParameter("name", nome);
+		List<Insumo> resultados = q.getResultList();
 		if (resultados.size()>0)
 			return (Insumo) resultados.get(0);
 		else
 			return null;
 	}
 	
-	public List<Prato> PratosComInsumo (String nome){	
-		Query q = manager.query();
-		q.constrain(Prato.class);
-		q.descend("insumos").descend("nome").constrain(nome);
-		List<Prato> resultados = q.execute();
-		return resultados;
-	}
-	
+//	public List<Prato> PratosComInsumo (String nome){	
+//		Query q = manager.query();
+//		q.constrain(Prato.class);
+//		q.descend("insumos").descend("nome").constrain(nome);
+//		List<Prato> resultados = q.execute();
+//		return resultados;
+//	}
+//	
 }

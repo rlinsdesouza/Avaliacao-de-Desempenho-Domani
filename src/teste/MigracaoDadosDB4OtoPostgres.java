@@ -10,16 +10,18 @@ import modelo.Insumo;
 import modelo.Prato;
 import modelo.Producao;
 
-public class TesteConsole {
+public class MigracaoDadosDB4OtoPostgres {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new TesteConsole ();
+		new MigracaoDadosDB4OtoPostgres ();
+		Fachadaold.finalizar();
 		Fachada.finalizar();
 
 	}
 	
-	public TesteConsole () {
+	public MigracaoDadosDB4OtoPostgres () {
+		Fachadaold.inicializar();
 		Fachada.inicializar();
 		cadastrar();
 //		consultar ();
@@ -30,30 +32,43 @@ public class TesteConsole {
 
 	
 	public void cadastrar(){
-		System.out.println("cadastrando...");
+		System.out.println("migrando...");
 		try {
-			Funcionario f1 = Fachada.cadastrarFuncionario(1, "Rafael Lins","073.975.104-26",null, "linsdesouza@hotmail.com", "teste","teste",null, null,null);
-			Funcionario f2 = Fachada.cadastrarFuncionario(2, "Maria Helena",null,null,null,null,null, null, null,null);
-
-			Insumo i1 = Fachada.cadastrarInsumo("CREME DE LEITE", true, false);
-			Insumo i2 = Fachada.cadastrarInsumo ("Farinha Yoki", true, true);
+			List<Funcionario> bancofuncionario = Fachadaold.listarFuncionarios();
+			for (Funcionario funcionario : bancofuncionario) {
+				Fachada.cadastrarFuncionario(funcionario.getMatricula(), funcionario.getNome(), funcionario.getCpf(), null, funcionario.getEmail(), funcionario.getSenha(), funcionario.getSalt(), funcionario.getDataAdmissao(), funcionario.getDataDemissao(),null);
+			}
 			
-//			List<Prato> pratos = CSVReader.read("pratosbd.csv");
-//			for (Prato prato : pratos) {
-//				Fachada.cadastrarPrato(prato.getNome(), prato.getReceita(),prato.getDificuldade(), prato.getTempoProduzir(), prato.isLactose(), prato.isGluten(), prato.getInsumos());	
-//			}
-			Prato p1 = Fachada.cadastrarPrato("Farofa de calabresa", "Faça devagar pra não se perder", 1,30,false,false,null);
-			Prato p2 = Fachada.cadastrarPrato("Lasanha de frango", "Prepare a massa e depois o recheio", 2,45,false,false,null);
-			Prato p3 = Fachada.cadastrarPrato("Feijoada", "Bote uma laranja pra cozinhar junto e absorver a gordura", 3,90,false,false,null);
-
-			Producao r1 = Fachada.cadastrarProducao("14/10/2018",p1,f2);
-			Producao r2 = Fachada.cadastrarProducao("14/10/2018", p2, f2);
-			Producao r3 = Fachada.cadastrarProducao("01/10/2018", p3, f2);
+			List<Insumo> bancoinsumos = Fachadaold.listarInsumo();
+			for (Insumo insumo : bancoinsumos) {
+				Fachada.cadastrarInsumo(insumo.getNome(), insumo.isLactose(), insumo.isGluten());
+			}
 			
-			Fachada.cadastrarAvaliacao(r1, 10, 8,null,f1);
-			Fachada.cadastrarAvaliacao(r2, 7, 7, "muito molho", f2);
+			List<Prato> bancopratos = Fachadaold.listarPratos();
+			for (Prato prato : bancopratos) {
+				Fachada.cadastrarPrato(prato.getNome(), prato.getReceita(), prato.getDificuldade(), prato.getTempoProduzir(), prato.isLactose(), prato.isGluten(), prato.getInsumos());
+//				int idPrato = Fachada.listarPratos(prato.getNome()).get(0).getId();
+				if(prato.getInsumos()!=null) {
+					for (Insumo insumo : prato.getInsumos()) {
+//						int idInsumo = Fachada.listarInsumo(insumo.getNome()).get(0).getId();
+						Fachada.adicionarInsumoAoPrato(prato, insumo);
+					}
+				}
+				
+			}
+			
+//			Prato p1 = Fachadaold.cadastrarPrato("Farofa de calabresa", "Faça devagar pra não se perder", 1,30,false,false,null);
+//			Prato p2 = Fachadaold.cadastrarPrato("Lasanha de frango", "Prepare a massa e depois o recheio", 2,45,false,false,null);
+//			Prato p3 = Fachadaold.cadastrarPrato("Feijoada", "Bote uma laranja pra cozinhar junto e absorver a gordura", 3,90,false,false,null);
 
-			System.out.println("pre-cadastro realizado com sucesso!");
+//			Producao r1 = Fachadaold.cadastrarProducao("14/10/2018",p1,f2);
+//			Producao r2 = Fachadaold.cadastrarProducao("14/10/2018", p2, f2);
+//			Producao r3 = Fachadaold.cadastrarProducao("01/10/2018", p3, f2);
+			
+//			Fachadaold.cadastrarAvaliacao(r1, 10, 8,null,f1);
+//			Fachadaold.cadastrarAvaliacao(r2, 7, 7, "muito molho", f2);
+
+			System.out.println("migra��o realizado com sucesso!");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

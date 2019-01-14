@@ -3,13 +3,12 @@ package fachada;
 import java.util.Date;
 import java.util.List;
 
-import daojpa.DAOAvaliacao;
-import daojpa.DAOFuncionario;
-import daojpa.DAOInsumo;
-import daojpa.DAOPrato;
-import daojpa.DAOProducao;
-//import dao.DAO;
-import daojpa.DAO;
+import dao.DAOAvaliacao;
+import dao.DAOFuncionario;
+import dao.DAOInsumo;
+import dao.DAOPrato;
+import dao.DAOProducao;
+import dao.DAO;
 import modelo.Avaliacao;
 
 import modelo.Funcionario;
@@ -17,7 +16,7 @@ import modelo.Insumo;
 import modelo.Prato;
 import modelo.Producao;
 
-public class Fachada {
+public class Fachadaold {
 	private static DAOInsumo daoinsumo = new DAOInsumo();
 	private static DAOFuncionario daofuncionario = new DAOFuncionario() ;
 	private static DAOPrato daoprato = new DAOPrato ();
@@ -52,15 +51,12 @@ public class Fachada {
 		DAO.begin();			
 		Prato i = daoprato.readByNome(nome);
 		if(i != null) {
-//			throw new Exception("produto ja cadastrado:" + nome);
-			return null;
-		}else {
-			i = new Prato(nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
-			daoprato.create(i);		
-			DAO.commit();
-			return i;
+			throw new Exception("produto ja cadastrado:" + nome);
 		}
-		
+		i = new Prato(nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
+		daoprato.create(i);		
+		DAO.commit();
+		return i;
 	}
 	
 	
@@ -148,13 +144,13 @@ public class Fachada {
 		return p;
 	}
 	
-//	public static List <Avaliacao> listarAvaliacaoes () {
-//		return daoavaliacao.readAll();
-//	}
-//	
-//	public static List <Producao> listarProducoes () {
-//		return daoproducao.readAll();
-//	}
+	public static List <Avaliacao> listarAvaliacaoes () {
+		return daoavaliacao.readAll();
+	}
+	
+	public static List <Producao> listarProducoes () {
+		return daoproducao.readAll();
+	}
 	
 	public static List <Producao> listarProducoesPorData (String data) {
 		return daoproducao.consultarProducoesPorDia(data);
@@ -168,26 +164,26 @@ public class Fachada {
 		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
 	}
 	
-//	public static List <Funcionario> listarFuncionarios () {
-//		return daofuncionario.readAll();
-//	}
-//	
-//	public static List <Funcionario> listarFuncionarios (String nome) {
-//		return daofuncionario.readAll(nome);
-//	}
-//	
-//	public static List <Prato> listarPratos () {
-//		return daoprato.readAll();
-//	}
-//	
+	public static List <Funcionario> listarFuncionarios () {
+		return daofuncionario.readAll();
+	}
+	
+	public static List <Funcionario> listarFuncionarios (String nome) {
+		return daofuncionario.readAll(nome);
+	}
+	
+	public static List <Prato> listarPratos () {
+		return daoprato.readAll();
+	}
+	
 	public static List <Prato> listarPratos (String nome) {
 		return daoprato.readAll(nome);
 	}
-//
-//	public static List<Insumo> listarInsumo() {
-//		return daoinsumo.readAll();
-//	}
-//	
+
+	public static List<Insumo> listarInsumo() {
+		return daoinsumo.readAll();
+	}
+	
 	public static List<Insumo> listarInsumo(String nome) {
 		return daoinsumo.readAll(nome);
 	}

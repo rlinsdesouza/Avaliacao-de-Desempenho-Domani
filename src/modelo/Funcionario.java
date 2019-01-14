@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,9 +28,9 @@ public class Funcionario implements IDInterface {
 	private String salt;
 	private Date dataAdmissao;
 	private Date dataDemissao;
-	@OneToMany(mappedBy="cozinheiro")
+	@OneToMany(mappedBy="cozinheiro",cascade=CascadeType.ALL)
 	private List<Producao> producoes;
-	@OneToMany(mappedBy="avaliador")
+	@OneToMany(mappedBy="avaliador",cascade=CascadeType.ALL)
 	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 	
 	public Funcionario () {

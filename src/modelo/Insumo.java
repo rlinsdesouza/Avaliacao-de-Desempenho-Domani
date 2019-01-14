@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,7 @@ public class Insumo implements IDInterface {
 	private String nome;
 	private boolean lactose;
 	private boolean gluten;
-	@ManyToMany
+	@ManyToMany (cascade=CascadeType.ALL)
 	private List<Prato> pratos = new ArrayList<Prato>();
 	
 	public Insumo () {

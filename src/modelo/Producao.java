@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,11 +20,11 @@ public class Producao implements IDInterface{
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
 	private String data;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Prato prato;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Funcionario cozinheiro;
-	@OneToMany(mappedBy="produto",orphanRemoval=true)
+	@OneToMany(mappedBy="produto",cascade=CascadeType.ALL,orphanRemoval=true)
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();
 	
 	public Producao () {

@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import fachada.Fachada;
+import fachada.Fachadaold;
 import modelo.Avaliacao;
 import modelo.Funcionario;
 import modelo.Producao;
@@ -107,7 +107,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 							break;
 						}
 						
-						avaliacao = Fachada.cadastrarAvaliacao(producao,notaSabor,notaAparencia,textFieldJusiticativa.getText(),avaliador);					
+						avaliacao = Fachadaold.cadastrarAvaliacao(producao,notaSabor,notaAparencia,textFieldJusiticativa.getText(),avaliador);					
 						JOptionPane.showMessageDialog(contentPane, "Salvo/Atualizado com sucesso!", "Confirma��o",2);
 						dispose();
 					}

@@ -1,12 +1,11 @@
 package modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import dao.IDInterface;
 
@@ -16,12 +15,12 @@ public class Avaliacao implements IDInterface  {
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne
+	@ManyToOne (cascade=CascadeType.ALL)
 	private Producao produto;
 	private int notaSabor;
 	private int notaAparencia;
 	private String justificativa;
-	@ManyToOne
+	@ManyToOne (cascade=CascadeType.ALL)
 	private Funcionario avaliador;
 	
 	public Avaliacao () {

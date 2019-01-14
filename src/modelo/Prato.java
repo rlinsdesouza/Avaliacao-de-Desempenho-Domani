@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,9 +25,9 @@ public class Prato implements IDInterface {
 	private int tempoProduzir;
 	private boolean lactose;
 	private boolean gluten;
-	@ManyToMany(mappedBy="pratos")
+	@ManyToMany(mappedBy="pratos",cascade=CascadeType.ALL)
 	private List<Insumo> insumos = new ArrayList<Insumo>();
-	@OneToMany(mappedBy="prato")
+	@OneToMany(mappedBy="prato",cascade=CascadeType.ALL)
 	private List<Producao> producoes = new ArrayList<Producao>();
 	
 	public Prato(String nome, String receita, int dificuldade, int tempoProduzir, boolean lactose,

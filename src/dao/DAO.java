@@ -20,10 +20,8 @@ import com.db4o.cs.Db4oClientServer;
 import com.db4o.cs.config.ClientConfiguration;
 import com.db4o.query.Query;
 
-import fachada.Fachada;
+import fachada.Fachadaold;
 import modelo.Avaliacao;
-import modelo.ContaBancaria;
-import modelo.Endereco;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
@@ -37,19 +35,13 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 	public static void open(){	
 		if(manager==null){		
-//			abrirBancoLocal();
-			abrirBancoServidor();
+			abrirBancoLocal();
+//			abrirBancoServidor();
 		}
 	}
 	private static void abrirBancoLocal(){
 		EmbeddedConfiguration config =  Db4oEmbedded.newConfiguration(); 
 		config.common().messageLevel(0);  // 0,1,2,3...
-		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(false);;
-		config.common().objectClass(ContaBancaria.class).cascadeOnUpdate(true);;
-		config.common().objectClass(ContaBancaria.class).cascadeOnActivate(true);
-		config.common().objectClass(Endereco.class).cascadeOnDelete(false);;
-		config.common().objectClass(Endereco.class).cascadeOnUpdate(true);;
-		config.common().objectClass(Endereco.class).cascadeOnActivate(true);
 		config.common().objectClass(Funcionario.class).cascadeOnDelete(false);;
 		config.common().objectClass(Funcionario.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Funcionario.class).cascadeOnActivate(true);
@@ -80,12 +72,6 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	private static void abrirBancoServidor(){
 		ClientConfiguration config = Db4oClientServer.newClientConfiguration( ) ;
 		config.common().messageLevel(0);   //0,1,2,3,4
-		config.common().objectClass(ContaBancaria.class).cascadeOnDelete(false);;
-		config.common().objectClass(ContaBancaria.class).cascadeOnUpdate(true);;
-		config.common().objectClass(ContaBancaria.class).cascadeOnActivate(true);
-		config.common().objectClass(Endereco.class).cascadeOnDelete(false);;
-		config.common().objectClass(Endereco.class).cascadeOnUpdate(true);;
-		config.common().objectClass(Endereco.class).cascadeOnActivate(true);
 		config.common().objectClass(Funcionario.class).cascadeOnDelete(false);;
 		config.common().objectClass(Funcionario.class).cascadeOnUpdate(true);;
 		config.common().objectClass(Funcionario.class).cascadeOnActivate(true);

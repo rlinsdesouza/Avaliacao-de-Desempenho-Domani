@@ -8,11 +8,13 @@ package daojpa;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 
 public abstract class DAO<T> implements DAOInterface<T> {
@@ -168,15 +170,19 @@ public abstract class DAO<T> implements DAOInterface<T> {
 //		return (List<T>) q.execute();
 //	}
 	
-//	public List<T> readAll(String nome){
-//		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
-//				.getGenericSuperclass()).getActualTypeArguments()[0];
-//		Query q = manager.query();
-//		q.constrain(type);
-//		q.descend("nome").constrain(nome).like();
-//		return (List<T>) q.execute();
-//	}
-//	
+	public List<T> readAll(String nome){
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+		Query query = manager.createQuery("select x from " + type.getSimpleName() + " x where p.nome like :name");
+		query.setParameter("name", "%"+nome+"%");
+
+		List<T> resultados = query.getResultList();
+		if (resultados.size()>0)
+			return resultados;
+		else
+			return null;
+	}
+	
 	
 	//--------transa��o---------------
 	public static void begin(){

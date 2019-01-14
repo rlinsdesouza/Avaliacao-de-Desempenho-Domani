@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import fachada.Fachada;
+import fachada.Fachadaold;
 import modelo.Funcionario;
 import modelo.Producao;
 import uteis.CreateEtiquetasPDF;
@@ -77,7 +77,7 @@ public class TelaConsulta extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					String texto;
-					List<Funcionario> lista1 = Fachada.listarFuncionarios();
+					List<Funcionario> lista1 = Fachadaold.listarFuncionarios();
 					texto = "Listagem de funcionarios: \n";
 					if (lista1.isEmpty())
 						texto += "n�o existe";
@@ -107,7 +107,7 @@ public class TelaConsulta extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					CreateEtiquetasPDF pdf = new CreateEtiquetasPDF();
-					pdf.createPdf("teste.pdf", Fachada.listarPratos("arroz"));					
+					pdf.createPdf("teste.pdf", Fachadaold.listarPratos("arroz"));					
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
@@ -136,7 +136,7 @@ public class TelaConsulta extends JFrame {
 					}else {
 						String texto;
 						String data = sf.format(datePickerinicial.getDate());
-						List<Producao> lista1 = Fachada.listarProducoesPorData(data);
+						List<Producao> lista1 = Fachadaold.listarProducoesPorData(data);
 						texto = "Listagem de funcionarios: \n";
 						if (lista1.isEmpty())
 							texto += "n�o existe";
@@ -172,7 +172,7 @@ public class TelaConsulta extends JFrame {
 					}else {
 						Funcionario selecionado;
 						String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcion�rio", "Localiza funcion�rio", 0);
-						List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
+						List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(nome); 
 						
 						if (funcionarios.size()>1) {
 							selecionado = seleciona (funcionarios);
@@ -185,9 +185,9 @@ public class TelaConsulta extends JFrame {
 						String datainicial = sf.format(datePickerinicial.getDate());
 						String datafinal = sf.format(datePickerfinal.getDate());
 						
-						List<Producao> lista1 = Fachada.listarProducoesPorDataFuncionario(datainicial, datafinal, selecionado.getId());
-						double nota = Fachada.calculaNotaProducoes(lista1);
-						int produtividade = Fachada.calculaProdutividadeProducoes(lista1);
+						List<Producao> lista1 = Fachadaold.listarProducoesPorDataFuncionario(datainicial, datafinal, selecionado.getId());
+						double nota = Fachadaold.calculaNotaProducoes(lista1);
+						int produtividade = Fachadaold.calculaProdutividadeProducoes(lista1);
 						texto = "Listagem de funcionarios: \n";
 //						if (lista1.isEmpty())
 //							texto += "n�o existe";

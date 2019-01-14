@@ -5,7 +5,7 @@ package daojpa;
 
 import java.util.List;
 
-import com.db4o.query.Query;
+import javax.persistence.Query;
 
 import modelo.Prato;
 import modelo.Producao;
@@ -17,23 +17,23 @@ import modelo.Producao;
 public class DAOPrato  extends DAO<Prato>{
 	
 	public Prato readByNome (String nome){	
-		Query q = manager.query();
-		q.constrain(Prato.class);
-		q.descend("nome").constrain(nome);
-		List<Prato> resultados = q.execute();
+		Query q = manager.createQuery(
+				"select p from Prato p where p.nome = :name");
+		q.setParameter("name", nome);
+		List<Prato> resultados = q.getResultList();
 		if (resultados.size()>0)
 			return (Prato) resultados.get(0);
 		else
 			return null;
 	}
 	
-	public List<Producao> ProducoesComPrato (String nome){	
-		Query q = manager.query();
-		q.constrain(Producao.class);
-		q.descend("prato").descend("nome").constrain(nome);
-		List<Producao> resultados = q.execute();
-		return resultados;
-	}
+//	public List<Producao> ProducoesComPrato (String nome){	
+//		Query q = manager.query();
+//		q.constrain(Producao.class);
+//		q.descend("prato").descend("nome").constrain(nome);
+//		List<Producao> resultados = q.execute();
+//		return resultados;
+//	}
 
 	
 }
