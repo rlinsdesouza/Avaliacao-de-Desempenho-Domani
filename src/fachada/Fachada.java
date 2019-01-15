@@ -52,8 +52,8 @@ public class Fachada {
 		DAO.begin();			
 		Prato i = daoprato.readByNome(nome);
 		if(i != null) {
-//			throw new Exception("produto ja cadastrado:" + nome);
-			return null;
+			throw new Exception("produto ja cadastrado:" + nome);
+//			return null;
 		}else {
 			i = new Prato(nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
 			daoprato.create(i);		

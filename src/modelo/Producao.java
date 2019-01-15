@@ -20,9 +20,9 @@ public class Producao implements IDInterface{
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
 	private String data;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Prato prato;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Funcionario cozinheiro;
 	@OneToMany(mappedBy="produto",cascade=CascadeType.ALL,orphanRemoval=true)
 	private List<Avaliacao> avaliacoes = new ArrayList <Avaliacao> ();

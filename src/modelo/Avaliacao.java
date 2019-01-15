@@ -15,12 +15,12 @@ public class Avaliacao implements IDInterface  {
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne (cascade=CascadeType.ALL)
+	@ManyToOne
 	private Producao produto;
 	private int notaSabor;
 	private int notaAparencia;
 	private String justificativa;
-	@ManyToOne (cascade=CascadeType.ALL)
+	@ManyToOne
 	private Funcionario avaliador;
 	
 	public Avaliacao () {

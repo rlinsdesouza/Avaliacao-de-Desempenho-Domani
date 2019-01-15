@@ -23,7 +23,7 @@ public class TesteConsole {
 		Fachada.inicializar();
 		cadastrar();
 //		consultar ();
-//		alterar();
+		alterar();
 //		remover();
 //		consultar();
 	}
@@ -63,14 +63,14 @@ public class TesteConsole {
 	public void alterar () {
 		try {
 			System.out.println("adiconando um insumo ao prato");
-			Fachadaold.adicionarInsumoAoPrato(Fachadaold.localizarPrato(2), Fachadaold.localizarInsumo(1));
-			System.out.println("Prato antes de atualizar o gluten e lactose e depois de add insumo: "+Fachadaold.localizarPrato(2));
+			Fachada.adicionarInsumoAoPrato(Fachada.localizarPrato(2), Fachada.localizarInsumo(1));
+			System.out.println("Prato antes de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
 			System.out.println("atualizando um prato em funcao do seus insumos");
-			Fachadaold.atualizarLactoseGluten(Fachadaold.localizarPrato(2));
-			System.out.println("Prato depois de atualizar o gluten e lactose e depois de add insumo: "+Fachadaold.localizarPrato(2));
-			System.out.println("Funcionario antes do update: "+Fachadaold.localizarFuncionario(2));
-			Fachadaold.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null);
-			System.out.println("Funcionario depois do update: "+Fachadaold.localizarFuncionario(2));
+			Fachada.atualizarLactoseGluten(Fachada.localizarPrato(2));
+			System.out.println("Prato depois de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
+			System.out.println("Funcionario antes do update: "+Fachada.localizarFuncionario(2));
+			Fachada.atualizarFuncionario(2, 1, "Rafael Lins de Souza", "073.975.104-26", null, "rlinsdesouza@gmail.com", null, null, null, null);
+			System.out.println("Funcionario depois do update: "+Fachada.localizarFuncionario(2));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
