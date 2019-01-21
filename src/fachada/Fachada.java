@@ -150,6 +150,7 @@ public class Fachada {
 	
 //	public static List <Avaliacao> listarAvaliacaoes () {
 //		return daoavaliacao.readAll();
+	
 //	}
 //	
 //	public static List <Producao> listarProducoes () {
@@ -205,15 +206,18 @@ public class Fachada {
 	}
 
 	public static Insumo atualizarInsumo(int id,String nome,boolean lactose,boolean gluten) {
+		DAO.begin();
 		Insumo p = daoinsumo.read(id);
 		p.setNome(nome);
 		p.setLactose(lactose);
 		p.setGluten(gluten);
 		daoinsumo.update(p);
+		DAO.commit();
 		return p;
 	}
 	
 	public static Prato atualizarPrato(int id,String nome,String receita,int dificuldade,int tempo,boolean lactose,boolean glutem,List<Insumo> insumos) {
+		DAO.begin();
 		Prato p = daoprato.read(id);
 		p.setNome(nome);
 		p.setReceita(receita);
@@ -223,17 +227,22 @@ public class Fachada {
 		p.setGluten(glutem);
 		p.setInsumos(insumos);
 		daoprato.update(p);
+		DAO.commit();
 		return p;
 	}
 	
 	public static Prato adicionarInsumoAoPrato (Prato p, Insumo i) {
+		DAO.begin();
 		p.getInsumos().add(i);
+		i.getPratos().add(p);
 		daoprato.update(p);
+		DAO.commit();
 		return p;
 	}
 	
 	public static Funcionario atualizarFuncionario(int id, int matricula, String nome, String cpf, List<Integer> telefone, String email, String senha,String salt,
 			Date dataAdmissao, Date dataDemissao) {
+		DAO.begin();
 		Funcionario p = daofuncionario.read(id);
 		p.setNome(nome);
 		p.setMatricula(matricula);
@@ -250,12 +259,14 @@ public class Fachada {
 //		p.setConta(conta);
 
 		daofuncionario.update(p);
+		DAO.commit();
 		return p;
 	}
 	
 	public static Prato atualizarLactoseGluten (Prato p) throws Exception {
 		List<Insumo> insumos = p.getInsumos();
 		if (insumos != null && !insumos.isEmpty()) {
+			DAO.begin();
 			p.setLactose(false);
 			p.setGluten(false);
 			for (Insumo insumo : insumos) {
@@ -265,6 +276,7 @@ public class Fachada {
 					p.setLactose(true);
 			}
 			daoprato.update(p);
+			DAO.commit();
 			return p;	
 		}else {
 			throw new Exception ("Produto sem insumos cadastrados!");

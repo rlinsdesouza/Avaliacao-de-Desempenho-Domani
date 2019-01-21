@@ -24,6 +24,7 @@ public class Insumo implements IDInterface {
 	@ManyToMany (cascade=CascadeType.ALL)
 	private List<Prato> pratos = new ArrayList<Prato>();
 	
+
 	public Insumo () {
 		
 	}
@@ -65,6 +66,14 @@ public class Insumo implements IDInterface {
 
 	public void setGluten(boolean gluten) {
 		this.gluten = gluten;
+	}
+	
+	public List<Prato> getPratos() {
+		return pratos;
+	}
+
+	public void setPratos(List<Prato> pratos) {
+		this.pratos = pratos;
 	}
 
 	@Override
