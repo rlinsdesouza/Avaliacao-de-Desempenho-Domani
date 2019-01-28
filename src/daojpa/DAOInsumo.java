@@ -23,12 +23,12 @@ public class DAOInsumo extends DAO<Insumo>  {
 			return null;
 	}
 	
-//	public List<Prato> PratosComInsumo (String nome){	
-//		Query q = manager.query();
-//		q.constrain(Prato.class);
-//		q.descend("insumos").descend("nome").constrain(nome);
-//		List<Prato> resultados = q.execute();
-//		return resultados;
-//	}
-//	
+	public List<Prato> PratosComInsumo (String nome){	
+		Query q = manager.createQuery(
+				"select p from Prato p where p.insumos.nome = :name");
+		q.setParameter("name", nome);
+		List<Prato> resultados = q.getResultList();
+		return resultados;
+	}
+	
 }

@@ -3,15 +3,14 @@ package fachada;
 import java.util.Date;
 import java.util.List;
 
+//import dao.DAO;
+import daojpa.DAO;
 import daojpa.DAOAvaliacao;
 import daojpa.DAOFuncionario;
 import daojpa.DAOInsumo;
 import daojpa.DAOPrato;
 import daojpa.DAOProducao;
-//import dao.DAO;
-import daojpa.DAO;
 import modelo.Avaliacao;
-
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
@@ -148,14 +147,14 @@ public class Fachada {
 		return p;
 	}
 	
-//	public static List <Avaliacao> listarAvaliacaoes () {
-//		return daoavaliacao.readAll();
+	public static List <Avaliacao> listarAvaliacaoes () {
+		return daoavaliacao.readAll();
 	
-//	}
-//	
-//	public static List <Producao> listarProducoes () {
-//		return daoproducao.readAll();
-//	}
+	}
+	
+	public static List <Producao> listarProducoes () {
+		return daoproducao.readAll();
+	}
 	
 	public static List <Producao> listarProducoesPorData (String data) {
 		return daoproducao.consultarProducoesPorDia(data);
@@ -165,30 +164,30 @@ public class Fachada {
 		return daoproducao.consultarProducoesPorDiaFuncionario(data,id);
 	}
 	
-	public static List <Producao> listarProducoesPorDataFuncionario (String datainicial, String datafinal, int id) {
-		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
+//	public static List <Producao> listarProducoesPorDataFuncionario (String datainicial, String datafinal, int id) {
+//		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
+//	}
+	
+	public static List <Funcionario> listarFuncionarios () {
+		return daofuncionario.readAll();
 	}
 	
-//	public static List <Funcionario> listarFuncionarios () {
-//		return daofuncionario.readAll();
-//	}
-//	
-//	public static List <Funcionario> listarFuncionarios (String nome) {
-//		return daofuncionario.readAll(nome);
-//	}
-//	
-//	public static List <Prato> listarPratos () {
-//		return daoprato.readAll();
-//	}
-//	
+	public static List <Funcionario> listarFuncionarios (String nome) {
+		return daofuncionario.readAll(nome);
+	}
+	
+	public static List <Prato> listarPratos () {
+		return daoprato.readAll();
+	}
+	
 	public static List <Prato> listarPratos (String nome) {
 		return daoprato.readAll(nome);
 	}
-//
-//	public static List<Insumo> listarInsumo() {
-//		return daoinsumo.readAll();
-//	}
-//	
+
+	public static List<Insumo> listarInsumo() {
+		return daoinsumo.readAll();
+	}
+	
 	public static List<Insumo> listarInsumo(String nome) {
 		return daoinsumo.readAll(nome);
 	}

@@ -25,7 +25,6 @@ public class TesteConsole {
 //		consultar ();
 		alterar();
 //		remover();
-//		consultar();
 	}
 
 	
@@ -81,27 +80,27 @@ public class TesteConsole {
 	public void remover () {
 		try {
 			System.out.println("removendo um insumo com prato vinculado: (CREME DE LEITE)");
-			Fachadaold.removerInsumo(Fachadaold.localizarInsumo(1));
+			Fachada.removerInsumo(Fachada.localizarInsumo(1));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		}
 		try {
 			System.out.println("removendo um prato com produ��o vinculada: (FEIJOADA) ");
-			Fachadaold.removerPrato(Fachadaold.localizarPrato(3));
+			Fachada.removerPrato(Fachada.localizarPrato(3));
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		try {
 			System.out.println("removendo uma producao com avaliacao vinculada: (PROUCAO DIA 14/10/2018) - FUNCIONARIA HELENA (COD 3) ");
-			Fachadaold.removerProducao(Fachadaold.listarProducoesPorDataFuncionario("14/10/2018",3).get(0));
+			Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("14/10/2018",3).get(0));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		try {
 			System.out.println("removendo uma producao sem avaliacao vinculada: (PROUCAO DIA 01/10/2018) - FUNCIONARIA HELENA (COD 3) ");
-			Producao p = Fachadaold.removerProducao(Fachadaold.listarProducoesPorDataFuncionario("01/10/2018",3).get(0));
+			Producao p = Fachada.removerProducao(Fachada.listarProducoesPorDataFuncionario("01/10/2018",3).get(0));
 			System.out.println("Removido com sucesso: "+p);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

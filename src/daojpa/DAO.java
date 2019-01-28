@@ -161,14 +161,16 @@ public abstract class DAO<T> implements DAOInterface<T> {
 //		manager.ext().refresh(obj, Integer.MAX_VALUE);
 //	}
 
-//	@SuppressWarnings("unchecked")
-//	public List<T> readAll(){
-//		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
-//				.getGenericSuperclass()).getActualTypeArguments()[0];
+	@SuppressWarnings("unchecked")
+	public List<T> readAll(){
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+		Query q = manager.createQuery(
+				"select x from "+type.getSimpleName()+ "x");
 //		Query q = manager.query();
 //		q.constrain(type);
-//		return (List<T>) q.execute();
-//	}
+		return (List<T>) q.getResultList();
+	}
 	
 	public List<T> readAll(String nome){
 		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()

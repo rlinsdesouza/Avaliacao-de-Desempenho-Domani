@@ -26,37 +26,5 @@ public class DAOFuncionario  extends DAO<Funcionario>{
 		else
 			return null;
 	}
-	
-	
-//	public  List<Funcionario> consultarFuncionarioSemPareteleira() {
-//		Query q = manager.query();
-//		q.constrain(Funcionario.class);
-//		q.descend("prateleira").constrain(null);
-//		return q.execute(); 
-//	}
-//
-//	public int consultarTotalFuncionarios() {
-//		Query q = manager.query();
-//		q.constrain(Funcionario.class);
-//		int total = q.execute().size(); 
-//		return total;
-//	}
-//
-//	public List<Funcionario> consultarFuncionariosDaPrateleira(int id){
-//		Query q = manager.query();
-//		q.constrain(Funcionario.class);
-//		q.descend("prateleira").descend("id").constrain(id);
-//		List<Funcionario> result = q.execute(); 
-//		return result;	
-//	}
-//
-//	public List<Funcionario> consultarVizinhos(String nome){
-//		Query q = manager.query();
-//		q.constrain(Funcionario.class);
-//		q.descend("prateleira").descend("Funcionarios").descend("nome").constrain(nome);
-//		q.descend("nome").constrain(nome).not(); // excluir o proprio nome do resultado
-//		List<Funcionario> result = q.execute(); 
-//		return result;	
-//	}
 
 }

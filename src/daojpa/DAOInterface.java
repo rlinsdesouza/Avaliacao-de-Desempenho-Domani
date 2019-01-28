@@ -7,5 +7,5 @@ public interface DAOInterface<T> {
 	public T read(int id);
 	public T update(T obj);
 	public void delete(T obj) ;
-//	public List<T> readAll();
+	public List<T> readAll();
 }

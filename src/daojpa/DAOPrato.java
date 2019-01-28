@@ -27,30 +27,10 @@ public class DAOPrato  extends DAO<Prato>{
 			return null;
 	}
 	
-//	public List<Producao> ProducoesComPrato (String nome){	
-//		Query q = manager.query();
-//		q.constrain(Producao.class);
-//		q.descend("prato").descend("nome").constrain(nome);
-//		List<Producao> resultados = q.execute();
-//		return resultados;
-//	}
-
-	
+	public List<Producao> ProducoesComPrato (String nome){
+		Query q = manager.createQuery(
+				"select p from Producao p where p.prato.nome = :name");
+		List<Producao> resultados = q.getResultList();
+		return resultados;
+	}	
 }
-
-//**************************************************************
-//@SuppressWarnings("serial")
-//class Filtro  implements Evaluation {
-//	public void evaluate(Candidate candidate) {
-//		Prato p = (Prato) candidate.getObject();
-//		candidate.include(p.getProdutos().size()==0);
-//	}
-//}
-//
-//@SuppressWarnings("serial")
-//class Filtro2  implements Evaluation {
-//	public void evaluate(Candidate candidate) {
-//		Prato p = (Prato) candidate.getObject();
-//		candidate.include(p.getProdutos().size()==2);
-//	}
-//}

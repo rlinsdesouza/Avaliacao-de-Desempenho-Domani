@@ -18,8 +18,6 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
 import fachada.Fachadaold;
-import modelo.ContaBancaria;
-import modelo.Endereco;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Producao;
@@ -105,16 +103,16 @@ public class TelaCadastroFuncionario extends JFrame {
 						
 						Date dataAdmissao = null;
 						Date dataDemissao = null;
-						ContaBancaria conta = null;
-						Endereco endereco = null;
+//						ContaBancaria conta = null;
+//						Endereco endereco = null;
 						List<Producao> producoes=null;
 		
 						
 						Funcionario p = Fachadaold.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
 						if (p == null) {
-							p = Fachadaold.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco, producoes);
+							p = Fachadaold.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, producoes);
 						}else {
-							Fachadaold.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, conta, endereco);
+							Fachadaold.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao);
 						}
 						atualizaDados(p);	
 						lblmsg.setText("cadastrado/atualizado "+p.getNome());
