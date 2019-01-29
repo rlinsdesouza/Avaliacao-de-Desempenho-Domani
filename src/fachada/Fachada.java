@@ -164,9 +164,9 @@ public class Fachada {
 		return daoproducao.consultarProducoesPorDiaFuncionario(data,id);
 	}
 	
-//	public static List <Producao> listarProducoesPorDataFuncionario (String datainicial, String datafinal, int id) {
-//		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
-//	}
+	public static List <Producao> listarProducoesPorDataFuncionario (String datainicial, String datafinal, int id) {
+		return daoproducao.consultarProducoesPorDiaFuncionario(datainicial,datafinal,id);
+	}
 	
 	public static List <Funcionario> listarFuncionarios () {
 		return daofuncionario.readAll();

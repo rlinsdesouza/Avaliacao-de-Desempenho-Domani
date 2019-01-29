@@ -1,150 +1,146 @@
-[EL Fine]: server: 2019-01-28 16:53:54.264--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2019-01-28 16:53:54.452--ServerSession(1938056729)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Insumo] is set to [FIELD].
-[EL Config]: metadata: 2019-01-28 16:53:54.501--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field pratos] is being defaulted to: class modelo.Prato.
-[EL Config]: metadata: 2019-01-28 16:53:54.508--ServerSession(1938056729)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Funcionario] is set to [FIELD].
-[EL Config]: metadata: 2019-01-28 16:53:54.511--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-01-28 16:53:54.512--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
-[EL Config]: metadata: 2019-01-28 16:53:54.513--ServerSession(1938056729)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Avaliacao] is set to [FIELD].
-[EL Config]: metadata: 2019-01-28 16:53:54.514--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-01-28 16:53:54.514--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field avaliador] is being defaulted to: class modelo.Funcionario.
-[EL Config]: metadata: 2019-01-28 16:53:54.515--ServerSession(1938056729)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Prato] is set to [FIELD].
-[EL Config]: metadata: 2019-01-28 16:53:54.515--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field insumos] is being defaulted to: class modelo.Insumo.
-[EL Config]: metadata: 2019-01-28 16:53:54.517--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-01-28 16:53:54.517--ServerSession(1938056729)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Producao] is set to [FIELD].
-[EL Config]: metadata: 2019-01-28 16:53:54.518--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field prato] is being defaulted to: class modelo.Prato.
-[EL Config]: metadata: 2019-01-28 16:53:54.518--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
-[EL Config]: metadata: 2019-01-28 16:53:54.519--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cozinheiro] is being defaulted to: class modelo.Funcionario.
-[EL Config]: metadata: 2019-01-28 16:53:54.519--ServerSession(1938056729)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Insumo] is being defaulted to: Insumo.
-[EL Config]: metadata: 2019-01-28 16:53:54.522--ServerSession(1938056729)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Insumo] is being defaulted to: INSUMO.
-[EL Config]: metadata: 2019-01-28 16:53:54.539--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
-[EL Config]: metadata: 2019-01-28 16:53:54.541--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-01-28 16:53:54.545--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.545--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
-[EL Config]: metadata: 2019-01-28 16:53:54.546--ServerSession(1938056729)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Funcionario] is being defaulted to: Funcionario.
-[EL Config]: metadata: 2019-01-28 16:53:54.546--ServerSession(1938056729)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Funcionario] is being defaulted to: FUNCIONARIO.
-[EL Config]: metadata: 2019-01-28 16:53:54.547--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
-[EL Config]: metadata: 2019-01-28 16:53:54.547--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [dataDemissao] is being defaulted to: DATADEMISSAO.
-[EL Config]: metadata: 2019-01-28 16:53:54.55--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [telefone] is being defaulted to: TELEFONE.
-[EL Fine]: metadata: 2019-01-28 16:53:54.55--Thread(Thread[main,5,main])--java.lang.ClassNotFoundException: java.util.Listjava.lang.Integer
-[EL Config]: metadata: 2019-01-28 16:53:54.553--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [salt] is being defaulted to: SALT.
-[EL Config]: metadata: 2019-01-28 16:53:54.554--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [matricula] is being defaulted to: MATRICULA.
-[EL Config]: metadata: 2019-01-28 16:53:54.554--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
-[EL Config]: metadata: 2019-01-28 16:53:54.555--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-01-28 16:53:54.555--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.556--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [dataAdmissao] is being defaulted to: DATAADMISSAO.
-[EL Config]: metadata: 2019-01-28 16:53:54.556--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2019-01-28 16:53:54.557--ServerSession(1938056729)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Avaliacao] is being defaulted to: Avaliacao.
-[EL Config]: metadata: 2019-01-28 16:53:54.557--ServerSession(1938056729)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Avaliacao] is being defaulted to: AVALIACAO.
-[EL Config]: metadata: 2019-01-28 16:53:54.558--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [notaAparencia] is being defaulted to: NOTAAPARENCIA.
-[EL Config]: metadata: 2019-01-28 16:53:54.558--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [justificativa] is being defaulted to: JUSTIFICATIVA.
-[EL Config]: metadata: 2019-01-28 16:53:54.558--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.559--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [notaSabor] is being defaulted to: NOTASABOR.
-[EL Config]: metadata: 2019-01-28 16:53:54.559--ServerSession(1938056729)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Prato] is being defaulted to: Prato.
-[EL Config]: metadata: 2019-01-28 16:53:54.559--ServerSession(1938056729)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Prato] is being defaulted to: PRATO.
-[EL Config]: metadata: 2019-01-28 16:53:54.564--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
-[EL Config]: metadata: 2019-01-28 16:53:54.564--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [receita] is being defaulted to: RECEITA.
-[EL Config]: metadata: 2019-01-28 16:53:54.565--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [dificuldade] is being defaulted to: DIFICULDADE.
-[EL Config]: metadata: 2019-01-28 16:53:54.565--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [tempoProduzir] is being defaulted to: TEMPOPRODUZIR.
-[EL Config]: metadata: 2019-01-28 16:53:54.565--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-01-28 16:53:54.565--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.565--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
-[EL Config]: metadata: 2019-01-28 16:53:54.566--ServerSession(1938056729)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Producao] is being defaulted to: Producao.
-[EL Config]: metadata: 2019-01-28 16:53:54.566--ServerSession(1938056729)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Producao] is being defaulted to: PRODUCAO.
-[EL Config]: metadata: 2019-01-28 16:53:54.566--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [data] is being defaulted to: DATA.
-[EL Config]: metadata: 2019-01-28 16:53:54.566--ServerSession(1938056729)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.588--ServerSession(1938056729)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [field pratos] is being defaulted to: INSUMO_PRATO.
-[EL Config]: metadata: 2019-01-28 16:53:54.589--ServerSession(1938056729)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.589--ServerSession(1938056729)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [pratos] is being defaulted to: insumos_ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.59--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.59--ServerSession(1938056729)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [pratos] is being defaulted to: pratos_ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.596--ServerSession(1938056729)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produto] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.597--ServerSession(1938056729)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produto] is being defaulted to: PRODUTO_ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.597--ServerSession(1938056729)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field avaliador] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.597--ServerSession(1938056729)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [avaliador] is being defaulted to: AVALIADOR_ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.597--ServerSession(1938056729)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field prato] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.598--ServerSession(1938056729)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [prato] is being defaulted to: PRATO_ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.598--ServerSession(1938056729)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field cozinheiro] is being defaulted to: ID.
-[EL Config]: metadata: 2019-01-28 16:53:54.598--ServerSession(1938056729)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [cozinheiro] is being defaulted to: COZINHEIRO_ID.
-[EL Info]: 2019-01-28 16:53:55.374--ServerSession(1938056729)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.3.v20180807-4be1041
-[EL Fine]: connection: 2019-01-28 16:53:55.563--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
-[EL Config]: connection: 2019-01-28 16:53:55.574--ServerSession(1938056729)--Connection(1824327284)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+[EL Fine]: server: 2019-01-29 14:29:44.046--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2019-01-29 14:29:44.276--ServerSession(1447689627)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Insumo] is set to [FIELD].
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field pratos] is being defaulted to: class modelo.Prato.
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Funcionario] is set to [FIELD].
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Avaliacao] is set to [FIELD].
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field avaliador] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2019-01-29 14:29:44.316--ServerSession(1447689627)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Prato] is set to [FIELD].
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field insumos] is being defaulted to: class modelo.Insumo.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Producao] is set to [FIELD].
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field prato] is being defaulted to: class modelo.Prato.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cozinheiro] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Insumo] is being defaulted to: Insumo.
+[EL Config]: metadata: 2019-01-29 14:29:44.326--ServerSession(1447689627)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Insumo] is being defaulted to: INSUMO.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Funcionario] is being defaulted to: Funcionario.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Funcionario] is being defaulted to: FUNCIONARIO.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [dataDemissao] is being defaulted to: DATADEMISSAO.
+[EL Config]: metadata: 2019-01-29 14:29:44.346--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [telefone] is being defaulted to: TELEFONE.
+[EL Fine]: metadata: 2019-01-29 14:29:44.346--Thread(Thread[main,5,main])--java.lang.ClassNotFoundException: java.util.Listjava.lang.Integer
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [salt] is being defaulted to: SALT.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [matricula] is being defaulted to: MATRICULA.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [dataAdmissao] is being defaulted to: DATAADMISSAO.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Avaliacao] is being defaulted to: Avaliacao.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Avaliacao] is being defaulted to: AVALIACAO.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [notaAparencia] is being defaulted to: NOTAAPARENCIA.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [justificativa] is being defaulted to: JUSTIFICATIVA.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [notaSabor] is being defaulted to: NOTASABOR.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Prato] is being defaulted to: Prato.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Prato] is being defaulted to: PRATO.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [receita] is being defaulted to: RECEITA.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [dificuldade] is being defaulted to: DIFICULDADE.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [tempoProduzir] is being defaulted to: TEMPOPRODUZIR.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Producao] is being defaulted to: Producao.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Producao] is being defaulted to: PRODUCAO.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [data] is being defaulted to: DATA.
+[EL Config]: metadata: 2019-01-29 14:29:44.356--ServerSession(1447689627)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.376--ServerSession(1447689627)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [field pratos] is being defaulted to: INSUMO_PRATO.
+[EL Config]: metadata: 2019-01-29 14:29:44.376--ServerSession(1447689627)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.376--ServerSession(1447689627)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [pratos] is being defaulted to: insumos_ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.376--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.376--ServerSession(1447689627)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [pratos] is being defaulted to: pratos_ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produto] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produto] is being defaulted to: PRODUTO_ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field avaliador] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [avaliador] is being defaulted to: AVALIADOR_ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field prato] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [prato] is being defaulted to: PRATO_ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field cozinheiro] is being defaulted to: ID.
+[EL Config]: metadata: 2019-01-29 14:29:44.386--ServerSession(1447689627)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [cozinheiro] is being defaulted to: COZINHEIRO_ID.
+[EL Info]: 2019-01-29 14:29:45.052--ServerSession(1447689627)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.3.v20180807-4be1041
+[EL Fine]: connection: 2019-01-29 14:29:45.162--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
+[EL Config]: connection: 2019-01-29 14:29:45.172--ServerSession(1447689627)--Connection(708533063)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
 	platform=>PostgreSQLPlatform
 	user name=> "postgres"
-	datasource URL=> "jdbc:postgresql://localhost:5432/bancopgd"
+	datasource URL=> "jdbc:postgresql://localhost:5433/bancopgd"
 ))
-[EL Config]: connection: 2019-01-28 16:53:55.618--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/bancopgd
+[EL Config]: connection: 2019-01-29 14:29:45.202--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5433/bancopgd
 	User: postgres
-	Database: PostgreSQL  Version: 10.6
+	Database: PostgreSQL  Version: 9.5.5
 	Driver: PostgreSQL Native Driver  Version: PostgreSQL 9.4 JDBC4.2 (build 1206)
-[EL Info]: connection: 2019-01-28 16:53:55.676--ServerSession(1938056729)--Thread(Thread[main,5,main])--/file:/C:/Users/Administrador/Documents/GitHub/ProjetoPOB--Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink login successful
-[EL Fine]: sql: 2019-01-28 16:53:55.731--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO (ID  SERIAL NOT NULL, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), PRIMARY KEY (ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.772--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE PRODUCAO (ID  SERIAL NOT NULL, DATA VARCHAR(255), COZINHEIRO_ID INTEGER, PRATO_ID INTEGER, PRIMARY KEY (ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.806--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE FUNCIONARIO (ID  SERIAL NOT NULL, CPF VARCHAR(255), DATAADMISSAO TIMESTAMP, DATADEMISSAO TIMESTAMP, EMAIL VARCHAR(255), MATRICULA INTEGER, NOME VARCHAR(255), SALT VARCHAR(255), SENHA VARCHAR(255), TELEFONE BYTEA, PRIMARY KEY (ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.857--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE AVALIACAO (ID  SERIAL NOT NULL, JUSTIFICATIVA VARCHAR(255), NOTAAPARENCIA INTEGER, NOTASABOR INTEGER, AVALIADOR_ID INTEGER, PRODUTO_ID INTEGER, PRIMARY KEY (ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.888--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE PRATO (ID  SERIAL NOT NULL, DIFICULDADE INTEGER, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), RECEITA VARCHAR(255), TEMPOPRODUZIR INTEGER, PRIMARY KEY (ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.944--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO_PRATO (insumos_ID INTEGER NOT NULL, pratos_ID INTEGER NOT NULL, PRIMARY KEY (insumos_ID, pratos_ID))
-[EL Fine]: sql: 2019-01-28 16:53:55.986--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_COZINHEIRO_ID FOREIGN KEY (COZINHEIRO_ID) REFERENCES FUNCIONARIO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:55.999--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_PRATO_ID FOREIGN KEY (PRATO_ID) REFERENCES PRATO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:56.002--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_PRODUTO_ID FOREIGN KEY (PRODUTO_ID) REFERENCES PRODUCAO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:56.007--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_AVALIADOR_ID FOREIGN KEY (AVALIADOR_ID) REFERENCES FUNCIONARIO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:56.01--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_insumos_ID FOREIGN KEY (insumos_ID) REFERENCES INSUMO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:56.016--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_pratos_ID FOREIGN KEY (pratos_ID) REFERENCES PRATO (ID)
-[EL Fine]: sql: 2019-01-28 16:53:56.324--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
+[EL Info]: connection: 2019-01-29 14:29:45.262--ServerSession(1447689627)--Thread(Thread[main,5,main])--/file:/C:/Users/IFPB/Documents/Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink login successful
+[EL Fine]: sql: 2019-01-29 14:29:45.372--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO (ID  SERIAL NOT NULL, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.452--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE PRODUCAO (ID  SERIAL NOT NULL, DATA VARCHAR(255), COZINHEIRO_ID INTEGER, PRATO_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.462--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE FUNCIONARIO (ID  SERIAL NOT NULL, CPF VARCHAR(255), DATAADMISSAO TIMESTAMP, DATADEMISSAO TIMESTAMP, EMAIL VARCHAR(255), MATRICULA INTEGER, NOME VARCHAR(255), SALT VARCHAR(255), SENHA VARCHAR(255), TELEFONE BYTEA, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.482--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE AVALIACAO (ID  SERIAL NOT NULL, JUSTIFICATIVA VARCHAR(255), NOTAAPARENCIA INTEGER, NOTASABOR INTEGER, AVALIADOR_ID INTEGER, PRODUTO_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.492--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE PRATO (ID  SERIAL NOT NULL, DIFICULDADE INTEGER, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), RECEITA VARCHAR(255), TEMPOPRODUZIR INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.502--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO_PRATO (insumos_ID INTEGER NOT NULL, pratos_ID INTEGER NOT NULL, PRIMARY KEY (insumos_ID, pratos_ID))
+[EL Fine]: sql: 2019-01-29 14:29:45.532--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_COZINHEIRO_ID FOREIGN KEY (COZINHEIRO_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.622--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_PRATO_ID FOREIGN KEY (PRATO_ID) REFERENCES PRATO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.622--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_PRODUTO_ID FOREIGN KEY (PRODUTO_ID) REFERENCES PRODUCAO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.632--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_AVALIADOR_ID FOREIGN KEY (AVALIADOR_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.632--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_insumos_ID FOREIGN KEY (insumos_ID) REFERENCES INSUMO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.642--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_pratos_ID FOREIGN KEY (pratos_ID) REFERENCES PRATO (ID)
+[EL Fine]: sql: 2019-01-29 14:29:45.963--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
 	bind => [Rafael Lins]
-[EL Fine]: sql: 2019-01-28 16:53:56.336--ClientSession(2135359921)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:45.973--ClientSession(1856158867)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [073.975.104-26, null, null, linsdesouza@hotmail.com, 1, RAFAEL LINS, teste, teste, null]
-[EL Fine]: sql: 2019-01-28 16:53:56.339--ClientSession(2135359921)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.397--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.003--ClientSession(1856158867)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.033--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
 	bind => [Maria Helena]
-[EL Fine]: sql: 2019-01-28 16:53:56.398--ClientSession(1788036341)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.033--ClientSession(1275143523)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [null, null, null, null, 2, MARIA HELENA, null, null, null]
-[EL Fine]: sql: 2019-01-28 16:53:56.399--ClientSession(1788036341)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.402--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.033--ClientSession(1275143523)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.043--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
 	bind => [CREME DE LEITE]
-[EL Fine]: sql: 2019-01-28 16:53:56.405--ClientSession(844264574)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.043--ClientSession(1201454821)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
 	bind => [false, true, CREME DE LEITE]
-[EL Fine]: sql: 2019-01-28 16:53:56.407--ClientSession(844264574)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.416--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.053--ClientSession(1201454821)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.053--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
 	bind => [Farinha Yoki]
-[EL Fine]: sql: 2019-01-28 16:53:56.417--ClientSession(918145945)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.053--ClientSession(1564698139)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
 	bind => [true, true, FARINHA YOKI]
-[EL Fine]: sql: 2019-01-28 16:53:56.417--ClientSession(918145945)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.42--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.053--ClientSession(1564698139)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.063--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
 	bind => [Farofa de calabresa]
-[EL Fine]: sql: 2019-01-28 16:53:56.422--ClientSession(1664093259)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.063--ClientSession(644052207)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
 	bind => [1, false, false, FAROFA DE CALABRESA, Faça devagar pra não se perder, 30]
-[EL Fine]: sql: 2019-01-28 16:53:56.423--ClientSession(1664093259)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.425--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.063--ClientSession(644052207)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.063--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
 	bind => [Lasanha de frango]
-[EL Fine]: sql: 2019-01-28 16:53:56.427--ClientSession(4573619)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.073--ClientSession(129498568)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
 	bind => [2, false, false, LASANHA DE FRANGO, Prepare a massa e depois o recheio, 45]
-[EL Fine]: sql: 2019-01-28 16:53:56.429--ClientSession(4573619)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.432--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.073--ClientSession(129498568)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.073--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
 	bind => [Feijoada]
-[EL Fine]: sql: 2019-01-28 16:53:56.433--ClientSession(1404150776)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.073--ClientSession(1986417638)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
 	bind => [3, false, false, FEIJOADA, Bote uma laranja pra cozinhar junto e absorver a gordura, 90]
-[EL Fine]: sql: 2019-01-28 16:53:56.434--ClientSession(1404150776)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.442--ClientSession(561772958)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
-	bind => [14/10/2018, 2, 1]
-[EL Fine]: sql: 2019-01-28 16:53:56.444--ClientSession(561772958)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.448--ClientSession(298862004)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
-	bind => [14/10/2018, 2, 2]
-[EL Fine]: sql: 2019-01-28 16:53:56.449--ClientSession(298862004)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.459--ClientSession(1705634364)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
-	bind => [01/10/2018, 2, 3]
-[EL Fine]: sql: 2019-01-28 16:53:56.461--ClientSession(1705634364)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.465--ClientSession(1282100951)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.073--ClientSession(1986417638)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.083--ClientSession(2038105753)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-14, 2, 1]
+[EL Fine]: sql: 2019-01-29 14:29:46.103--ClientSession(2038105753)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.113--ClientSession(508378341)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-14, 2, 2]
+[EL Fine]: sql: 2019-01-29 14:29:46.113--ClientSession(508378341)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.123--ClientSession(888557915)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-01, 2, 3]
+[EL Fine]: sql: 2019-01-29 14:29:46.123--ClientSession(888557915)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.123--ClientSession(1482246673)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
 	bind => [null, 8, 10, 1, 1]
-[EL Fine]: sql: 2019-01-28 16:53:56.467--ClientSession(1282100951)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.469--ClientSession(1478835287)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
+[EL Fine]: sql: 2019-01-29 14:29:46.123--ClientSession(1482246673)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.133--ClientSession(965586344)--Connection(1438030319)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
 	bind => [MUITO MOLHO, 7, 7, 2, 2]
-[EL Fine]: sql: 2019-01-28 16:53:56.47--ClientSession(1478835287)--Connection(1440057381)--Thread(Thread[main,5,main])--select lastval()
-[EL Fine]: sql: 2019-01-28 16:53:56.48--ClientSession(287136919)--Connection(1440057381)--Thread(Thread[main,5,main])--INSERT INTO INSUMO_PRATO (pratos_ID, insumos_ID) VALUES (?, ?)
-	bind => [2, 1]
-[EL Fine]: sql: 2019-01-28 16:53:56.485--ClientSession(1042273835)--Connection(1440057381)--Thread(Thread[main,5,main])--UPDATE PRATO SET LACTOSE = ? WHERE (ID = ?)
-	bind => [true, 2]
-[EL Fine]: sql: 2019-01-28 16:53:56.489--ClientSession(255156436)--Connection(1440057381)--Thread(Thread[main,5,main])--UPDATE FUNCIONARIO SET MATRICULA = ?, NOME = ? WHERE (ID = ?)
-	bind => [10, RAFAEL LINS DE SOUZA, 1]
-[EL Config]: connection: 2019-01-28 16:53:56.492--ServerSession(1938056729)--Connection(1440057381)--Thread(Thread[main,5,main])--disconnect
-[EL Info]: connection: 2019-01-28 16:53:56.492--ServerSession(1938056729)--Thread(Thread[main,5,main])--/file:/C:/Users/Administrador/Documents/GitHub/ProjetoPOB--Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink logout successful
-[EL Config]: connection: 2019-01-28 16:53:56.493--ServerSession(1938056729)--Connection(1824327284)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: sql: 2019-01-29 14:29:46.133--ClientSession(965586344)--Connection(1438030319)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-01-29 14:29:46.143--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO
+[EL Fine]: sql: 2019-01-29 14:29:46.143--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO
+[EL Fine]: sql: 2019-01-29 14:29:46.143--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO
+[EL Fine]: sql: 2019-01-29 14:29:46.143--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO
+[EL Fine]: sql: 2019-01-29 14:29:46.153--ServerSession(1447689627)--Connection(1438030319)--Thread(Thread[main,5,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO

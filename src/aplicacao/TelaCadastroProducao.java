@@ -47,8 +47,8 @@ public class TelaCadastroProducao extends JFrame {
 	private JDateChooser datePicker;
 	private JTextField textFieldCodFuncionario;
 	
-	private DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	private SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
+	private DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 
 	
 	/**

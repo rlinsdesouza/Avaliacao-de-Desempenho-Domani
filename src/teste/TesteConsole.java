@@ -22,7 +22,7 @@ public class TesteConsole {
 	public TesteConsole () {
 		Fachada.inicializar();
 		cadastrar();
-//		consultar ();
+		consultar ();
 		alterar();
 //		remover();
 	}
@@ -45,9 +45,9 @@ public class TesteConsole {
 			Prato p2 = Fachada.cadastrarPrato("Lasanha de frango", "Prepare a massa e depois o recheio", 2,45,false,false,null);
 			Prato p3 = Fachada.cadastrarPrato("Feijoada", "Bote uma laranja pra cozinhar junto e absorver a gordura", 3,90,false,false,null);
 
-			Producao r1 = Fachada.cadastrarProducao("14/10/2018",p1,f2);
-			Producao r2 = Fachada.cadastrarProducao("14/10/2018", p2, f2);
-			Producao r3 = Fachada.cadastrarProducao("01/10/2018", p3, f2);
+			Producao r1 = Fachada.cadastrarProducao("2018-10-14",p1,f2);
+			Producao r2 = Fachada.cadastrarProducao("2018-10-14", p2, f2);
+			Producao r3 = Fachada.cadastrarProducao("2018-10-01", p3, f2);
 			
 			Fachada.cadastrarAvaliacao(r1, 10, 8,null,f1);
 			Fachada.cadastrarAvaliacao(r2, 7, 7, "muito molho", f2);
@@ -110,37 +110,37 @@ public class TesteConsole {
 	
 	public void consultar () {
 		System.out.println("Todos os funcionarios: ");
-		List<Funcionario> l = Fachadaold.listarFuncionarios();
+		List<Funcionario> l = Fachada.listarFuncionarios();
 		for (Funcionario funcionario : l) {
 			System.out.println(funcionario);
 		}
 		
 		System.out.println("Todos os insumos: ");
-		List<Insumo> li = Fachadaold.listarInsumo();
+		List<Insumo> li = Fachada.listarInsumo();
 		for (Insumo i : li) {
 			System.out.println(i);
 		}
 		
 		System.out.println("Todos os pratos: ");
-		List<Prato> lp = Fachadaold.listarPratos();
+		List<Prato> lp = Fachada.listarPratos();
 		for (Prato p : lp) {
 			System.out.println(p);
 		}
 		
 		System.out.println("Todos as producoes: ");
-		List<Producao> lprod = Fachadaold.listarProducoes();
+		List<Producao> lprod = Fachada.listarProducoes();
 		for (Producao prod : lprod) {
 			System.out.println(prod);
 		}
 		
 		System.out.println("Todos as avaliacoes: ");
-		List<Avaliacao> la = Fachadaold.listarAvaliacaoes();
+		List<Avaliacao> la = Fachada.listarAvaliacaoes();
 		for (Avaliacao a : la) {
 			System.out.println(a);
 		}
 		
 		System.out.println("Notas das produ��es do funcionario Helena(id 3) entre 01/10/2018 a 15/10/2018: ");
-		List<Producao> lphelena = Fachadaold.listarProducoesPorDataFuncionario("01/10/2018", "15/10/2018", 3);
+		List<Producao> lphelena = Fachada.listarProducoesPorDataFuncionario("01/10/2018", "15/10/2018", 3);
 		System.out.println(Fachadaold.calculaNotaProducoes(lphelena));
 	}
 }
