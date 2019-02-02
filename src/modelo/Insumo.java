@@ -34,6 +34,7 @@ public class Insumo implements IDInterface {
 		this.nome = nome.toUpperCase();
 		this.lactose = lactose;
 		this.gluten = gluten;
+		this.pratos = new ArrayList <Prato>();
 	}
 
 	public int getId() {
@@ -69,7 +70,7 @@ public class Insumo implements IDInterface {
 	}
 	
 	public List<Prato> getPratos() {
-		return pratos;
+		return this.pratos;
 	}
 
 	public void setPratos(List<Prato> pratos) {

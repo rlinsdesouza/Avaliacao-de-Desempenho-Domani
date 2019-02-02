@@ -21,10 +21,10 @@ public class TesteConsole {
 	
 	public TesteConsole () {
 		Fachada.inicializar();
-//		cadastrar();
+		cadastrar();
 		consultar ();
-//		alterar();
-//		remover();
+		alterar();
+		remover();
 	}
 
 	
@@ -58,6 +58,7 @@ public class TesteConsole {
 	public void alterar () {
 		try {
 			System.out.println("adiconando um insumo ao prato");
+			System.out.println(Fachada.localizarPrato(2).getInsumos());
 			Fachada.adicionarInsumoAoPrato(Fachada.localizarPrato(2), Fachada.localizarInsumo(1));
 			System.out.println("Prato antes de atualizar o gluten e lactose e depois de add insumo: "+Fachada.localizarPrato(2));
 			System.out.println("atualizando um prato em funcao do seus insumos");
