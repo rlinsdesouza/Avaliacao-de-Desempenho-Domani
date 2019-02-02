@@ -29,7 +29,8 @@ public class DAOPrato  extends DAO<Prato>{
 	
 	public List<Producao> ProducoesComPrato (String nome){
 		Query q = manager.createQuery(
-				"select p from Producao p where p.prato.nome = :name");
+				"select p from Producao p JOIN Prato pt where pt.nome = :name");
+		q.setParameter("name", nome);
 		List<Producao> resultados = q.getResultList();
 		return resultados;
 	}	

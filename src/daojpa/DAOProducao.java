@@ -3,8 +3,11 @@
  */
 package daojpa;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -35,27 +38,20 @@ public class DAOProducao extends DAO<Producao>  {
 	}
 	
 	public List<Producao> consultarProducoesPorDiaFuncionario(String datainicial,String datafinal, int id){
-		(dataproducao.isAfter(this.datainicialf)||dataproducao.equals(this.datainicialf))
-		&& (dataproducao.isBefore(this.datafinalf)||dataproducao.equals(this.datafinalf))
-		&& p.getCozinheiro().getId()==this.idf);
 		Query q = manager.createQuery(
-				"select p from Producao p where p.data > :data AND p.cozinheiro.id = :id");
-		q.setParameter("data", data);
+				"select p from Producao p where "
+				+ "(p.data > :datainicial OR p.data = :datainicial)"
+				+ "AND"
+				+ "(p.data < :datafinal OR p.data = :datafinal)"
+				+ "AND"
+				+ "(p.cozinheiro.id = :id)");
+		q.setParameter("datainicial", datainicial);
+		q.setParameter("datafinal", datafinal);
 		q.setParameter("id", id);	
-		q.constrain(new Filtro(datainicial,datafinal,id));
-		List<Producao> result = q.execute();
+		List<Producao> result = q.getResultList();
 		return result;	
 	}
 	
-	public List<Avaliacao> ProducaoComAvaliacao (Producao p){	
-		Query q = manager.createQuery(
-				"select a from Avaliacao a where a.id = :pId");
-		q.setParameter("pId", p.getId());
-//		q.descend("id").constrain(p.getId());
-//		q.descend("avaliacoes");
-		List<Avaliacao> resultados = q.getResultList();
-		return resultados;
-	}
 
 //**************************************************************
 @SuppressWarnings("serial")

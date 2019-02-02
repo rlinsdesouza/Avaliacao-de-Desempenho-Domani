@@ -25,7 +25,7 @@ public class DAOInsumo extends DAO<Insumo>  {
 	
 	public List<Prato> PratosComInsumo (String nome){	
 		Query q = manager.createQuery(
-				"select p from Prato p where p.insumos.nome = :name");
+				"select p from Insumo i JOIN Prato p where i.nome = :name");
 		q.setParameter("name", nome);
 		List<Prato> resultados = q.getResultList();
 		return resultados;

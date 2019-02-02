@@ -1,9 +1,6 @@
-/META-INF/
 /aplicacao/
 /dao/
+/META-INF/
 /daojpa/
-/fachada/
-/modelo/
-/servidor/
 /teste/
-/uteis/
+/fachada/

@@ -126,7 +126,7 @@ public class Fachada {
 	
 	public static Producao removerProducao (Producao p) throws Exception {
 		DAO.begin();
-		List<Avaliacao> l = daoproducao.ProducaoComAvaliacao(p);
+		List<Avaliacao> l = p.getAvaliacoes();
 		if (l.isEmpty()) {
 			p.getCozinheiro().getProducoes().remove(p);
 			daofuncionario.update(p.getCozinheiro());
