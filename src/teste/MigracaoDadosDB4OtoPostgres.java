@@ -70,24 +70,35 @@ public class MigracaoDadosDB4OtoPostgres {
 				
 			}
 			
-//			List<Producao> bancoproducao = Fachadaold.listarProducoes();
-//			DateFormat formatBR = new SimpleDateFormat("dd-mm-yyyy");
-//			DateFormat formatUS = new SimpleDateFormat("yyyy-mm-dd");
-//			
-//			for (Producao producao : bancoproducao) {
-//				//Primeiro converte de String para Date
-//				Date date = formatBR.parse(producao.getData());
-//				//Depois formata data
-//				String dateFormated = formatUS.format(date);
-//				
-//				Fachada.cadastrarProducao(dateFormated, producao.getPrato(), producao.getCozinheiro());
-//				if(producao.getAvaliacoes() !=null) {
-//					for (Avaliacao avaliacao : producao.getAvaliacoes()) {
-//						Fachada.cadastrarAvaliacao(producao, avaliacao.getNotaSabor(), avaliacao.getNotaAparencia(), avaliacao.getJustificativa(), avaliacao.getAvaliador());
-//					}
-//				}
-//				
-//			}
+			List<Producao> bancoproducao = Fachadaold.listarProducoes();
+			DateFormat formatBR = new SimpleDateFormat("dd/mm/yyyy");
+			DateFormat formatUS = new SimpleDateFormat("yyyy-mm-dd");
+			
+			for (Producao producao : bancoproducao) {
+				//Primeiro converte de String para Date
+				Date date = formatBR.parse(producao.getData());
+				//Depois formata data
+				String dateFormated = formatUS.format(date);
+				
+//				System.out.println(dateFormated);
+//				System.out.println(producao.getPrato().getNome());
+//				System.out.println(Fachada.listarPratos(producao.getPrato().getNome()));
+//				System.out.println(producao.getCozinheiro().getNome());
+//				System.out.println(Fachada.listarFuncionarios(producao.getCozinheiro().getNome().toUpperCase()));
+				
+				try {
+					Producao producaoPostgres = Fachada.cadastrarProducao(dateFormated, Fachada.listarPratos(producao.getPrato().getNome()).get(0), Fachada.listarFuncionarios(producao.getCozinheiro().getNome().toUpperCase()).get(0));
+					if(producao.getAvaliacoes() !=null) {
+						for (Avaliacao avaliacao : producao.getAvaliacoes()) {
+							Fachada.cadastrarAvaliacao(producaoPostgres, avaliacao.getNotaSabor(), avaliacao.getNotaAparencia(), avaliacao.getJustificativa(), Fachada.listarFuncionarios(avaliacao.getAvaliador().getNome()).get(0));
+						}
+					}
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+				
+				
+			}
 
 //			Producao r1 = Fachadaold.cadastrarProducao("14/10/2018",p1,f2);
 //			Producao r2 = Fachadaold.cadastrarProducao("14/10/2018", p2, f2);

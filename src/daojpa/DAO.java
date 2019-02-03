@@ -176,7 +176,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass()
 				.getGenericSuperclass()).getActualTypeArguments()[0];
 		Query query = manager.createQuery("select x from " + type.getSimpleName() + " x where x.nome like :name");
-		query.setParameter("name", "%"+nome+"%");
+		query.setParameter("name", "%"+nome.toUpperCase()+"%");
 		List<T> resultados = query.getResultList();
 		if (resultados.size()>0)
 			return resultados;

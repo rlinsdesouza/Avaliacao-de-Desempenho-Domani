@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Producao;
@@ -108,11 +108,11 @@ public class TelaCadastroFuncionario extends JFrame {
 						List<Producao> producoes=null;
 		
 						
-						Funcionario p = Fachadaold.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
+						Funcionario p = Fachada.localizarFuncionario(Integer.parseInt(textFieldCod.getText()));					
 						if (p == null) {
-							p = Fachadaold.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, producoes);
+							p = Fachada.cadastrarFuncionario(matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao, producoes);
 						}else {
-							Fachadaold.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao);
+							Fachada.atualizarFuncionario(p.getId(),matricula, nome,cpf ,telefone, email, senha,salt,dataAdmissao,dataDemissao);
 						}
 						atualizaDados(p);	
 						lblmsg.setText("cadastrado/atualizado "+p.getNome());
@@ -157,7 +157,7 @@ public class TelaCadastroFuncionario extends JFrame {
 				txtMatricula.setEnabled(true);
 				Funcionario selecionado;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do funcionário", "Localiza funcionário", 0);
-				List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(nome); 
+				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
 				
 				if (funcionarios.size()>1) {
 					selecionado = seleciona (funcionarios);

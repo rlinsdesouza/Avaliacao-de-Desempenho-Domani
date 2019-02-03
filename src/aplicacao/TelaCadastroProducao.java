@@ -23,7 +23,7 @@ import javax.swing.border.EmptyBorder;
 import com.db4o.internal.query.processor.ParentCandidate;
 import com.toedter.calendar.JDateChooser;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Funcionario;
 import modelo.Insumo;
 import modelo.Prato;
@@ -80,10 +80,10 @@ public class TelaCadastroProducao extends JFrame {
 					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja salvar/atualizar essas produc�es para o funcion�rio?", "Confirmação",0);
 					if (opcao==0) {
 					
-						Funcionario f = Fachadaold.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
+						Funcionario f = Fachada.localizarFuncionario(Integer.parseInt(textFieldCodFuncionario.getText()));
 						
 						String data = sf.format(datePicker.getDate());
-						List<Producao> producoes = Fachadaold.listarProducoesPorDataFuncionario(data, f.getId());
+						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data, f.getId());
 						List<Prato> pratosproducao = new ArrayList<Prato>();
 						List<Prato> pratoslist = new ArrayList<Prato>();
 						
@@ -96,7 +96,7 @@ public class TelaCadastroProducao extends JFrame {
 							Prato p = (Prato) listModel.get(i);
 							pratoslist.add(p);
 							if (!pratosproducao.contains(p)&&p!=null)
-								Fachadaold.cadastrarProducao (data,p,f);
+								Fachada.cadastrarProducao (data,p,f);
 						}
 						
 						
@@ -104,7 +104,7 @@ public class TelaCadastroProducao extends JFrame {
 							if (!pratoslist.contains(prato)) {
 								for (Producao p : producoes) {
 									if (p.getPrato().getId()==prato.getId())
-										Fachadaold.removerProducao (p);
+										Fachada.removerProducao (p);
 								}
 							}
 								
@@ -131,7 +131,7 @@ public class TelaCadastroProducao extends JFrame {
 				
 				Funcionario selecionado;
 				String nome = JOptionPane.showInputDialog(contentPane, "Nome do funcion�rio", "Localiza funcion�rio", 0);
-				List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(nome); 
+				List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome); 
 				
 				if (funcionarios.size()>1) {
 					selecionado = seleciona (funcionarios);
@@ -186,7 +186,7 @@ public class TelaCadastroProducao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Prato selecionado = null;
 				String nome = JOptionPane.showInputDialog(btnAddPrato, "Nome do prato", "Localiza prato",1);
-				List<Prato> pratos = Fachadaold.listarPratos(nome);
+				List<Prato> pratos = Fachada.listarPratos(nome);
 				if (pratos.size() != 0) {
 					if (pratos.size()>1) {
 						selecionado = seleciona(pratos);
@@ -229,7 +229,7 @@ public class TelaCadastroProducao extends JFrame {
 					int opcao = JOptionPane.showConfirmDialog(contentPane, "Confirma a data para busca:"+data, "Confirmação",0);
 					if (opcao == 0) {
 						String nome = JOptionPane.showInputDialog(contentPane, "Nome do cozinheiro", "Localiza cozinheiro",1);
-						List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(nome);
+						List<Funcionario> funcionarios = Fachada.listarFuncionarios(nome);
 
 						Funcionario selecionado;
 						if (funcionarios.size()>1) {
@@ -243,7 +243,7 @@ public class TelaCadastroProducao extends JFrame {
 						}
 						
 						
-						List<Producao> producoes = Fachadaold.listarProducoesPorDataFuncionario(data,selecionado.getId());
+						List<Producao> producoes = Fachada.listarProducoesPorDataFuncionario(data,selecionado.getId());
 						atualizaDados(producoes);
 					}
 				}

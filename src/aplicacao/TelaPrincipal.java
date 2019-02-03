@@ -20,7 +20,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 
 public class TelaPrincipal {
 	private JFrame frmPrincipal;
@@ -65,7 +65,7 @@ public class TelaPrincipal {
 	 * Create the application.
 	 */
 	public TelaPrincipal() {
-		Fachadaold.inicializar();
+		Fachada.inicializar();
 		initialize();	
 	}
 
@@ -91,7 +91,7 @@ public class TelaPrincipal {
 							frmPrincipal.setVisible(true);
 							login.dispose();
 						}else {
-						Fachadaold.finalizar();
+						Fachada.finalizar();
 						System.exit(0);
 					}
 					
@@ -107,7 +107,7 @@ public class TelaPrincipal {
 				@Override
 				public void windowClosing(WindowEvent e) {
 					JOptionPane.showMessageDialog(frmPrincipal, "até breve !");
-					Fachadaold.finalizar();
+					Fachada.finalizar();
 				}
 			});
 			frmPrincipal.setSize(1650,1080);
@@ -120,7 +120,7 @@ public class TelaPrincipal {
 			    public void actionPerformed(ActionEvent e)
 			    {
 			        JFrame frame = (JFrame)e.getSource();
-					Fachadaold.finalizar();
+					Fachada.finalizar();
 					System.exit(0);
 			    }
 			};

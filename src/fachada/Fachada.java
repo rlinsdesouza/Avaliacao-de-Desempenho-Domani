@@ -39,7 +39,7 @@ public class Fachada {
 		if(i != null) {
 			throw new Exception("ja cadastrado:" + nome);
 		}
-		i = new Funcionario(matricula, nome, cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, producoes);
+		i = new Funcionario(matricula, nome.toUpperCase(), cpf, telefone, email,senha,salt,dataAdmissao, dataDemissao, producoes);
 		daofuncionario.create(i);		
 		DAO.commit();
 		return i;
@@ -54,7 +54,7 @@ public class Fachada {
 			throw new Exception("produto ja cadastrado:" + nome);
 //			return null;
 		}else {
-			i = new Prato(nome,receita,dificuldade,tempoProduzir,lactose,gluten,insumos);
+			i = new Prato(nome.toUpperCase(),receita.toUpperCase(),dificuldade,tempoProduzir,lactose,gluten,insumos);
 			daoprato.create(i);		
 			DAO.commit();
 			return i;
@@ -71,7 +71,7 @@ public class Fachada {
 			throw new Exception("produto ja cadastrado:" + nome);
 		}
 
-		i = new Insumo(nome, lactose, gluten);
+		i = new Insumo(nome.toUpperCase(), lactose, gluten);
 		daoinsumo.create(i);		
 		DAO.commit();
 		return i;

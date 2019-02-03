@@ -19,7 +19,7 @@ public class DAOFuncionario  extends DAO<Funcionario>{
 	public Funcionario readByNome (String nome){	
 		Query q = manager.createQuery(
 				"select f from Funcionario f where f.nome = :name");
-		q.setParameter("name", nome);
+		q.setParameter("name", nome.toUpperCase());
 		List<Funcionario> resultados = q.getResultList();
 		if (resultados.size()>0)
 			return (Funcionario) resultados.get(0);

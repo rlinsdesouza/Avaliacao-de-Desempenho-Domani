@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Insumo;
 
 public class TelaCadastroInsumo extends JFrame {
@@ -87,11 +87,11 @@ public class TelaCadastroInsumo extends JFrame {
 						Boolean lactose = chckbxLactose.isSelected();
 						Boolean gluten = checkBoxGluten.isSelected();
 						
-						Insumo p = Fachadaold.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
+						Insumo p = Fachada.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
 						if (p == null) {
-							p = Fachadaold.cadastrarInsumo(nome,lactose,gluten);
+							p = Fachada.cadastrarInsumo(nome,lactose,gluten);
 						}else {
-							Fachadaold.atualizarInsumo(p.getId(),nome,lactose,gluten);
+							Fachada.atualizarInsumo(p.getId(),nome,lactose,gluten);
 						}
 						JOptionPane.showMessageDialog(contentPane, "Cadastrado/atualizado com sucesso!");
 						btnNovoInsumo.doClick();						
@@ -135,7 +135,7 @@ public class TelaCadastroInsumo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				Insumo selecionado;
 				String nome = JOptionPane.showInputDialog(btnLocalizar, "Nome do insumo", "Localiza prato", 0);
-				List<Insumo> insumos = Fachadaold.listarInsumo(nome); 
+				List<Insumo> insumos = Fachada.listarInsumo(nome); 
 				
 				if (insumos.size()>1) {
 					selecionado = seleciona (insumos);
@@ -154,11 +154,11 @@ public class TelaCadastroInsumo extends JFrame {
 				try {
 					int opcao = JOptionPane.showConfirmDialog(contentPane, "Deseja REALMENTE excluir o insumo?", "Confirmação",0);
 					if (opcao==0) {					
-						Insumo p = Fachadaold.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
+						Insumo p = Fachada.localizarInsumo(Integer.parseInt(textFieldCodInsumo.getText()));					
 						if (p == null) {
 							JOptionPane.showMessageDialog(contentPane, "Localize um insumo!");
 						}else {
-							Fachadaold.removerInsumo(p);
+							Fachada.removerInsumo(p);
 						}
 						JOptionPane.showMessageDialog(contentPane, "Excluido com sucesso!");
 						btnNovoInsumo.doClick();						

@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Avaliacao;
 import modelo.Funcionario;
 import modelo.Producao;
@@ -35,8 +35,8 @@ public class TelaAvaliacaoCozinha extends JDialog {
 	private JLabel lblAvaliados;
 	private JDateChooser datePicker;
 	
-	private DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	private SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
+	private DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 	private JTextField textFieldAvaliador;
 	private JList listSabor;
 	private JLabel lblPratosNoAvaliados;
@@ -107,7 +107,7 @@ public class TelaAvaliacaoCozinha extends JDialog {
 							break;
 						}
 						
-						avaliacao = Fachadaold.cadastrarAvaliacao(producao,notaSabor,notaAparencia,textFieldJusiticativa.getText(),avaliador);					
+						avaliacao = Fachada.cadastrarAvaliacao(producao,notaSabor,notaAparencia,textFieldJusiticativa.getText(),avaliador);					
 						JOptionPane.showMessageDialog(contentPane, "Salvo/Atualizado com sucesso!", "Confirma��o",2);
 						dispose();
 					}

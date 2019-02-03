@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Funcionario;
 import uteis.PasswordUtils;
 
@@ -71,7 +71,7 @@ public class TelaLogin extends JDialog {
 					int tentativas=0;
 					String senha = passwordField.getText(); 
 					
-					List<Funcionario> funcionarios = Fachadaold.listarFuncionarios(textFieldNome.getText());
+					List<Funcionario> funcionarios = Fachada.listarFuncionarios(textFieldNome.getText());
 					
 					for (Funcionario funcionario : funcionarios) {
 						if (PasswordUtils.verifyUserPassword(senha, funcionario.getSenha(), funcionario.getSalt())) {
@@ -85,7 +85,7 @@ public class TelaLogin extends JDialog {
 						}
 						if (tentativas == 3) {
 							JOptionPane.showMessageDialog(null, "tentativas excedidas!");
-							Fachadaold.finalizar();
+							Fachada.finalizar();
 							System.exit(0);	
 						}
 							
@@ -106,7 +106,7 @@ public class TelaLogin extends JDialog {
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Fachadaold.finalizar();
+				Fachada.finalizar();
 				System.exit(0);	
 			}
 		});

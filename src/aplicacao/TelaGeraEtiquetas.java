@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachadaold;
+import fachada.Fachada;
 import modelo.Insumo;
 import modelo.Prato;
 import uteis.CreateEtiquetasPDF;
@@ -100,7 +100,7 @@ public class TelaGeraEtiquetas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Prato selecionado;
 				String nome = JOptionPane.showInputDialog(btnAddPrato, "Nome do prato", "Localiza prato",1);
-				List<Prato> pratos = Fachadaold.listarPratos(nome);
+				List<Prato> pratos = Fachada.listarPratos(nome);
 
 				if (pratos.size()>1) {
 					selecionado = seleciona(pratos);

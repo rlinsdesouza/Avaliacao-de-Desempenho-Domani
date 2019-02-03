@@ -19,7 +19,7 @@ public class DAOPrato  extends DAO<Prato>{
 	public Prato readByNome (String nome){	
 		Query q = manager.createQuery(
 				"select p from Prato p where p.nome = :name");
-		q.setParameter("name", nome);
+		q.setParameter("name", nome.toUpperCase());
 		List<Prato> resultados = q.getResultList();
 		if (resultados.size()>0)
 			return (Prato) resultados.get(0);
@@ -30,7 +30,7 @@ public class DAOPrato  extends DAO<Prato>{
 	public List<Producao> ProducoesComPrato (String nome){
 		Query q = manager.createQuery(
 				"select p from Producao p JOIN Prato pt where pt.nome = :name");
-		q.setParameter("name", nome);
+		q.setParameter("name", nome.toUpperCase());
 		List<Producao> resultados = q.getResultList();
 		return resultados;
 	}	

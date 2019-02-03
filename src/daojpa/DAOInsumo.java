@@ -15,7 +15,7 @@ public class DAOInsumo extends DAO<Insumo>  {
 	public Insumo readByNome (String nome){	
 		Query q = manager.createQuery(
 				"select i from Insumo i where i.nome = :name");
-		q.setParameter("name", nome);
+		q.setParameter("name", nome.toUpperCase());
 		List<Insumo> resultados = q.getResultList();
 		if (resultados.size()>0)
 			return (Insumo) resultados.get(0);
@@ -26,7 +26,7 @@ public class DAOInsumo extends DAO<Insumo>  {
 	public List<Prato> PratosComInsumo (String nome){	
 		Query q = manager.createQuery(
 				"select p from Insumo i JOIN Prato p where i.nome = :name");
-		q.setParameter("name", nome);
+		q.setParameter("name", nome.toUpperCase());
 		List<Prato> resultados = q.getResultList();
 		return resultados;
 	}
