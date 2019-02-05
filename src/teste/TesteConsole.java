@@ -22,9 +22,10 @@ public class TesteConsole {
 	public TesteConsole () {
 		Fachada.inicializar();
 		cadastrar();
-		consultar ();
 		alterar();
+		consultar ();
 		remover();
+		System.out.println("TESTE FINALIZADO");
 	}
 
 	

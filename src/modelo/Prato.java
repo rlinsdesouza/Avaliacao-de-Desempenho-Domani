@@ -26,7 +26,7 @@ public class Prato implements IDInterface {
 	private int tempoProduzir;
 	private boolean lactose;
 	private boolean gluten;
-	@ManyToMany(mappedBy="pratos",cascade=CascadeType.ALL)
+	@ManyToMany(mappedBy="pratos",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Insumo> insumos = new ArrayList<Insumo>();
 	@OneToMany(mappedBy="prato",cascade=CascadeType.ALL)
 	private List<Producao> producoes = new ArrayList<Producao>();

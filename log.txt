@@ -1,1025 +1,167 @@
-[EL Fine]: server: 2019-02-02 21:30:40.655--Thread(Thread[AWT-EventQueue-0,6,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2019-02-02 21:30:41.327--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Insumo] is set to [FIELD].
-[EL Config]: metadata: 2019-02-02 21:30:41.405--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to many mapping element [field pratos] is being defaulted to: class modelo.Prato.
-[EL Config]: metadata: 2019-02-02 21:30:41.42--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Funcionario] is set to [FIELD].
-[EL Config]: metadata: 2019-02-02 21:30:41.42--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-02-02 21:30:41.42--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
-[EL Config]: metadata: 2019-02-02 21:30:41.42--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Avaliacao] is set to [FIELD].
-[EL Config]: metadata: 2019-02-02 21:30:41.42--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field avaliador] is being defaulted to: class modelo.Funcionario.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Prato] is set to [FIELD].
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to many mapping element [field insumos] is being defaulted to: class modelo.Insumo.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Producao] is set to [FIELD].
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field prato] is being defaulted to: class modelo.Prato.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field cozinheiro] is being defaulted to: class modelo.Funcionario.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Insumo] is being defaulted to: Insumo.
-[EL Config]: metadata: 2019-02-02 21:30:41.436--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Insumo] is being defaulted to: INSUMO.
-[EL Config]: metadata: 2019-02-02 21:30:41.467--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Funcionario] is being defaulted to: Funcionario.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Funcionario] is being defaulted to: FUNCIONARIO.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [senha] is being defaulted to: SENHA.
-[EL Config]: metadata: 2019-02-02 21:30:41.483--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [dataDemissao] is being defaulted to: DATADEMISSAO.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [telefone] is being defaulted to: TELEFONE.
-[EL Fine]: metadata: 2019-02-02 21:30:41.498--Thread(Thread[AWT-EventQueue-0,6,main])--java.lang.ClassNotFoundException: java.util.Listjava.lang.Integer
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [salt] is being defaulted to: SALT.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [matricula] is being defaulted to: MATRICULA.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [cpf] is being defaulted to: CPF.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [dataAdmissao] is being defaulted to: DATAADMISSAO.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Avaliacao] is being defaulted to: Avaliacao.
-[EL Config]: metadata: 2019-02-02 21:30:41.498--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Avaliacao] is being defaulted to: AVALIACAO.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [notaAparencia] is being defaulted to: NOTAAPARENCIA.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [justificativa] is being defaulted to: JUSTIFICATIVA.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [notaSabor] is being defaulted to: NOTASABOR.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Prato] is being defaulted to: Prato.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Prato] is being defaulted to: PRATO.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [receita] is being defaulted to: RECEITA.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [dificuldade] is being defaulted to: DIFICULDADE.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [tempoProduzir] is being defaulted to: TEMPOPRODUZIR.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Producao] is being defaulted to: Producao.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Producao] is being defaulted to: PRODUCAO.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [data] is being defaulted to: DATA.
-[EL Config]: metadata: 2019-02-02 21:30:41.514--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.561--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The join table name for the many to many mapping [field pratos] is being defaulted to: INSUMO_PRATO.
-[EL Config]: metadata: 2019-02-02 21:30:41.561--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The source primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.561--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The source foreign key column name for the many to many mapping [pratos] is being defaulted to: insumos_ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.561--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.561--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The target foreign key column name for the many to many mapping [pratos] is being defaulted to: pratos_ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field produto] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [produto] is being defaulted to: PRODUTO_ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field avaliador] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [avaliador] is being defaulted to: AVALIADOR_ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field prato] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [prato] is being defaulted to: PRATO_ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field cozinheiro] is being defaulted to: ID.
-[EL Config]: metadata: 2019-02-02 21:30:41.577--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [cozinheiro] is being defaulted to: COZINHEIRO_ID.
-[EL Info]: 2019-02-02 21:30:42.67--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.3.v20180807-4be1041
-[EL Fine]: connection: 2019-02-02 21:30:43.03--Thread(Thread[AWT-EventQueue-0,6,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
-[EL Config]: connection: 2019-02-02 21:30:43.061--ServerSession(206918065)--Connection(1284107092)--Thread(Thread[AWT-EventQueue-0,6,main])--connecting(DatabaseLogin(
+[EL Fine]: server: 2019-02-05 14:13:47.777--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2019-02-05 14:13:48.033--ServerSession(701141022)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Insumo] is set to [FIELD].
+[EL Config]: metadata: 2019-02-05 14:13:48.065--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field pratos] is being defaulted to: class modelo.Prato.
+[EL Config]: metadata: 2019-02-05 14:13:48.066--ServerSession(701141022)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Funcionario] is set to [FIELD].
+[EL Config]: metadata: 2019-02-05 14:13:48.067--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-02-05 14:13:48.068--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
+[EL Config]: metadata: 2019-02-05 14:13:48.068--ServerSession(701141022)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Avaliacao] is set to [FIELD].
+[EL Config]: metadata: 2019-02-05 14:13:48.069--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field produto] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-02-05 14:13:48.07--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field avaliador] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2019-02-05 14:13:48.07--ServerSession(701141022)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Prato] is set to [FIELD].
+[EL Config]: metadata: 2019-02-05 14:13:48.071--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field insumos] is being defaulted to: class modelo.Insumo.
+[EL Config]: metadata: 2019-02-05 14:13:48.071--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field producoes] is being defaulted to: class modelo.Producao.
+[EL Config]: metadata: 2019-02-05 14:13:48.072--ServerSession(701141022)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Producao] is set to [FIELD].
+[EL Config]: metadata: 2019-02-05 14:13:48.072--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field prato] is being defaulted to: class modelo.Prato.
+[EL Config]: metadata: 2019-02-05 14:13:48.072--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field avaliacoes] is being defaulted to: class modelo.Avaliacao.
+[EL Config]: metadata: 2019-02-05 14:13:48.073--ServerSession(701141022)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cozinheiro] is being defaulted to: class modelo.Funcionario.
+[EL Config]: metadata: 2019-02-05 14:13:48.076--ServerSession(701141022)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Insumo] is being defaulted to: Insumo.
+[EL Config]: metadata: 2019-02-05 14:13:48.079--ServerSession(701141022)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Insumo] is being defaulted to: INSUMO.
+[EL Config]: metadata: 2019-02-05 14:13:48.097--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2019-02-05 14:13:48.1--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-02-05 14:13:48.1--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.101--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2019-02-05 14:13:48.101--ServerSession(701141022)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Funcionario] is being defaulted to: Funcionario.
+[EL Config]: metadata: 2019-02-05 14:13:48.102--ServerSession(701141022)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Funcionario] is being defaulted to: FUNCIONARIO.
+[EL Config]: metadata: 2019-02-05 14:13:48.102--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
+[EL Config]: metadata: 2019-02-05 14:13:48.102--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [dataDemissao] is being defaulted to: DATADEMISSAO.
+[EL Config]: metadata: 2019-02-05 14:13:48.105--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [telefone] is being defaulted to: TELEFONE.
+[EL Fine]: metadata: 2019-02-05 14:13:48.106--Thread(Thread[main,5,main])--java.lang.ClassNotFoundException: java.util.Listjava.lang.Integer
+[EL Config]: metadata: 2019-02-05 14:13:48.111--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [salt] is being defaulted to: SALT.
+[EL Config]: metadata: 2019-02-05 14:13:48.112--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [matricula] is being defaulted to: MATRICULA.
+[EL Config]: metadata: 2019-02-05 14:13:48.112--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
+[EL Config]: metadata: 2019-02-05 14:13:48.112--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-02-05 14:13:48.113--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.113--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [dataAdmissao] is being defaulted to: DATAADMISSAO.
+[EL Config]: metadata: 2019-02-05 14:13:48.113--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2019-02-05 14:13:48.113--ServerSession(701141022)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Avaliacao] is being defaulted to: Avaliacao.
+[EL Config]: metadata: 2019-02-05 14:13:48.113--ServerSession(701141022)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Avaliacao] is being defaulted to: AVALIACAO.
+[EL Config]: metadata: 2019-02-05 14:13:48.114--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [notaAparencia] is being defaulted to: NOTAAPARENCIA.
+[EL Config]: metadata: 2019-02-05 14:13:48.114--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [justificativa] is being defaulted to: JUSTIFICATIVA.
+[EL Config]: metadata: 2019-02-05 14:13:48.114--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.115--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [notaSabor] is being defaulted to: NOTASABOR.
+[EL Config]: metadata: 2019-02-05 14:13:48.115--ServerSession(701141022)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Prato] is being defaulted to: Prato.
+[EL Config]: metadata: 2019-02-05 14:13:48.115--ServerSession(701141022)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Prato] is being defaulted to: PRATO.
+[EL Config]: metadata: 2019-02-05 14:13:48.115--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [gluten] is being defaulted to: GLUTEN.
+[EL Config]: metadata: 2019-02-05 14:13:48.116--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [receita] is being defaulted to: RECEITA.
+[EL Config]: metadata: 2019-02-05 14:13:48.116--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [dificuldade] is being defaulted to: DIFICULDADE.
+[EL Config]: metadata: 2019-02-05 14:13:48.116--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [tempoProduzir] is being defaulted to: TEMPOPRODUZIR.
+[EL Config]: metadata: 2019-02-05 14:13:48.116--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2019-02-05 14:13:48.116--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.117--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [lactose] is being defaulted to: LACTOSE.
+[EL Config]: metadata: 2019-02-05 14:13:48.117--ServerSession(701141022)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Producao] is being defaulted to: Producao.
+[EL Config]: metadata: 2019-02-05 14:13:48.117--ServerSession(701141022)--Thread(Thread[main,5,main])--The table name for entity [class modelo.Producao] is being defaulted to: PRODUCAO.
+[EL Config]: metadata: 2019-02-05 14:13:48.117--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [data] is being defaulted to: DATA.
+[EL Config]: metadata: 2019-02-05 14:13:48.117--ServerSession(701141022)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.142--ServerSession(701141022)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [field pratos] is being defaulted to: INSUMO_PRATO.
+[EL Config]: metadata: 2019-02-05 14:13:48.144--ServerSession(701141022)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.144--ServerSession(701141022)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [pratos] is being defaulted to: insumos_ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.145--ServerSession(701141022)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field pratos] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.145--ServerSession(701141022)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [pratos] is being defaulted to: pratos_ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.152--ServerSession(701141022)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produto] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.153--ServerSession(701141022)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produto] is being defaulted to: PRODUTO_ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.153--ServerSession(701141022)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field avaliador] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.153--ServerSession(701141022)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [avaliador] is being defaulted to: AVALIADOR_ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.153--ServerSession(701141022)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field prato] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.154--ServerSession(701141022)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [prato] is being defaulted to: PRATO_ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.154--ServerSession(701141022)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field cozinheiro] is being defaulted to: ID.
+[EL Config]: metadata: 2019-02-05 14:13:48.154--ServerSession(701141022)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [cozinheiro] is being defaulted to: COZINHEIRO_ID.
+[EL Info]: 2019-02-05 14:13:48.878--ServerSession(701141022)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.3.v20180807-4be1041
+[EL Fine]: connection: 2019-02-05 14:13:49.007--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
+[EL Config]: connection: 2019-02-05 14:13:49.015--ServerSession(701141022)--Connection(891093184)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
 	platform=>PostgreSQLPlatform
 	user name=> "postgres"
-	datasource URL=> "jdbc:postgresql://localhost:5432/bancopgd"
+	datasource URL=> "jdbc:postgresql://localhost:5433/bancopgd"
 ))
-[EL Config]: connection: 2019-02-02 21:30:43.186--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--Connected: jdbc:postgresql://localhost:5432/bancopgd
+[EL Config]: connection: 2019-02-05 14:13:49.045--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5433/bancopgd
 	User: postgres
-	Database: PostgreSQL  Version: 9.6.11
+	Database: PostgreSQL  Version: 9.5.5
 	Driver: PostgreSQL Native Driver  Version: PostgreSQL 9.4 JDBC4.2 (build 1206)
-[EL Info]: connection: 2019-02-02 21:30:43.28--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/linsd/Documents/GitHub/ProjetoPOB--Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink login successful
-[EL Fine]: sql: 2019-02-02 21:30:50.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE NOME LIKE ?
-	bind => [%RAFAEL%]
-[EL Fine]: sql: 2019-02-02 21:31:34.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE NOME LIKE ?
-	bind => [%ANALICE%]
-[EL Fine]: sql: 2019-02-02 21:31:34.707--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE ((((DATA > ?) OR (DATA = ?)) AND ((DATA < ?) OR (DATA = ?))) AND (COZINHEIRO_ID = ?))
-	bind => [2018-10-01, 2018-10-01, 2018-10-31, 2018-10-31, 4]
-[EL Fine]: sql: 2019-02-02 21:31:34.723--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [408]
-[EL Fine]: sql: 2019-02-02 21:31:34.723--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [371]
-[EL Fine]: sql: 2019-02-02 21:31:34.723--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [403]
-[EL Fine]: sql: 2019-02-02 21:31:34.723--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [500]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [11]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [476]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [404]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [368]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [264]
-[EL Fine]: sql: 2019-02-02 21:31:34.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [343]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [58]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [410]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [294]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [448]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [416]
-[EL Fine]: sql: 2019-02-02 21:31:34.754--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [415]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [105]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [156]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [428]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [417]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [306]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [118]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [150]
-[EL Fine]: sql: 2019-02-02 21:31:34.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [23]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [25]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [126]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [319]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [420]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [321]
-[EL Fine]: sql: 2019-02-02 21:31:34.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [110]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [18]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [348]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [354]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [111]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [555]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [323]
-[EL Fine]: sql: 2019-02-02 21:31:34.801--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [84]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [235]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [188]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [95]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [295]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [160]
-[EL Fine]: sql: 2019-02-02 21:31:34.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [200]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [201]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [202]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [203]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [204]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [205]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [206]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [207]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [208]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [209]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [210]
-[EL Fine]: sql: 2019-02-02 21:31:34.832--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [211]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [212]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [213]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [582]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (ID = ?)
-	bind => [2]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [583]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [584]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [585]
-[EL Fine]: sql: 2019-02-02 21:31:34.848--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [586]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [724]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [725]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [726]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [727]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [728]
-[EL Fine]: sql: 2019-02-02 21:31:34.864--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [729]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [736]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [737]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [738]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [750]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [751]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [752]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [753]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [829]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [830]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [831]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [832]
-[EL Fine]: sql: 2019-02-02 21:31:34.879--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [833]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [834]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [835]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [836]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [860]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [861]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [862]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [863]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [864]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [865]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [866]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [963]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [964]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [965]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [966]
-[EL Fine]: sql: 2019-02-02 21:31:34.895--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [967]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [968]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [969]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [970]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1092]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1093]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1094]
-[EL Fine]: sql: 2019-02-02 21:31:34.911--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1095]
-[EL Fine]: sql: 2019-02-02 21:31:34.926--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1096]
-[EL Fine]: sql: 2019-02-02 21:31:34.926--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1097]
-[EL Fine]: sql: 2019-02-02 21:31:34.926--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1098]
-[EL Fine]: sql: 2019-02-02 21:31:34.926--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1099]
-[EL Fine]: sql: 2019-02-02 21:31:34.926--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1100]
-[EL Fine]: sql: 2019-02-02 21:31:43.474--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE NOME LIKE ?
-	bind => [%DORA%]
-[EL Fine]: sql: 2019-02-02 21:31:43.474--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE ((((DATA > ?) OR (DATA = ?)) AND ((DATA < ?) OR (DATA = ?))) AND (COZINHEIRO_ID = ?))
-	bind => [2018-10-01, 2018-10-01, 2018-10-31, 2018-10-31, 7]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [380]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [374]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [9]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [229]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [405]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [385]
-[EL Fine]: sql: 2019-02-02 21:31:43.489--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [402]
-[EL Fine]: sql: 2019-02-02 21:31:43.505--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [399]
-[EL Fine]: sql: 2019-02-02 21:31:43.505--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [393]
-[EL Fine]: sql: 2019-02-02 21:31:43.505--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [394]
-[EL Fine]: sql: 2019-02-02 21:31:43.505--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [397]
-[EL Fine]: sql: 2019-02-02 21:31:43.505--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [273]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [248]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [266]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [93]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [194]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [395]
-[EL Fine]: sql: 2019-02-02 21:31:43.52--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [2]
-[EL Fine]: sql: 2019-02-02 21:31:43.536--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [386]
-[EL Fine]: sql: 2019-02-02 21:31:43.536--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [512]
-[EL Fine]: sql: 2019-02-02 21:31:43.536--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [384]
-[EL Fine]: sql: 2019-02-02 21:31:43.536--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [388]
-[EL Fine]: sql: 2019-02-02 21:31:43.536--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [127]
-[EL Fine]: sql: 2019-02-02 21:31:43.552--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [10]
-[EL Fine]: sql: 2019-02-02 21:31:43.552--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [413]
-[EL Fine]: sql: 2019-02-02 21:31:43.567--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [499]
-[EL Fine]: sql: 2019-02-02 21:31:43.567--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [430]
-[EL Fine]: sql: 2019-02-02 21:31:43.567--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [9]
-[EL Fine]: sql: 2019-02-02 21:31:43.567--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [10]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [14]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [15]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [16]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [17]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [18]
-[EL Fine]: sql: 2019-02-02 21:31:43.583--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [19]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [20]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [21]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [50]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [51]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [52]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [53]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [54]
-[EL Fine]: sql: 2019-02-02 21:31:43.599--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [55]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [56]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [57]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [58]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [59]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [90]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [91]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [92]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [93]
-[EL Fine]: sql: 2019-02-02 21:31:43.614--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [94]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [95]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [96]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [97]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [98]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [99]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [149]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (ID = ?)
+[EL Info]: connection: 2019-02-05 14:13:49.109--ServerSession(701141022)--Thread(Thread[main,5,main])--/file:/C:/Users/IFPB/Documents/Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink login successful
+[EL Fine]: sql: 2019-02-05 14:13:49.165--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO (ID  SERIAL NOT NULL, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.204--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE PRODUCAO (ID  SERIAL NOT NULL, DATA VARCHAR(255), COZINHEIRO_ID INTEGER, PRATO_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.287--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE FUNCIONARIO (ID  SERIAL NOT NULL, CPF VARCHAR(255), DATAADMISSAO TIMESTAMP, DATADEMISSAO TIMESTAMP, EMAIL VARCHAR(255), MATRICULA INTEGER, NOME VARCHAR(255), SALT VARCHAR(255), SENHA VARCHAR(255), TELEFONE BYTEA, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.349--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE AVALIACAO (ID  SERIAL NOT NULL, JUSTIFICATIVA VARCHAR(255), NOTAAPARENCIA INTEGER, NOTASABOR INTEGER, AVALIADOR_ID INTEGER, PRODUTO_ID INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.37--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE PRATO (ID  SERIAL NOT NULL, DIFICULDADE INTEGER, GLUTEN BOOLEAN, LACTOSE BOOLEAN, NOME VARCHAR(255), RECEITA VARCHAR(255), TEMPOPRODUZIR INTEGER, PRIMARY KEY (ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.392--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--CREATE TABLE INSUMO_PRATO (insumos_ID INTEGER NOT NULL, pratos_ID INTEGER NOT NULL, PRIMARY KEY (insumos_ID, pratos_ID))
+[EL Fine]: sql: 2019-02-05 14:13:49.4--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_COZINHEIRO_ID FOREIGN KEY (COZINHEIRO_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.409--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE PRODUCAO ADD CONSTRAINT FK_PRODUCAO_PRATO_ID FOREIGN KEY (PRATO_ID) REFERENCES PRATO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.412--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_PRODUTO_ID FOREIGN KEY (PRODUTO_ID) REFERENCES PRODUCAO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.415--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_AVALIADOR_ID FOREIGN KEY (AVALIADOR_ID) REFERENCES FUNCIONARIO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.42--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_insumos_ID FOREIGN KEY (insumos_ID) REFERENCES INSUMO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.426--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--ALTER TABLE INSUMO_PRATO ADD CONSTRAINT FK_INSUMO_PRATO_pratos_ID FOREIGN KEY (pratos_ID) REFERENCES PRATO (ID)
+[EL Fine]: sql: 2019-02-05 14:13:49.742--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
+	bind => [RAFAEL LINS]
+[EL Fine]: sql: 2019-02-05 14:13:49.755--ClientSession(1336001042)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [073.975.104-26, null, null, linsdesouza@hotmail.com, 1, RAFAEL LINS, teste, teste, null]
+[EL Fine]: sql: 2019-02-05 14:13:49.759--ClientSession(1336001042)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.774--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO WHERE (NOME = ?)
+	bind => [MARIA HELENA]
+[EL Fine]: sql: 2019-02-05 14:13:49.776--ClientSession(481511146)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO FUNCIONARIO (CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [null, null, null, null, 2, MARIA HELENA, null, null, null]
+[EL Fine]: sql: 2019-02-05 14:13:49.777--ClientSession(481511146)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.781--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
+	bind => [CREME DE LEITE]
+[EL Fine]: sql: 2019-02-05 14:13:49.783--ClientSession(299413131)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
+	bind => [false, true, CREME DE LEITE]
+[EL Fine]: sql: 2019-02-05 14:13:49.785--ClientSession(299413131)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.788--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO WHERE (NOME = ?)
+	bind => [FARINHA YOKI]
+[EL Fine]: sql: 2019-02-05 14:13:49.789--ClientSession(2139788441)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO INSUMO (GLUTEN, LACTOSE, NOME) VALUES (?, ?, ?)
+	bind => [true, true, FARINHA YOKI]
+[EL Fine]: sql: 2019-02-05 14:13:49.791--ClientSession(2139788441)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.796--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+	bind => [FAROFA DE CALABRESA]
+[EL Fine]: sql: 2019-02-05 14:13:49.798--ClientSession(1570358965)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [1, false, false, FAROFA DE CALABRESA, FAçA DEVAGAR PRA NãO SE PERDER, 30]
+[EL Fine]: sql: 2019-02-05 14:13:49.8--ClientSession(1570358965)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.803--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+	bind => [LASANHA DE FRANGO]
+[EL Fine]: sql: 2019-02-05 14:13:49.805--ClientSession(176342513)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [2, false, false, LASANHA DE FRANGO, PREPARE A MASSA E DEPOIS O RECHEIO, 45]
+[EL Fine]: sql: 2019-02-05 14:13:49.806--ClientSession(176342513)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.808--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (NOME = ?)
+	bind => [FEIJOADA]
+[EL Fine]: sql: 2019-02-05 14:13:49.81--ClientSession(1784131088)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRATO (DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [3, false, false, FEIJOADA, BOTE UMA LARANJA PRA COZINHAR JUNTO E ABSORVER A GORDURA, 90]
+[EL Fine]: sql: 2019-02-05 14:13:49.811--ClientSession(1784131088)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.82--ClientSession(2038105753)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-14, 2, 1]
+[EL Fine]: sql: 2019-02-05 14:13:49.822--ClientSession(2038105753)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.827--ClientSession(1263634860)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-14, 2, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.829--ClientSession(1263634860)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.832--ClientSession(1070044969)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO PRODUCAO (DATA, COZINHEIRO_ID, PRATO_ID) VALUES (?, ?, ?)
+	bind => [2018-10-01, 2, 3]
+[EL Fine]: sql: 2019-02-05 14:13:49.834--ClientSession(1070044969)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.838--ClientSession(1815556070)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
+	bind => [null, 8, 10, 1, 1]
+[EL Fine]: sql: 2019-02-05 14:13:49.84--ClientSession(1815556070)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.843--ClientSession(1042307502)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO AVALIACAO (JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID) VALUES (?, ?, ?, ?, ?)
+	bind => [MUITO MOLHO, 7, 7, 2, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.844--ClientSession(1042307502)--Connection(708533063)--Thread(Thread[main,5,main])--select lastval()
+[EL Fine]: sql: 2019-02-05 14:13:49.853--ClientSession(1225568095)--Connection(708533063)--Thread(Thread[main,5,main])--INSERT INTO INSUMO_PRATO (pratos_ID, insumos_ID) VALUES (?, ?)
+	bind => [2, 1]
+[EL Fine]: sql: 2019-02-05 14:13:49.858--ClientSession(684822005)--Connection(708533063)--Thread(Thread[main,5,main])--UPDATE PRATO SET LACTOSE = ? WHERE (ID = ?)
+	bind => [true, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.861--ClientSession(1826334428)--Connection(708533063)--Thread(Thread[main,5,main])--UPDATE FUNCIONARIO SET MATRICULA = ?, NOME = ? WHERE (ID = ?)
+	bind => [10, RAFAEL LINS DE SOUZA, 1]
+[EL Fine]: sql: 2019-02-05 14:13:49.865--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO
+[EL Fine]: sql: 2019-02-05 14:13:49.868--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, GLUTEN, LACTOSE, NOME FROM INSUMO
+[EL Fine]: sql: 2019-02-05 14:13:49.87--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO
+[EL Fine]: sql: 2019-02-05 14:13:49.873--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO
+[EL Fine]: sql: 2019-02-05 14:13:49.876--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO
+[EL Fine]: sql: 2019-02-05 14:13:49.882--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE ((((DATA > ?) OR (DATA = ?)) AND ((DATA < ?) OR (DATA = ?))) AND (COZINHEIRO_ID = ?))
+	bind => [2018-10-01, 2018-10-01, 2018-10-15, 2018-10-15, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.893--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT t0.ID, t0.DIFICULDADE, t0.GLUTEN, t0.LACTOSE, t0.NOME, t0.RECEITA, t0.TEMPOPRODUZIR FROM PRATO t0, INSUMO t1 WHERE (t1.NOME = ?)
+	bind => [CREME DE LEITE]
+[EL Fine]: sql: 2019-02-05 14:13:49.899--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT t1.ID, t1.DATA, t1.COZINHEIRO_ID, t1.PRATO_ID FROM PRATO t0, PRODUCAO t1 WHERE (t0.NOME = ?)
+	bind => [FEIJOADA]
+[EL Fine]: sql: 2019-02-05 14:13:49.902--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE ((DATA = ?) AND (COZINHEIRO_ID = ?))
+	bind => [2018-10-14, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.904--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE ((DATA = ?) AND (COZINHEIRO_ID = ?))
+	bind => [2018-10-01, 2]
+[EL Fine]: sql: 2019-02-05 14:13:49.908--ClientSession(1759250827)--Connection(708533063)--Thread(Thread[main,5,main])--DELETE FROM PRODUCAO WHERE (ID = ?)
 	bind => [3]
-[EL Fine]: sql: 2019-02-02 21:31:43.63--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [150]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [151]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [152]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [153]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [154]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [155]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [156]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [157]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [158]
-[EL Fine]: sql: 2019-02-02 21:31:43.645--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [159]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [160]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [161]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [162]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [163]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [252]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [253]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [254]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [255]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [256]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [257]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [258]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [259]
-[EL Fine]: sql: 2019-02-02 21:31:43.661--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [260]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [261]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [262]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [263]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [294]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [295]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [296]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [297]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [298]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [299]
-[EL Fine]: sql: 2019-02-02 21:31:43.677--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [300]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [301]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [302]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [303]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [304]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [602]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [603]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [604]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [605]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [606]
-[EL Fine]: sql: 2019-02-02 21:31:43.692--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [607]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [608]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [609]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [610]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [611]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [612]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [652]
-[EL Fine]: sql: 2019-02-02 21:31:43.708--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [653]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [654]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [655]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [656]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [657]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [658]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [659]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [660]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [661]
-[EL Fine]: sql: 2019-02-02 21:31:43.724--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [662]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [680]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [681]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [682]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [683]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [684]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [685]
-[EL Fine]: sql: 2019-02-02 21:31:43.739--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [686]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [687]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [714]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [715]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [716]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [717]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [718]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [719]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [720]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [721]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [722]
-[EL Fine]: sql: 2019-02-02 21:31:43.755--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [723]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [779]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [780]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [781]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [782]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [783]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [784]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [785]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [786]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [787]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [788]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [789]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [790]
-[EL Fine]: sql: 2019-02-02 21:31:43.77--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [797]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [798]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [799]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [800]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [801]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [802]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [803]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [804]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [805]
-[EL Fine]: sql: 2019-02-02 21:31:43.786--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [806]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [837]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [838]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [839]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [840]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [841]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [842]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [996]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [997]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [998]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [999]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1000]
-[EL Fine]: sql: 2019-02-02 21:31:43.802--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1001]
-[EL Fine]: sql: 2019-02-02 21:31:43.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1002]
-[EL Fine]: sql: 2019-02-02 21:31:43.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1003]
-[EL Fine]: sql: 2019-02-02 21:31:43.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1004]
-[EL Fine]: sql: 2019-02-02 21:31:43.817--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, JUSTIFICATIVA, NOTAAPARENCIA, NOTASABOR, AVALIADOR_ID, PRODUTO_ID FROM AVALIACAO WHERE (PRODUTO_ID = ?)
-	bind => [1005]
-[EL Fine]: sql: 2019-02-02 21:31:54.11--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, CPF, DATAADMISSAO, DATADEMISSAO, EMAIL, MATRICULA, NOME, SALT, SENHA, TELEFONE FROM FUNCIONARIO
-[EL Fine]: sql: 2019-02-02 21:32:04.814--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%ARROZ%]
-[EL Fine]: sql: 2019-02-02 21:32:09.783--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%ARROZ%]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATA, COZINHEIRO_ID, PRATO_ID FROM PRODUCAO WHERE (DATA = ?)
-	bind => [2018-10-01]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [293]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [176]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [191]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [189]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [441]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [340]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [106]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [57]
-[EL Fine]: sql: 2019-02-02 21:32:11.317--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [1]
-[EL Fine]: sql: 2019-02-02 21:32:11.333--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [121]
-[EL Fine]: sql: 2019-02-02 21:32:11.333--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [236]
-[EL Fine]: sql: 2019-02-02 21:32:11.333--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [334]
-[EL Fine]: sql: 2019-02-02 21:32:11.333--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [459]
-[EL Fine]: sql: 2019-02-02 21:32:35.102--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%SOBRECOXA%]
-[EL Fine]: sql: 2019-02-02 21:32:47.946--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [547]
-[EL Fine]: sql: 2019-02-02 21:32:59.057--ClientSession(2076885587)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--UPDATE PRATO SET GLUTEN = ? WHERE (ID = ?)
-	bind => [true, 547]
-[EL Fine]: sql: 2019-02-02 21:33:16.824--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%TORTA DE FRANGO%]
-[EL Fine]: sql: 2019-02-02 21:33:31.232--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [441]
-[EL Fine]: sql: 2019-02-02 21:33:38.358--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%TORTA DE FRANGO%]
-[EL Fine]: sql: 2019-02-02 21:33:40.842--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [464]
-[EL Fine]: sql: 2019-02-02 21:33:51.972--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%ESPAGU%]
-[EL Fine]: sql: 2019-02-02 21:33:57.363--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [164]
-[EL Fine]: sql: 2019-02-02 21:34:00.358--ClientSession(801298045)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--UPDATE PRATO SET GLUTEN = ? WHERE (ID = ?)
-	bind => [true, 164]
-[EL Fine]: sql: 2019-02-02 21:34:42.896--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%FEIJAO%]
-[EL Fine]: sql: 2019-02-02 21:34:46.956--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%FEIJ%]
-[EL Fine]: sql: 2019-02-02 21:34:59.019--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [180]
-[EL Fine]: sql: 2019-02-02 21:35:30.258--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE NOME LIKE ?
-	bind => [%BRANCO%]
-[EL Fine]: sql: 2019-02-02 21:35:32.79--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.GLUTEN, t1.LACTOSE, t1.NOME FROM INSUMO_PRATO t0, INSUMO t1 WHERE ((t0.pratos_ID = ?) AND (t1.ID = t0.insumos_ID))
-	bind => [23]
-[EL Fine]: sql: 2019-02-02 21:35:46.483--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT t1.ID, t1.DATA, t1.COZINHEIRO_ID, t1.PRATO_ID FROM PRATO t0, PRODUCAO t1 WHERE (t0.NOME = ?)
-	bind => [ARROZ BRANCO]
-[EL Fine]: sql: 2019-02-02 21:35:46.498--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [458]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [59]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [14]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [45]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [239]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [70]
-[EL Fine]: sql: 2019-02-02 21:35:46.514--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [169]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [276]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [291]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [274]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [139]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [246]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [364]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [102]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [108]
-[EL Fine]: sql: 2019-02-02 21:35:46.529--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [48]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [327]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [112]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [460]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [461]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [444]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [317]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [141]
-[EL Fine]: sql: 2019-02-02 21:35:46.545--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [227]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [310]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [251]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [206]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [257]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [147]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [299]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [439]
-[EL Fine]: sql: 2019-02-02 21:35:46.561--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [149]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [326]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [37]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [463]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [277]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [284]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [443]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [101]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [243]
-[EL Fine]: sql: 2019-02-02 21:35:46.576--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [447]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [171]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [359]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [353]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [85]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [167]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [190]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [338]
-[EL Fine]: sql: 2019-02-02 21:35:46.592--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [471]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [78]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [128]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [472]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [474]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [114]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [196]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [362]
-[EL Fine]: sql: 2019-02-02 21:35:46.608--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [90]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [89]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [389]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [177]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [366]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [109]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [203]
-[EL Fine]: sql: 2019-02-02 21:35:46.623--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [49]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [502]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [170]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [146]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [423]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [436]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [358]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [316]
-[EL Fine]: sql: 2019-02-02 21:35:46.639--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [442]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [339]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [320]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [418]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [479]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [115]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [99]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [324]
-[EL Fine]: sql: 2019-02-02 21:35:46.654--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [97]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [392]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [469]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [242]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [129]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [107]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [56]
-[EL Fine]: sql: 2019-02-02 21:35:46.67--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [451]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [285]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [148]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [159]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [265]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [290]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [214]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [68]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [483]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [382]
-[EL Fine]: sql: 2019-02-02 21:35:46.686--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [250]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [247]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [356]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [77]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [496]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [554]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [283]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [349]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [75]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [363]
-[EL Fine]: sql: 2019-02-02 21:35:46.701--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [81]
-[EL Fine]: sql: 2019-02-02 21:35:46.717--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [412]
-[EL Fine]: sql: 2019-02-02 21:35:46.717--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [230]
-[EL Fine]: sql: 2019-02-02 21:35:46.717--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [548]
-[EL Fine]: sql: 2019-02-02 21:35:46.717--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [541]
-[EL Fine]: sql: 2019-02-02 21:35:46.717--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [344]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [175]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [279]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [281]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [154]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [222]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [98]
-[EL Fine]: sql: 2019-02-02 21:35:46.733--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [300]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [232]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [261]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [61]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [63]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [212]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [312]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [64]
-[EL Fine]: sql: 2019-02-02 21:35:46.748--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [234]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [557]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [144]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [375]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [35]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [545]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [15]
-[EL Fine]: sql: 2019-02-02 21:35:46.764--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [69]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [508]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [83]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [50]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [76]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [213]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [198]
-[EL Fine]: sql: 2019-02-02 21:35:46.78--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [335]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [166]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [38]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [314]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [518]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [67]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [361]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [526]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [523]
-[EL Fine]: sql: 2019-02-02 21:35:46.795--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [73]
-[EL Fine]: sql: 2019-02-02 21:35:46.811--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [91]
-[EL Fine]: sql: 2019-02-02 21:35:46.811--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [103]
-[EL Fine]: sql: 2019-02-02 21:35:46.811--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DIFICULDADE, GLUTEN, LACTOSE, NOME, RECEITA, TEMPOPRODUZIR FROM PRATO WHERE (ID = ?)
-	bind => [342]
-[EL Config]: connection: 2019-02-02 21:36:05.782--ServerSession(206918065)--Connection(219005648)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect
-[EL Info]: connection: 2019-02-02 21:36:05.798--ServerSession(206918065)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/linsd/Documents/GitHub/ProjetoPOB--Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink logout successful
-[EL Config]: connection: 2019-02-02 21:36:05.798--ServerSession(206918065)--Connection(1284107092)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect
+[EL Config]: connection: 2019-02-05 14:13:49.912--ServerSession(701141022)--Connection(708533063)--Thread(Thread[main,5,main])--disconnect
+[EL Info]: connection: 2019-02-05 14:13:49.912--ServerSession(701141022)--Thread(Thread[main,5,main])--/file:/C:/Users/IFPB/Documents/Avaliacao-de-Desempenho-Domani/bin/_bancopgd-eclipselink logout successful
+[EL Config]: connection: 2019-02-05 14:13:49.912--ServerSession(701141022)--Connection(891093184)--Thread(Thread[main,5,main])--disconnect

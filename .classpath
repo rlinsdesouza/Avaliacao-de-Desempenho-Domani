@@ -2,10 +2,15 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/db4o-8.1.249.16099-core-java5.jar"/>
 	<classpathentry kind="lib" path="lib/db4o-8.1.249.16099-cs-java5.jar"/>
 	<classpathentry kind="lib" path="lib/db4o-8.1.249.16099-cs.optional-java5.jar"/>
@@ -17,5 +22,10 @@
 	<classpathentry kind="lib" path="lib-banco/postgresql-9.4-1206-jdbc42.jar"/>
 	<classpathentry kind="lib" path="eclipselink/eclipselink.jar"/>
 	<classpathentry kind="lib" path="eclipselink/javax.persistence_2.2.1.v201807122140.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
