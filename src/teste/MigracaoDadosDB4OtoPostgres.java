@@ -40,7 +40,13 @@ public class MigracaoDadosDB4OtoPostgres {
 			
 			List<Insumo> bancoinsumos = Fachadaold.listarInsumo();
 			for (Insumo insumo : bancoinsumos) {
-				Fachada.cadastrarInsumo(insumo.getNome(), insumo.isLactose(), insumo.isGluten());
+				try {
+					Fachada.cadastrarInsumo(insumo.getNome(), insumo.isLactose(), insumo.isGluten());		
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+			
+				}
+				
 			}
 			
 			List<Prato> bancopratos = Fachadaold.listarPratos();
@@ -55,7 +61,7 @@ public class MigracaoDadosDB4OtoPostgres {
 								try {
 									Fachada.adicionarInsumoAoPrato(Fachada.localizarPrato(idPrato), Fachada.localizarInsumo(idInsumo));
 								} catch (Exception e) {
-									System.out.println("erro ao add insumo!");
+									System.out.println(e.getMessage());
 								}
 								
 							}
@@ -107,7 +113,7 @@ public class MigracaoDadosDB4OtoPostgres {
 //			Fachadaold.cadastrarAvaliacao(r1, 10, 8,null,f1);
 //			Fachadaold.cadastrarAvaliacao(r2, 7, 7, "muito molho", f2);
 
-			System.out.println("migração realizado com sucesso!");
+			System.out.println("migraï¿½ï¿½o realizado com sucesso!");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

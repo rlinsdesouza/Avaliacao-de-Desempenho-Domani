@@ -1,0 +1,194 @@
+﻿-- -- 
+-- --MIGRACAO DOS FUNCIONARIOS
+-- 
+-- CREATE TABLE temppessoa AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select id, nome from funcionario')
+--     AS DATA(cod INTEGER,nome VARCHAR(100)));
+-- 
+-- DO $$
+-- declare
+-- item temppessoa%ROWTYPE;
+-- Begin
+-- For item IN (select * from temppessoa) LOOP
+-- 
+-- 
+-- INSERT INTO pessoas VALUES (default, 
+-- 			item.nome,
+-- 			item.nome,
+-- 			null,
+-- 			null,
+-- 			null,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- -- MIGRACAO DOS INSUMOS
+-- 
+-- CREATE TABLE tempinsumos AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select nome,lactose,gluten from insumo')
+--     AS DATA(nome VARCHAR(100),lactose BOOLEAN, gluten BOOLEAN));
+-- DO $$
+-- declare
+-- insumo tempinsumos%ROWTYPE;
+-- lactose VARCHAR(255);
+-- gluten VARCHAR(255);
+-- Begin
+-- For insumo IN (select * from tempinsumos)  LOOP
+-- 
+-- IF insumo.lactose THEN
+-- lactose = 'S';
+-- ELSE lactose ='N';
+-- END IF;
+-- 
+-- IF insumo.gluten THEN
+-- gluten = 'S';
+-- ELSE gluten = 'N';
+-- END IF;			
+-- 
+-- INSERT INTO insumos VALUES (default, 
+-- 			insumo.nome,
+-- 			lactose,
+-- 			gluten,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- -- MIGRACAO DOS PRATOS
+-- 
+-- CREATE TABLE temppratos AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select dificuldade,lactose,gluten,nome,receita,tempoproduzir from prato')
+--     AS DATA(dificuldade INTEGER,lactose BOOLEAN,gluten BOOLEAN,nome VARCHAR(100),receita TEXT,tempoproduzir INTEGER));
+-- DO $$
+-- declare
+-- prato temppratos%ROWTYPE;
+-- lactose VARCHAR(255);
+-- gluten VARCHAR(255);
+-- Begin
+-- For prato IN (select * from temppratos)  LOOP
+-- 
+-- IF prato.lactose THEN
+-- lactose = 'S';
+-- ELSE lactose ='N';
+-- END IF;
+-- 
+-- IF prato.gluten THEN
+-- gluten = 'S';
+-- ELSE gluten = 'N';
+-- END IF;			
+-- 
+-- INSERT INTO pratos VALUES (default, 
+-- 			prato.nome,
+-- 			prato.receita,
+-- 			prato.dificuldade,
+-- 			prato.tempoproduzir,
+-- 			lactose,
+-- 			gluten,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- -- MIGRACAO DO RELACIONAMENTO PRATO-INSUMO
+-- 
+-- CREATE TABLE temprelpratinsumo AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select insumos_id,pratos_id from insumo_prato')
+--     AS DATA(insumos_id INTEGER,pratos_id INTEGER));
+-- DO $$
+-- declare
+-- item temprelpratinsumo%ROWTYPE;
+-- Begin
+-- For item IN (select * from temprelpratinsumo)  LOOP
+-- 
+-- INSERT INTO insumo_prato VALUES 
+-- 			(
+-- 			item.insumos_id,
+-- 			item.pratos_id,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- -- MIGRACAO DAS PRODUCOES
+-- 
+-- CREATE TABLE tempproducao AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select data,cozinheiro_id from producao')
+--     AS DATA(datatext VARCHAR(10),cozinheiro_id INTEGER));
+-- DO $$
+-- declare
+-- item tempproducao%ROWTYPE;
+-- Begin
+-- For item IN (select * from tempproducao)  LOOP
+-- 
+-- INSERT INTO producaos VALUES 
+-- 			(
+-- 			default,
+-- 			item.datatext,
+-- 			item.cozinheiro_id,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- 
+-- -- MIGRACAO DA RELACAO PRATO-PRODUCAO
+-- 
+-- CREATE TABLE temprelpratoproducao AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select id,data,cozinheiro_id,prato_id from producao')
+--     AS DATA(cod INTEGER, datatext VARCHAR(10),cozinheiro_id INTEGER, prato_id INTEGER));
+-- DO $$
+-- declare
+-- item temprelpratoproducao%ROWTYPE;
+-- Begin
+-- For item IN (select * from temprelpratoproducao)  LOOP
+-- 
+-- INSERT INTO prato_producao VALUES 
+-- 			(
+-- 			default,
+-- 			item.prato_id,
+-- 			item.cod,
+-- 			null,
+-- 			null
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+--  
+-- 
+-- -- MIGRACAO DAS AVALIACOES
+-- 
+-- CREATE TABLE tempavaliacoes AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select justificativa,notaaparencia,notasabor,avaliador_id,produto_id from avaliacao')
+--     AS DATA(justificativa TEXT,notaaparencia DOUBLE PRECISION,notasabor DOUBLE PRECISION,avaliador_id INTEGER,produto_id INTEGER));
+-- DO $$
+-- declare
+-- item tempavaliacoes%ROWTYPE;
+-- Begin
+-- For item IN (select * from tempavaliacoes)  LOOP
+-- 
+-- INSERT INTO avaliacaos VALUES 
+-- 			(
+-- 			default,
+-- 			item.notasabor,
+-- 			item.notaaparencia,
+-- 			item.justificativa,
+-- 			item.avaliador_id,
+-- 			item.produto_id,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE,
+-- 			CURRENT_TIMESTAMP::TIMESTAMP WITHOUT TIME ZONE
+-- 			);
+-- 
+-- End loop;
+-- End$$;
+-- 
+-- 
+-- -- REFERENCIAS
+-- 
+-- -- https://www.postgresql.org/docs/current/contrib-dblink-function.html
+-- -- http://www.leeladharan.com/postgresql-cross-database-queries-using-dblink
+-- 
+-- -- COMANDOS DE TESTE
