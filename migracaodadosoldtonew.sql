@@ -1,4 +1,6 @@
-﻿-- -- 
+﻿-- CREATE EXTENSION dblink;
+-- 
+-- -- 
 -- --MIGRACAO DOS FUNCIONARIOS
 -- 
 -- CREATE TABLE temppessoa AS (SELECT * FROM dblink('host=localhost user=postgres password=postgres dbname=bancopgd','select id, nome from funcionario')
